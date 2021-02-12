@@ -57,7 +57,7 @@ The fragile has no options. Tinkering in a rational manner under the right condi
 
 In this sub-book, Taleb also makes his contempt for academia very clear. He hates them. He blames the for inverting the arrow of knowledge to read "academia -> practice", and thinks that they make it look like we owe more to knowledge than practice. He calls this an epiphenomena - "a secondary mental phenomenon that is caused by and accompanies a physical phenomenon but has no causal influence itself". He claims that the academics have fooled us into thinking they are the reason for humanity's progress. There is of course more nuance to this argument, but the general gist is the academics are the fools, and the doers are the heroes.
 
-Here, the very important idea of "The Green Lumber Fallacy" is presented - "mistaking the source of important or even necessary knowledge, for another less visible from the outside, less tractable one... how many things we call 'relevant knowledge' aren’t so much so". Another, more mathematical way of looking at is confusing a function *f(x)* for another function *g(x)*, a one that has a different non-linearity. This conflation is the root of many problems. As Fat Tony (a character representing anitfragility) would say, *"They are not the same ting"*
+Here, the very important idea of "The Green Lumber Fallacy" is presented - "mistaking the source of important or even necessary knowledge, for another less visible from the outside, less tractable one... how many things we call 'relevant knowledge' aren’t so much so". Another, more mathematical way of looking at is confusing a function $f(x)$ for another function $g(x)$, a one that has a different non-linearity. This conflation is the root of many problems. As Fat Tony (a character representing anitfragility) would say, *"They are not the same ting"*
 
 Another important point that is present here is the idea that things that are unintelligible are not necessarily unintelligent. He says that in real life, knowledge is no match for exposure; the decision effects supersede the logic. Taleb says the study of *the payoff* has been largely missed by intellectual history. Socrates, as Fat Tony would put it, was playing a *sucker game*.
 
@@ -66,14 +66,14 @@ Another important point that is present here is the idea that things that are un
 Never play the sucker's game, be a non-sucker.
 
 ### Book V - The Nonlinear and the Nonlinear
-Here, Taleb presents a mathematical basis for Antifragility. Here, there are a few things that are introduced, non-linear functions (*f(x)* changes in a manner not proportional to x). Taleb's talks about how the failure of most economic models are linked to the effects of the convexity effects (second-order effects).
+Here, Taleb presents a mathematical basis for Antifragility. Here, there are a few things that are introduced, non-linear functions ($f(x)$ changes in a manner not proportional to x). Taleb's talks about how the failure of most economic models are linked to the effects of the convexity effects (second-order effects).
 
 Fragility is linked to concavity (negative convexity) which equals *dislike of randomness*. Taleb posits that having a larger corporation only exacerbates the effects of a negative black swan. The Agency problem - the divergence between the agent and her client - aggravates the non-linearities (convexities and asymmetries). Doubt is cast on the effectiveness of these giant corporate mergers.
 
 The final important concept here is the Jensen's Inequality - the basis of Antifragility and its effects.
 It is generally stated in the following form:
 
-if I have a convex function f(x) and there is a spread of possible x's, then avg(f(x)) >= f(avg(x)).
+if I have a convex function $f(x)$ and there is a spread of possible x's, then $avg(f(x)) >= f(avg(x))$.
 
 The difference between the two is what's called the Jensen Gap, this is what gives us the edge in positive convexity offered by antifragility. The convexity bias allows us to be wrong more often in a random setting. Someone with a linear payoff would have to be right way more often to get the same payoff as compared to having convexity bias on your side.
 On the other hand, the mirror of this is fragility, caused by negative convex bias (or concavity bias).
