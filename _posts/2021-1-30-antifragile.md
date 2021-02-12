@@ -51,7 +51,9 @@ Taleb applies this to not only finance but day to day life. He asks to practice 
 ### Book IV - Optionality, Technology and the Intelligence of Antifragility
 Here, the idea of optionality is introduced. The idea is simple - one must have *options*. Never be locked into something; the more the options, the easier you can avoid negative black swans. He also proposes the notion of optionality as a substitute for intelligence. Optionality can be coupled with randomness, and some selection filter to produce intelligence. He gives the example of the work by François Jacob on optionality in nature; the body spontaneously aborts half of all embryos - its easier to leverage options than to create the perfect baby blueprint. 
 
-> Option = asymmetry + rationality
+\[
+Option = asymmetry + rationality
+\]
 
 The fragile has no options. Tinkering in a rational manner under the right conditions can outperform knowledge by exposing oneself to positive asymmetries.
 
@@ -73,7 +75,10 @@ Fragility is linked to concavity (negative convexity) which equals *dislike of r
 The final important concept here is the Jensen's Inequality - the basis of Antifragility and its effects.
 It is generally stated in the following form:
 
-if I have a convex function $f(x)$ and there is a spread of possible x's, then $avg(f(x)) >= f(avg(x))$.
+if I have a convex function $f(x)$ and there is a spread of possible x's, then 
+\[
+avg(f(x)) >= f(avg(x))
+\]
 
 The difference between the two is what's called the Jensen Gap, this is what gives us the edge in positive convexity offered by antifragility. The convexity bias allows us to be wrong more often in a random setting. Someone with a linear payoff would have to be right way more often to get the same payoff as compared to having convexity bias on your side.
 On the other hand, the mirror of this is fragility, caused by negative convex bias (or concavity bias).
