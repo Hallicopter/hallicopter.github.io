@@ -1,35 +1,23 @@
 ---
 layout: default
 ---
-<h1>
-    Welcome to my internet presence.
-</h1>
-Here is a map to navigate my website:
-<dl>
-    <dt>blog </dt>
-    <dd>    - posts I took a while to write, and I consider polished </dd>
-    <dt>books</dt>
-    <dd>    - book reviews and notes</dd>
-    <dt>thoughts</dt>
-    <dd>    -  random thoughts, and unpolished pieces; also my weekly newsletter - "The Letter".</dd>
-    <dt>about</dt>
-    <dd>    - more about me</dd>
-</dl>
-<!--<div class="posts">-->
-<!--  {% for post in site.posts %}-->
-<!--  {% if post.categories contains 'main' %}-->
-<!--  <article class="post">-->
 
-<!--    <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>-->
 
-<!--    <div class="entry">-->
-<!--      {{ post.excerpt }}-->
-<!--    </div>-->
+<div class="posts">
+  {% for post in site.posts %}
+  {% if post.categories contains 'main' %}
+  <article class="post">
 
-<!--    <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>-->
-<!--  </article>-->
-<!--  {% endif %}-->
-<!--  {% endfor %}-->
+    <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
+    <div class="entry">
+      {{ post.excerpt }}
+    </div>
+
+    <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+  </article>
+  {% endif %}
+  {% endfor %}
 
 
 <!--  &lt;!&ndash; pagination &ndash;&gt;-->
