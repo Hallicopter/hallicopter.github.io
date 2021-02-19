@@ -74,18 +74,5 @@ ul {
     grid-template-columns: repeat(auto-fit,minmax(132px, 1fr));
 }
 
-#sketch {
-    min-height: 400px;
-}
 
-#sketch canvas {
-    clip-path: circle(45%);
-    /*border: 1px solid #999;*/
-    border-radius: 50%;
-    transition: clip-path 1.5s ease-in-out;
-}
-
-#sketch canvas:hover {
-    clip-path: circle(100%);
-}
 
