@@ -14,3 +14,4 @@ package.json
 *.gem
 *.gemspec
 .jekyll-cache
+.obsidian/
