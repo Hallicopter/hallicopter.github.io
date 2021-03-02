@@ -34,7 +34,7 @@ These are two forms of the barbell, there can be several other variants, in the 
 
 I program computers for a living. Things move fast in my field, and things that are cutting edge today, would be garbage tomorrow. Ask any programmer when was the last time they wrote a Java applet, once considered the defacto way to create an internet application [^5] . Today, browsers don't even support them. The whole thing is garbage. And as a believer in the adage of "Garbage in, garbage out", we know what my knowledge portfolio will look like over time.
 
-To get over this, I am going to barbell my investment. To do this, first, I must determine what are my "safe assets". In a field with technologies and knowledge being as transient as there, how do I find out what is a "safe" investment? The answer to this is the Lindy effect:
+To get over this, I am going to barbell my investment. To do this, first, I must determine what are my "safe assets". In a field with technologies and knowledge being as transient as they are, how do I find out what is a "safe" investment? The answer to this is the Lindy effect:
 
 > "A technology, or anything nonperishable, increases in life expectancy with every day of its life.”
 
