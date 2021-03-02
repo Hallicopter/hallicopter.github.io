@@ -42,7 +42,7 @@ A similar metric can be used to find extremely high risk, high reward investment
 1. Safe asset heuristic: Technologies/concepts that have had a lifespan of a minimum of 25 years. Example: Concurrency, Virtualisation, Compilers.
 2. Risky asset heuristic: Technology/concepts that have a maximum age of 5 years. Eg: HTTP/3, Web3 technologies.
 
-My risk appetite is high, so I want to split my time investment in these assets in a ration of 70:30.
+My risk appetite is high, so I want to split my time investment in these assets in a ratio of 70:30.
 
 That's the distribution of knowledge, now for implementing this strategy, I would create a knowledge SIP, or a systematic investment plan. Methods of investment for me would include, but not be limited to:
 - Read one technical book per month.
