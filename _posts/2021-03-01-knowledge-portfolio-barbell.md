@@ -9,7 +9,7 @@ Exposing myself to extreme success. Or maybe not.
 
 ## Knawlidge.
 
-Staying at home for over a year with no expenditure of my own [^1] meant that I had accumulated a nice pile of cash for myself from my job. Since I don't like being a chump, I decided that it was time to start building an investment portfolio with my money. I read and heard many books, articles and podcasts [^3] on how to manage my money and transition it to "wealth". I am sure everyone reading this would agree that having a well thought out investment portfolio is the fiscally prudent thing to do in my situation. Its probably that what everyone of us would do (unless you are the fiscally irresponsible kind. Or like gambling). 
+Staying at home for over a year with no expenditure of my own [^1] meant that I had accumulated a nice pile of cash for myself from my job. Since I don't like being a chump, I decided that it was time to start building an investment portfolio with my money. I read and heard many books, articles and podcasts [^3] on how to manage my money and transition it to "wealth". I am sure everyone reading this would agree that having a well thought out investment portfolio is the fiscally prudent thing to do in my situation. Its probably what all of us would do (unless you are the fiscally irresponsible kind. Or like gambling). 
 
 After deciding to attain pecuniary perfection, I started dilligently doting over my portfolio of passive funds, torridly tracking multiple international indices and rabidly reading online thesauri to sound smarter [^4].  Despite having a thourough investment plan to build wealth, I faultered in planning a portfolio of the most important asset you can have, Knowledge (or as guru extrordinair Tai Lopez would say - "[Knawlidge](https://www.youtube.com/watch?v=Cv1RJTHf5fk)"). It was time I treated my knowledge capital the same way I treated my financial capital.
 
@@ -32,7 +32,7 @@ These are two forms of the barbell, there can be several other variants, in the 
 
 ### Garbage in, garbage out.
 
-I am program computers for a living. Things move fast in my field, and things that are cutting edge today, would be garbage tomorrow. Ask any programmer when was the last time they wrote a Java applet, once considered the defacto way to create an internet application [^5] . Today, browsers don't even support them. The whole thing is garbage. And as a believer in the adage of "Garbage in, garbage out", we know what my knowledge portfolio will look like over time.
+I program computers for a living. Things move fast in my field, and things that are cutting edge today, would be garbage tomorrow. Ask any programmer when was the last time they wrote a Java applet, once considered the defacto way to create an internet application [^5] . Today, browsers don't even support them. The whole thing is garbage. And as a believer in the adage of "Garbage in, garbage out", we know what my knowledge portfolio will look like over time.
 
 To get over this, I am going to barbell my investment. To do this, first, I must determine what are my "safe assets". In a field with technologies and knowledge being as transient as there, how do I find out what is a "safe" investment? The answer to this is the Lindy effect:
 
