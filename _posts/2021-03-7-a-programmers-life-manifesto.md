@@ -5,7 +5,7 @@ tags: [Personal Development]
 layout: post
 ---
 
-This may or may not age well, but I always find cross functional principles amusing.
+I always find cross functional principles amusing.
 
 ## Cross functional Principles.
 Cross functional principles are principles that were designed to be guidelines for a particular field, but somehow apply to another field. This is not a technical term for such principles,  just something I use to describe such principles. I find the idea of cross functional principles really satisfying. It feels like two (seemingly) different worlds having a cross-over. 
