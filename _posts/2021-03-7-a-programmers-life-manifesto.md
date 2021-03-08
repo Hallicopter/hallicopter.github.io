@@ -10,10 +10,10 @@ I always find cross functional principles amusing.
 ## Cross functional Principles.
 Cross functional principles are principles that were designed to be guidelines for a particular field, but somehow apply to another field. This is not a technical term for such principles,  just something I use to describe such principles. I find the idea of cross functional principles really satisfying. It feels like two (seemingly) different worlds having a cross-over. 
 
-Recently, I finished reading "The Pragmatic Programmer" [^1], a book about the craft of writing good code and building great software. I learnt a lot great principles on the art of making good software, but also felt like most (if not all) of these principles can be applied to life. 
+Recently, I finished reading "The Pragmatic Programmer" [^1], a book about the craft of writing good code and building great software. I learnt a lot of great principles on the art of making good software, but also felt like most (if not all) of these principles can be applied to life. 
 
 ## The action manifesto.
-I figured the most pragmatic way of applying this principles would be to break them down into short, easy-to-apply tests for the actions/decisions you take. If you want a cringier way of thinking about these tests, they are the CI/CD build pipeline to your life [^2]
+I figured the most pragmatic way of applying these principles would be to break them down into short, easy-to-apply tests for the actions/decisions you take. If you want a cringier way of thinking about these tests, they are the CI/CD build pipeline to your life [^2]
 
 I have derived these tests by adapting (quite loosely sometimes) the hallmarks of a great codebase.
 
