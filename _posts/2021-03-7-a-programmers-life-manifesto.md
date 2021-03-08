@@ -36,7 +36,7 @@ My interpretation of this is very important for me in today's attention economy 
 Suppose my intended output for an action is finish writing an article on "Hearing loss". Ever so often I should poll myself to make sure the actions I am taking do indeed contribute to that very goal, and no other one. I have to keep things single responsibility. More responsibilities may cause tight coupling which, down the line , would cause great pain and unintended second or third order consequences. [^3]
 
 ### Avoid tech debt like the plague.
-This is a simple principle. Every action you take is either a debt from your future self, or a favour you are doing to your future self. Any debt that you take must be thought of as a high interest, loan shark debt. You will be forced to pay it back at a much worst time and place, with a ridiculous interest fees.
+This is a simple principle. Every action you take is either a debt from your future self, or a favour you are doing to your future self. Any debt that you take must be thought of as a high interest, loan shark debt. You will be forced to pay it back at a much worse time and place, with a ridiculous interest fees.
 
 Before performing an action, run the following "life debt" test. Am I taking a life debt? If the answer is yes, avoid the action like the plague.
 
