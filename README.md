@@ -11,6 +11,7 @@ Check out the website over at https://advait.live.
 * Animated generative Art background that slowly develops as you read posts.
 * Ratings on the post (based on post metadata)
 * RSS Feeds.
+* LaTex support.
 
 ### Screenshots
 
