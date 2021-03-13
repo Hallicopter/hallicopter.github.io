@@ -5,7 +5,7 @@ tags: [Personal]
 layout: post
 ---
 
-A look back what I like, and dislike about my most popular project being a terminal speed reader.
+A look back at what I like, and dislike about my most popular project being a terminal speed reader.
 
 ## Breaking down relative success.
 
