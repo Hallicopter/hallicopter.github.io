@@ -2,7 +2,7 @@
 title: Antifragile.
 rating: 10/10
 categories: [books]
-tags: [Philosophy, Maths]
+tags: [Philosophy, Mathematics]
 layout: post
 ---
 
