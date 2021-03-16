@@ -1,10 +1,9 @@
 ---
 title: Barbelling my knowledge portfolio.
 categories: [thoughts]
-tags: [Personal Development]
+tags: [Musings]
 layout: post
 ---
-
 Exposing myself to extreme success. Or maybe not.
 
 ## Knawlidge.

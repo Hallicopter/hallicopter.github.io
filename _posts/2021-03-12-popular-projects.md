@@ -1,7 +1,7 @@
 ---
 title: My most popular side project.
 categories: [thoughts]
-tags: [Personal]
+tags: [Musings]
 layout: post
 ---
 

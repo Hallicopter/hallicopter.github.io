@@ -1,7 +1,7 @@
 ---
 title: A programmer's life manifesto.
 categories: [thoughts]
-tags: [Personal Development]
+tags: [Musings]
 layout: post
 ---
 
