@@ -20,7 +20,7 @@ Before we get to why this strategy is so great, let's understand the problem we 
 The barbell strategy aims to curb negative Black Swans, and expose yourself to positive Black Swans. This is done by never staying in the middle, only in the extremes. One end of the barbell is extremely safe, the other end of the barbell is extremely unsafe, and high risk. The high risk part of the barbell in a best case scenario exposes you to positive Black Swans. In the worst case, you lose your whole high risk portion due to a negative Black Swan, but you have your super safe end of the barbell to protect you.
 
 
-<img src="https://mk0jeangaleayxo58vkt.kinstacdn.com/wp-content/uploads/2020/12/Barbell-Strategy-800x600.jpeg" height="400">
+<img src="https://i.imgur.com/sHdF5t9.png" height="400">
 <p style="text-align:center"> An example of a financial barbel, courtesy Jean Galea </p>
 
 This strategy applies to all facets of life. In fact, more so in the non financial aspects of life. There are many ways that a barbell can be applied, here are a few examples from a career point of view:
