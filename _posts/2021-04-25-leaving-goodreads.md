@@ -66,7 +66,7 @@ This allows every community to have it's own rules and identities, while being a
 ### It's small.
 I intend to build a community of like minded people on my instance. The idea here is to have a high trust, close knit community of people. My particular instance is themed predominantly around non-fiction books (the kind I read a lot). 
 
-I hope to have people who share similar interests to join the platform so that the social aspect that I had missed in Goodreads is achieved. Also, since the number of people on the platform are fewer and closer, the ratings and reviews are much more valuable, since they can be interpreted with the context of who is writing the review, which is as important as the review itself.
+I hope to have people who share similar interests to join the platform so that the social aspect that I had missed in Goodreads is achieved. Also, since the number of people on the platform are fewer and closer, the ratings and reviews are much more valuable since they can be interpreted with the context of who is writing the review which is as important as the review itself.
 
 ### It's got all I need!
 It's got great cataloging features, the ability make lists like in goodreads, and books can be imported from goodreads. I exported my goodreads library and moved it all to my platform. 
