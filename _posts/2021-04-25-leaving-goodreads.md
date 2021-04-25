@@ -75,7 +75,7 @@ It's got great cataloging features, the ability make lists like in goodreads, an
 If you love reading and discussing non-fiction books like I do, sign at [bookclub.techstartups.space](https://bookclub.techstartups.space/). I am the owner and maintainer, will be easily accessible and active there. 
 If this is not your kind of a thing, I urge you to drop goodreads and try out other platforms like [OpenLibrary](https://openlibrary.org/). 
 
-As I have mentioned earlier, Big Tech and corporates are going to be the death of us. Decentralisation will help us become more resilient, and allow for a more free and open internet.
+As I have mentioned in earlier essays, Big Tech and corporates are going to be the death of us. Decentralisation will help us become more resilient, and allow for a more free and open internet.
 
 
 
