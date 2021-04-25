@@ -35,7 +35,7 @@ Going off book reviews has caused me more harm than good, it made me avoid givin
 
 The point I am trying to bring across here is that I started obsessing over the score to the point where I was missing out on some excellent literature and books just because of a few scathing reviews, or a "sub par" score. On the other end of the spectrum, I wasted a lot of time reading books that I deemed okay or slightly above average at best only because they have super high Goodreads scores (Think like a rocket scientist, [Volume Control](https://advait.live/volume-control/), etc.
 
-Organic recommendations based on your interests, and people you know are exponentially superior than average ratings. In hindsight, this is painfully obvious, but had Goodreads trapped me into this narrow minded 5 point scale up until recently.
+Organic recommendations based on your interests, and people you know are exponentially superior than average ratings. In hindsight, this is painfully obvious, but Goodreads had trapped me into this narrow minded 5 point scale up until recently.
 
 ### Social Reading.
 Yeah, this was a clean failure for me. At no point on my presence on Goodreads did I have or felt any social interactions with other users. Nobody I knew was hugely active on Goodreads, and those who were rarely did anything outside of putting books on their "to-read" shelves. This was pretty much dead on arrival. From my point of view, the community only played a part in rating the books, the stupid number I used to go by while picking books. Now since I don't look at that number either, the Goodreads community is meaningless to me. 
