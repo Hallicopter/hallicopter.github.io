@@ -31,7 +31,7 @@ This may seem relatively unpopular, but over the course of the 30+ books I have 
 
 Liking a book is very subjective in nature. I had given [Antifragile](https://advait.live/antifragile/) a 10/10; you'd find thousands of folk calling the book unreadable. On the other end of the spectrum, I thought [A Brief History of Time](https://advait.live/history-of-time/) was practically unreadable. There a thousands of people who would call the book a modern classic.
 
-Going off book reviews has cause me more harm than good, it made me avoid giving books a chance because their average score was a little below a 4 or some reviews were too scathing. I avoided most classics only because they hovered around the sub-four point mark. The Odyssey is a 3.78, sitting firmly below the Fifty Shades Freed and Fifty Shades Darker (with about the same number of ratings).
+Going off book reviews has caused me more harm than good, it made me avoid giving books a chance because their average score was a little below a 4 or some reviews were too scathing. I avoided most classics only because they hovered around the sub-four point mark. The Odyssey is a 3.78, sitting firmly below the Fifty Shades Freed and Fifty Shades Darker (with about the same number of ratings).
 
 The point I am trying to bring across here is that I started obsessing over the score to the point where I was missing out on some excellent literature and books just because of a few scathing reviews, or a "sub par" score. On the other end of the spectrum, I wasted a lot of time reading books that I deemed okay or slightly above average at best that have super high Goodreads scores (Think like a rocket scientist, [Volume Control](https://advait.live/volume-control/), etc.
 
