@@ -42,7 +42,7 @@ Yeah, this was a clean failure for me. At no point on my presence on Goodreads d
 
 ### Book Cataloging
 I shall give credit where due, Goodreads was and is great for this. I could make lists of books I want to read, I could categorise lists, I could keep track of all the books I read, and when I read them. But, recently I had an epiphany; why should I let the corporate snakes over at Amazon lock up all my data -my ratings, reviews and reading preferences - all just for this cataloging feature? They had the gall of sucking me dry of my data, only to lock away easy access to it by deprecating their API. 
-The ratings mislead me, the platform is run by vampires[^2], and I am contributing to another data silo, creating extreme centralisation, which is against the core ethos of the free internet. I had to find a better way, and I did.
+The ratings mislead me, the platform is run by vampires[^2], and I am contributing to another data silo (creating extreme centralisation) which is against the core ethos of the free internet. I had to find a better way, and I did.
 
 ## Introducing the Tech Startup Book Club.
 Check it out [here](https://bookclub.techstartups.space/) right now.
