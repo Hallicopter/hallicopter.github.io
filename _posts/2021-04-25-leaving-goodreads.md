@@ -10,7 +10,7 @@ Quitting goodreads... to join my own platform.
 ## Making the jump
 I finally made the plunge, I have cut out Goodreads from my life. For the uninitiated, Goodreads is a massive (the only one I know) social reading platform with over 90 million users. It is owned by Amazon, the same company that runs the majority of internet and e-commerce. I had even read somewhere that amazon servers don't run on electricity, but the souls of their customer base, which is an interesting bit of trivia.
 
-I had joined Goodreads long time ago, pre-amazon-acquisition. I was a mildly active user for most of my time on Goodreads, though in the past 6 months, my activity had exploded due to my sudden reading upsurge post-pandemic. This reading transformation came around the same time as my anti Big Tech transformation after learning about the harmful effects of this extreme asymmetry and centralisation[^1]. This made me feel a little uneasy about being on Goodreads, though it wasn't all that bad. I really had no other choice - that is until I came across the Fediverse, which we will come to in a bit.
+I had joined Goodreads long time ago, pre-amazon-acquisition. I was a mildly active user for most of my time on Goodreads, though in the past 6 months, my activity had exploded due to my sudden reading upsurge post-pandemic. The upsurge occurred around the same time as my anti Big Tech transformation after learning about the harmful effects of this extreme asymmetry and centralisation[^1]. This made me feel a little uneasy about being on Goodreads, though it wasn't all that bad. I really had no other choice - that is until I came across the Fediverse, which we will come to in a bit.
 
 Before I get into why I made the jump, it's worth noting why I joined Goodreads in the first place. 
 - Cataloging what and when I read books.
@@ -24,7 +24,7 @@ Apart from that, I loved idea of having Goodreads API available to me so I could
 <p style="text-align:center">Goodreads cutting off my access to my own content</p>
 
 
-Now, in 2 out of those 3 categories, Goodreads failed me. Here is why.
+In 2 out of those 3 categories I mentioned earlier, Goodreads failed me. Here is why.
 
 ### Seeing book reviews.
 This may seem relatively unpopular, but over the course of the 30+ books I have read in the past 6 odd months, I have learn't that the Goodreads rating is not a good metric of how much I would like a book. In fact, it has more often than not disappointed me. The reason for this is that the mean of thousands of ratings has no meaning or nuance left in it. None whatsoever. At the beginning of my reading, I used to rely a lot on Goodreads for book discovery. Very soon, I realised that this approach was giving me duds. I discovered a way more effective strategy was getting recommendations from real people. I found myself wandering subreddits and discussing book recommendations with strangers, and somehow these recommendations were far superior to me going off of Goodreads ratings.
