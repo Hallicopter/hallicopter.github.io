@@ -9,8 +9,8 @@ let width = Math.max( body.scrollWidth, body.offsetWidth,
     html.clientWidth, html.scrollWidth, html.offsetWidth );
 console.log(height);
 let THE_SEED;
-let number_of_particles = 150;
-let number_of_particle_sets = 6;
+let number_of_particles = 300;
+let number_of_particle_sets = 12;
 let particle_sets = [];
 let tick = 0;
 
@@ -59,6 +59,9 @@ function setup() {
 
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 function draw() {
     particle_sets.forEach(function(particles, index) {
@@ -66,6 +69,7 @@ function draw() {
             for(j=0; j<1; j++) {
                 particle.update(index);
                 particle.display(index);
+                sleep(1500)
             }
         });
     });
