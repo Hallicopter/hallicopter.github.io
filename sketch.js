@@ -9,8 +9,8 @@ let width = Math.max( body.scrollWidth, body.offsetWidth,
     html.clientWidth, html.scrollWidth, html.offsetWidth );
 console.log(height);
 let THE_SEED;
-let number_of_particles = 300;
-let number_of_particle_sets = 12;
+let number_of_particles = 150;
+let number_of_particle_sets = 6;
 let particle_sets = [];
 let tick = 0;
 
@@ -21,9 +21,7 @@ let palette;
 function setup() {
 
     canvas = createCanvas(width, height);
-    // width = 1920
-    // height = 3600
-    // createCanvas(1200, 1200);
+
     THE_SEED = floor(random(9999999));
     randomSeed(THE_SEED);
     background('#111');
@@ -54,18 +52,11 @@ function setup() {
         }
         particle_sets.push(ps);
     }
-    // canvas = createCanvas(windowWidth, windowHeight);
 
     canvas.background('#0E192B');
-    // canvas.background('#022');
-    // canvas.smooth();
-    // canvas.noStroke();
     canvas.position(0, 0);
     canvas.style('z-index', '-1');
 
-    // mic = new p5.AudioIn();
-    // mic.start();
-    //background(175);
 }
 
 
