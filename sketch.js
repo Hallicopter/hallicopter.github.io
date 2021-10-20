@@ -4,7 +4,7 @@ var body = document.body,
     html = document.documentElement;
 
 let height = Math.max( body.scrollHeight, body.offsetHeight,
-    html.clientHeight, html.scrollHeight, html.offsetHeight );
+    html.clientHeight, html.scrollHeight, html.offsetHeight, 1200 );
 let width = Math.max( body.scrollWidth, body.offsetWidth,
     html.clientWidth, html.scrollWidth, html.offsetWidth );
 console.log(height);
