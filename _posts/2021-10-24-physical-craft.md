@@ -40,7 +40,7 @@ This weekend too, I wanted to spend more time living in the real world. I wanted
 
 I painted the car an iconic ferrari red, and coated it in a layer of glossy epoxy spray paint to finish it off.
 
-It was hard painting this. The model was tiny. The paint kept rubbing off on my fingers. I could not paint in even strokes. But I loved every second of it. 
+It was hard painting this. The model was tiny. The paint kept rubbing off on my fingers. I could not even paint in uniform strokes. But I loved every second of it. 
 
 ### Therapy
 
@@ -50,4 +50,4 @@ The pursuit of physical crafts is therapeutic in nature. I think I have develope
 
 <p style="text-align:center"> Or, how to get into physical crafts</p>
 
-Well, indugling in these tiny art projects has made me congizant of the terms and conditions of being a tech bro™️, the ones I initially overlooked. You may also be like me. Get into pottery, carpentry, painting, drawing, anything really. I assure you, you will feel a lot more at peace. 
+Indugling in these tiny art projects has made me congizant of the terms and conditions of being a tech bro™️, the ones I initially overlooked. You may also be like me. Get into pottery, carpentry, painting, drawing, anything really. I assure you, you will feel a lot more at peace. 
