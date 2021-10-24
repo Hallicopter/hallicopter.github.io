@@ -44,7 +44,7 @@ It was hard painting this. The model was tiny. The paint kept rubbing off on my 
 
 ### Therapy
 
-The pursuit of physical crafts is therapeutic in nature. I think I have developed stockholm syndrome towards technology. It lured me in with shiny colours, bright lights and a wild promise of power, but cleverly hid it's consequences in the terms and conditions. 
+The pursuit of physical crafts is therapeutic in nature. I think I have developed stockholm syndrome towards technology. It lured me in with shiny colours, bright lights and a wild promise of power, but cleverly hid its consequences in the terms and conditions. 
 
 <img src="https://i.imgur.com/qmdaYro.png" height="200">
 
