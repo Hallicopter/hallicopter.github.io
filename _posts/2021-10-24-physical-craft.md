@@ -30,7 +30,7 @@ I struggled a lot while making this. The glue kept sticking to my hands. The pie
 
 Something about dealing with analog articles like glue and scissors was very therapeutic. This may not seem like a big thing for a lot of people, but I rarely spend time in such pursuits. I doubt a lot of us do. We fill our free time binging shows, playing games and living in other digital worlds. This felt different, better.
 
-This weekend too, I wanted to spend more time living in the real world. I wanted to struggle suing my uncooperative fingers to make something. I wanted to pursue a physical craft. I decided to paint my 3D print of the 2018 Ferrari that was driven by Vettel and Kimi.  
+This weekend too, I wanted to spend more time living in the real world. I wanted to use my uncooperative fingers to make something. I wanted to pursue a physical craft. I decided to paint my 3D print of the 2018 Ferrari that was driven by Vettel and Kimi.  
 
 <img src="https://i.imgur.com/HLGb19L.png" height="400">
 
