@@ -1,5 +1,5 @@
 ---
-title: The pursuit for physical crafts.
+title: The pursuit of physical crafts.
 categories: [thoughts]
 tags: [Musings]
 layout: post
