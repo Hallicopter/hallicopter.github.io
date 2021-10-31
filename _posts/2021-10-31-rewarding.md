@@ -7,6 +7,10 @@ layout: post
 
 ---
 
+A venn diagram didn't help.
+
+### Background
+
 I write more than the average person. Writing is good. I tell myself. Many times I don't even write substantive things. But I write anyways. I find it to be _rewarding_.
 
 It's not easy to find activities that are rewarding. Writing is one of the easier "rewarding" activity that I know of. I find sharpening my knives rewarding. But there are only so many times you would sharpen your knives. I find cooking rewarding. But that can get very exhausting. I find shooting hoops rewarding. That's a low-hanging fruit. 
