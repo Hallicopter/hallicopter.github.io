@@ -62,6 +62,8 @@ Being a hacker is rewarding. I must always be a hacker.
 
 But what about people? Being a hacker may be rewarding enough, but sometimes it may not. People are important. I like helping people. Helping them makes me happy. It's rewarding. I want to help people at scale. The hacker mindset can help me help people. Customer first, companies say. I agree.
 
+
+
 <img src="https://i.imgur.com/P3S3O8r.png" height="400">
 
 <p style="text-align:center"> The holy trinity</p>
