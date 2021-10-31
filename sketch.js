@@ -3,14 +3,14 @@ var mic;
 var body = document.body,
     html = document.documentElement;
 
-let height = Math.max( body.scrollHeight, body.offsetHeight,
-    html.clientHeight, html.scrollHeight, html.offsetHeight, 1200 );
+let height = Math.min(Math.max( body.scrollHeight, body.offsetHeight,
+    html.clientHeight, html.scrollHeight, html.offsetHeight), 1000);
 let width = Math.max( body.scrollWidth, body.offsetWidth,
     html.clientWidth, html.scrollWidth, html.offsetWidth );
 console.log(height);
 let THE_SEED;
-let number_of_particles = 300;
-let number_of_particle_sets = 12;
+let number_of_particles = 100;
+let number_of_particle_sets = 4;
 let particle_sets = [];
 let tick = 0;
 
