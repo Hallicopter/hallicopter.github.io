@@ -14,7 +14,7 @@ Or how to have a good time on the internet.
 
 I have grown up with the internet. In a lot of ways, my thinking and personality are a product of the internet. I am sure, if I weren't on the internet as much as I was, I would have been a very different person. I grew up playing club penguin, miniclip games and stick cricket. I used to upload videos on the YouTube back when Ray William Johnson was the biggest YouTuber on the planet. I created my first email account before I knew what I could do with it. Basically, I loved (and still love) the internet.
 
-During my time on the internet, rarely dabbled into the social side of things. I never made an account on Facebook. I was briefly on Google+ before it shut down. I never made accounts on those flavour-of-the-season anonymous QA social networks like Ask Fm and Yik Yak. I was very late to the Instagram train (and have recently come off it). I was just not very social on the internet. The only social media I have used religiously (and still use) is Reddit. Off late, I have also become active on Twitter. 
+During my time on the internet, I rarely dabbled into the social side of things. I never made an account on Facebook. I was briefly on Google+ before it shut down. I never made accounts on those flavour-of-the-season anonymous QA social networks like Ask Fm and Yik Yak. I was very late to the Instagram train (and have recently come off it). I was just not very social on the internet. The only social media I have used religiously (and still use) is Reddit. Off late, I have also become active on Twitter. 
 
 Living on the internet, scouring through inumerous comment sections and endless threads, I have learnt a lot about the internet, and by proxy humanity. I have seen how the internet can bring out the absolute worst in people. I myself have indulged in petty arguments on the internet that not only added zero value, but also got me and the the other person invovled all riled up. 
 
@@ -22,7 +22,7 @@ Living on the internet, scouring through inumerous comment sections and endless 
 
 <p style="text-align:center"> Me arguing over something petty on the internet 4 years ago</p>
 
-In 2021, it's very hard to be happy on the internet. It is much more convenient and easier to be outraged or angry instead. Most of the internet is designed to be like this. Such are the unfortunate byproducs of the attention economy. In my opinion, twitter is one of the worst offendors. It's a platform that thrives on people making provocative statements preventing anyone to have a remotely meaningful conversation. Most tweets I come across amount to rarely anything more than playground insults. Or some sort of signalling. I realised that I had to set personal rules to not get sucked into this torrential boneheadedness. 
+In 2021, it's very hard to be happy on the internet. It is much more convenient and easier to be outraged or angry instead. Most of the internet is designed to be like this. Such are the unfortunate by products of the attention economy. In my opinion, twitter is one of the worst offenders. It's a platform that thrives on people making provocative statements while preventing anyone from having a remotely meaningful conversation. Most tweets I come across rarely amount to anything more than playground insults. Or some sort of signalling. I realised that I had to set personal rules to not get sucked into this torrential boneheadedness. 
 
 ### Enter Improv.
 
@@ -50,11 +50,11 @@ If you want to have a good time on the internet, don't block. Disagree with some
 
 #### Focus on the here and now.
 
-In improv, it's important for all the actors to focus on what other actors are doing now. That's what helps you remain grounded in an improv situation. On the internet too, it's easy to get carried away. I have got carried away explaining why Urvashi theatre is inferior to a Digital IMAX experience. I didn't focus on the here and now, which was me trying to know more about where I could have a good time watching Dunkirk. 
+In improv, it's important for all the actors to focus on what other actors are doing in the now. That's what helps you remain grounded in an improv situation. On the internet too, it's easy to get carried away. As seen earlier, I got carried away explaining why Urvashi theatre is inferior to a Digital IMAX experience. I didn't focus on the here and now, which was me trying to know more about where I could have a good time watching Dunkirk. 
 
 #### Be open to change.
 
-In improv, the scene can change very rapidly. One must never be married the situation and must position ourselves to embrace change any moment. 
+In improv, the scene can change very rapidly. One must never be married to the situation and must position ourselves to embrace change at any moment. 
 
 ### Epilogue
 
