@@ -11,7 +11,9 @@ layout: post
 
 Is physical writing the way forward for me?
 
+<img src="https://i.imgur.com/KH9bW6R.jpg" height="500">
 
+<p style="text-align:center"> Yes, I know that my handwriting has a long way to go. </p>
 
 I have written about my disdain for my excess exposure to computers This is an experiment that aims at reducing my computer usage. All articles and essays I have written so far have been typed out. This meant I have been set in front of the computer for hours at a time writing down my thoughts. This article will be a little different. I am physically writing this one. 
 
