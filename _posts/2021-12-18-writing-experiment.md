@@ -23,4 +23,4 @@ I have also noticed that the absolute lack of distractions due to the analog nat
 
 PS: I am planning to use OCR to scan this and convert it to text. If you are reading this it has worked. 
 
-PPS: This is me after running OCR. I am hoping one pleasant side effect of this exercise would be my handwriting improves. I noticed some common patterns where the computer is not able to recognize my handwriting. A second pass is definitely necessary, which is another feature more than a bug. It forces me to re-read and edit my writing, something that I rarely did.
+PPS: This is me after running OCR. I am hoping one pleasant side effect of this exercise would be that my handwriting improves. I noticed some common patterns where the computer is not able to recognize my handwriting. A second pass on the output is definitely necessary, which is another bug that is actually a feature. It forces me to re-read and edit my writing, something that I rarely did.
