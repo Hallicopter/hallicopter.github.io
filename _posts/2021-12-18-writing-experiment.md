@@ -9,6 +9,10 @@ layout: post
 
 ---
 
+Is physical writing the way forward for me?
+
+
+
 I have written about my disdain for my excess exposure to computers This is an experiment that aims at reducing my computer usage. All articles and essays I have written so far have been typed out. This meant I have been set in front of the computer for hours at a time writing down my thoughts. This article will be a little different. I am physically writing this one. 
 
 Right of the bat, I can notice a few differences. I write much slower than I type. Another difference is that the big prominent backspace key that I always fell back on while typing is missing here. I am using the old-school scratch-the-word-and-move-on method. I am hoping that the lack of a backspace key, along with my motor limitation will make me think a little more before I put my thoughts to (literally) paper. 
