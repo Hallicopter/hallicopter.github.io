@@ -52,7 +52,7 @@ In 2021, I built quite a few things. Most (if not all) worked functionally. That
 
 My [CLI ebook speed reader](https://github.com/Hallicopter/shirah-reader) falls into the former category and everything else in the latter. This year, there was an exception - [InternetBlogCo](https://internetblog.co/). 
 
-Even today, my brother regularly uses it to publish his writings. I view InternetBlogCo as the most useful side project I have built, and as a consequence, the most fun side project I have worked on. If you want to start writing, but don't know how to create or maintain a blog, check it out. 
+Even today, my brother regularly uses it to publish his [writings](https://internetblog.co/atharva/). I view InternetBlogCo as the most useful side project I have built, and as a consequence, the most fun side project I have worked on. If you want to start writing, but don't know how to create or maintain a blog, check it out. 
 
 #### {To be continued}
 
