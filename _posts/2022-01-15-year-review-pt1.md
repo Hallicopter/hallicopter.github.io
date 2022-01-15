@@ -9,7 +9,9 @@ A retrospective, told in multiple parts.
 
 
 
-Like in most years of my life, a lot happened this year. I grew in some ways (body fat %) and regressed in others' (muscle mass %). Here, I write a brief overview of my year. I will not go in chronological order, but I may do so if I please. Primarily, though, I am going to split my experiences into two broad categories - "surprising" and "unsurprising". As the category labels suggest, I am going to classify my experiences on whether I found them to be surprising or unsurprising in terms of enjoyment, learning, and any other parameter I deem fit. Additionally, I will also go over some mistakes I made and what I learned along the way, all for your perusal. 
+Like in most years of my life, a lot happened this year. I grew in some ways (body fat %) and regressed in others (muscle mass %). Here, I write a brief overview of my year. I will not go in chronological order, but I may do so if I please. Primarily, though, I am going to split my experiences into two broad categories - "surprising" and "unsurprising".
+
+As the category labels suggest, I am going to classify my experiences on whether I found them to be surprising or unsurprising in terms of enjoyment, learning, and any other parameter I deem fit. Additionally, I will also go over some mistakes I made and what I learned along the way, all for your perusal. 
 
 I am splitting this into multiple parts because I want to write this over multiple sittings, which would allow me to come up with more ideas on how to conduct my personal retrospective.
 
@@ -54,6 +56,6 @@ My CLI ebook speed reader falls into the former category and everything else in 
 
 Even today, my brother regularly uses it to publish his writings. I view InternetBlogCo as the most useful side project I have built, and as a consequence, the most fun side project I have worked on. If you want to start writing, but don't know how to create or maintain a blog, check it out. 
 
-#### [To be continued]
+#### {To be continued}
 
-PS: I am running an experiment where I write down my essays instead of typing them out. Read about that [here](https://advait.live/writing-experiment/). See the original handwritten draft [here](https://drive.google.com/file/d/1SfMljZHkGEOHWWGB4PKVYTVEp0o8NwK-/view?usp=sharing).https://drive.google.com/file/d/1SfMljZHkGEOHWWGB4PKVYTVEp0o8NwK-/view?usp=sharing)
+PS: I am running an experiment where I write down my essays instead of typing them out. Read about that [here](https://advait.live/writing-experiment/). See the original handwritten draft [here](https://drive.google.com/file/d/1SfMljZHkGEOHWWGB4PKVYTVEp0o8NwK-/view?usp=sharing).
