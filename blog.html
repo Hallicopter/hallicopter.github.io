@@ -5,6 +5,7 @@ layout: default
 
 <div class="posts">
   {% for post in site.posts %}
+  {% unless post.draft %}
   {% if post.categories contains 'main' %}
   <article class="post">
 
@@ -17,6 +18,7 @@ layout: default
     <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
   </article>
   {% endif %}
+  {% endunless %}
   {% endfor %}
 
 
