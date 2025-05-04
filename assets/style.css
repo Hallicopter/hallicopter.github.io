@@ -1,0 +1,269 @@
+/*
+ * Extremely minimal old book theme
+ * Pure HTML, minimal CSS, clean typography, no fluff
+ */
+
+/* Font for drop caps is loaded from local file */
+@font-face {
+  font-family: 'Goudy Initialen';
+  src: url('/assets/fonts/GoudyInitialen.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Minimal base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Old book aesthetic - extremely minimal */
+body {
+  font-family: 'IM Fell DW Pica', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.65;
+  color: #3A3226;
+  background-color: #F5E8C9; /* Warm amber/parchment color */
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////8IN+deAAAAGnRSTlMAAwgJEBk+P0pLUFdYWWNkaWprbHN0dXaBgxis5KQAAABZSURBVEjH7cy7AYAwDENRw4dCsP+sZAZIXqCga26OLHmVR0zO2YjS6iJq65uora4iuH6Rq/ed7Pc432/odR2urnNxdZ2Lq+tcXF3nDzr/Gx1E3UFd5F4GMJxdIiHRJP+PAAAAAElFTkSuQmCC');
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+/* Drop caps - ONLY for the very first paragraph of essays */
+.entry > p:first-of-type:first-letter {
+  float: left;
+  font-family: 'Goudy Initialen', serif !important;
+  font-size: 3.8em;
+  line-height: 0.8;
+  padding-right: 0.12em;
+  padding-top: 0.1em;
+  margin-bottom: 0;
+  color: #800020; /* Deep maroon */
+}
+
+/* Fix for single-line paragraphs with drop caps */
+.entry > p:first-of-type {
+  min-height: 3.8em; /* Same as drop cap font size */
+  display: block;
+  margin-bottom: 1.5em; /* Consistent spacing after paragraph */
+  clear: both; /* Ensure following elements clear the drop cap */
+}
+
+/* Add class to manually assign drop caps where desired */
+.drop-cap:first-letter {
+  float: left;
+  font-family: 'Goudy Initialen', serif !important;
+  font-size: 4.5em;
+  line-height: 0.7;
+  padding-right: 0.12em;
+  padding-top: 0.1em;
+  margin-bottom: -0.05em;
+  color: #800020; /* Deep maroon */
+}
+
+/* Minimal heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'IM Fell DW Pica', Georgia, serif;
+  font-weight: normal;
+  color: #6B4226; /* Darker warm brown */
+  margin-top: 1.3em;
+  margin-bottom: 0.6em;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+h1.site-title {
+  margin-bottom: 0.5em;
+}
+
+h1.page-title, h1.post-title {
+  color: #6B4226; /* Brown title instead of blue */
+  border-bottom: 1px dotted #8B5A2B;
+  padding-bottom: 0.3em;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+/* Links - warm brown styling */
+a {
+  color: #8B5A2B; /* Warm brown instead of blue */
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+/* Header - matching screenshot layout */
+header {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+header h1 {
+  margin: 0.8em 0 0.5em;
+  font-size: 2em;
+}
+
+header h1 a {
+  color: #6B4226; /* Brown title instead of blue */
+  text-decoration: none;
+}
+
+/* Navigation - clean, minimal horizontal menu */
+nav {
+  margin: 1em 0 2em;
+  padding-bottom: 0.5em;
+  text-align: center;
+  border-bottom: 1px solid #D3BF8D;
+}
+
+nav a {
+  display: inline-block;
+  margin: 0 0.8em;
+  color: #8B5A2B;
+}
+
+/* Main content */
+main {
+  min-height: 60vh;
+}
+
+/* Paragraphs and text */
+p {
+  margin-bottom: 1.2em;
+}
+
+/* Lists */
+ul, ol {
+  margin-left: 2em;
+  margin-bottom: 1.2em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 1.5em 0 1.5em 1.5em;
+  padding-left: 1em;
+  border-left: 3px solid #D3BF8D;
+  font-style: italic;
+  color: #5E4B32;
+}
+
+/* Code */
+code, pre {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #EDE0C5;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+pre {
+  padding: 1em;
+  overflow-x: auto;
+  margin-bottom: 1.2em;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #D3BF8D;
+  padding: 0.3em;
+  background-color: #F9EFD9;
+  margin: 1em 0;
+}
+
+/* Footer */
+footer {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid #D3BF8D;
+  font-size: 0.9em;
+  color: #776A56;
+  text-align: center;
+}
+
+/* Search specific styling */
+.search-input {
+  width: 100%;
+  padding: 0.7em;
+  font-family: 'IM Fell DW Pica', Georgia, serif;
+  border: 1px solid #D3BF8D;
+  background-color: #F9EFD9;
+  color: #3A3226;
+  font-size: 1em;
+  margin-bottom: 1.5em;
+}
+
+.search-results {
+  margin-top: 1.5em;
+}
+
+/* Title styling to match screenshots */
+.page-title, .post-title {
+  color: #1E88E5; /* Blue title from first screenshot */
+  border-bottom: 1px dotted #1E88E5;
+  text-align: center;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+}
+
+/* Date display */
+.post-date {
+  display: block;
+  margin: 1em 0 2em;
+  color: #776A56;
+  font-style: italic;
+}
+
+/* Horizontal rule styling */
+hr {
+  border: none;
+  border-top: 1px solid #D3BF8D;
+  margin: 2em 0;
+}
+
+/* Welcome message styling */
+.welcome-message {
+  text-align: center;
+  color: #6B4226;
+  font-size: 1.3em;
+  margin: 2em 0;
+}
+
+/* Prevent MathJax equations from overflowing the content area */
+.MathJax_Display, .mjx-chtml, .MathJax {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  white-space: normal !important;
+}
+
+.MathJax_Display {
+  line-height: 1.2 !important;
+  margin: 1em 0 !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  white-space: normal !important;
+}
