@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My swelling debts and the elusive race condition, part six. - Advait Raykar</title>
+    <link rel="stylesheet" href="/new-style.css">
+    <style>
+        .post-content {
+            margin: var(--spacing) 0;
+        }
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+        .post-content h1, 
+        .post-content h2, 
+        .post-content h3 {
+            margin: 2rem 0 1rem;
+        }
+        .post-content p {
+            margin-bottom: 1rem;
+        }
+        .post-content ul, 
+        .post-content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        .post-content blockquote {
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-color);
+            color: var(--secondary-color);
+        }
+        .post-content code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .post-content pre code {
+            display: block;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .post-header {
+            text-align: center;
+            margin: var(--spacing) 0;
+        }
+        .post-date {
+            color: var(--secondary-color);
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Advait Raykar</a>
+            <div class="nav-links">
+                <a href="/blog">Blog</a>
+                <a href="/books">Books</a>
+                <a href="/about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article>
+            <header class="post-header">
+                <h1>My swelling debts and the elusive race condition, part six.</h1>
+                <div class="post-date">2021-10-09</div>
+            </header>
+            <div class="post-content">
+                <p>If programmers had a credit rating for their tech debt, they'd all be junk bonds. </p>
+<p><img src="https://i.imgur.com/PucMM0F.png" height="400"></p>
+<p style="text-align:center"> A 3d printed bust of Marcus Aurelius, Home, Bangalore, 2021</p>
+
+<h2>Recap</h2>
+<p>For those new here, I aspire to write about what is happening with me on at least a weekly basis. To quote my older post</p>
+<blockquote>
+<p>I hope I keep this up and eventually I can publish my future memoir of my wildly successful life with this a reference.</p>
+</blockquote>
+<p>In that spirit, I <em>had</em> decided to rename this series to "My memoir", and then soon later declared that I don't like the name. I have now decided that I don't want to restrict it to any name. Every chapter will have it's own title followed by the chapter number. Let's see how my titles get progressively worse. Enough with the rambling, read the rest of my "memoir" <a href="https://advait.live/tags/#Memoir">here</a>.  From this week on, I am adding a new section to my memoir - "Perusal", where I recommend aritcles or books that I read.</p>
+<p>Apart from this, all my chapters end with "Notes on the <a href="https://en.wikipedia.org/wiki/Epigraph_(literature)">epigraph</a>" where I give more context on the photograph in my frontmatter.</p>
+<h3>My debts</h3>
+<p>You may have hear about "tech debt", a tech shop buzzword used to describe somewhat poor technical decsions made in order ship something faster or simplify some code. It's called "tech debt" because programmers[^1] delude themselves into thinking they will pay back said debt. If programmers had a credit rating for their tech debt, they'd all be junk bonds. Why am I bringing up tech debt, you may ask (while stroking your chin). It's because I am going to be clichéd and compare this to real life. Specifically my life. </p>
+<p>Every decision is a debt in the making. All of us, knowingly or unknowingly are racking up on debts (or the rare few up us, are doing quite the opposite). But who is the debtor and who is the debtee, you make ask (while stroking your chin more vigourously). You are the debtor, and your future self is the debtee. Debt eventually catches up to you. There are a hundred ways you could rip this analogy to shreds, so I appeal to you to stop thinking about this analogy further. Let's get back to me. </p>
+<p>There was a strong period of 6-9 months starting September 2020 when I lived a debt free life. I exercised, I meditated and I read a lot. For the past three months, I have been racking up debt and screwing over my future self. My reading has dwindled, my meditiation is but a stream and I have gained about 5kg. A lot of this was because I never kept track of these life debts. I have now decided to keep track of said debts, and slowly start repaying them before I become the living, breathing equivalent of a junk bond. The new section "Perusal" is one step in that direction. A lifestyle change is overdue. </p>
+<h3>The art of racing in the code.</h3>
+<p>This week at work, my tech debt finally caught up to me. I had written a set of goroutines that ended up in a set of race conditions. At work, I am usually very cognisant of the tech debts I take, littering my code with TODOs and warnings. Unfortunately, this particular race condition I didn't foresee. I took hours to find and fix it. On this journey, I also ended up learning about a Go compiler feature - the race flag.</p>
+<p>Starting v1.1, Go has a -race flag that can be added while building, running, testing or installing go packages. I wish I knew about this sooner. Instead of explaining it with an original example, I am going to just show the one in the official go blog[^2] </p>
+<p>Create a race condition with this code as the example</p>
+<p>```go
+package main</p>
+<p>import "fmt"</p>
+<p>func main() {
+    done := make(chan bool)
+    m := make(map[string]string)
+    m["name"] = "world"
+    go func() {
+        m["name"] = "data race"
+        done &lt;- true
+    }()
+    fmt.Println("Hello,", m["name"])
+    &lt;-done
+}
+```</p>
+<p>And run the code with the race flag, like so</p>
+<p><code>go
+go run -race racy.go</code></p>
+<p>The go compiler will automagically catch race conditions, </p>
+<p>```sh
+Hello, world
+==================
+WARNING: DATA RACE
+Write at 0x00c00011c180 by goroutine 7:
+  runtime.mapaccess2_faststr()
+      /opt/homebrew/opt/go/libexec/src/runtime/map_faststr.go:107 +0x48c
+  main.main.func1()
+      /Users/advait/Downloads/dumpster/racy.go:10 +0x48</p>
+<p>Previous read at 0x00c00011c180 by main goroutine:
+  runtime.evacuate_fast64()
+      /opt/homebrew/opt/go/libexec/src/runtime/map_fast64.go:375 +0x3dc
+  main.main()
+      /Users/advait/Downloads/dumpster/racy.go:13 +0xfc</p>
+<p>Goroutine 7 (running) created at:
+  main.main()
+      /Users/advait/Downloads/dumpster/racy.go:9 +0xd0
+==================
+==================
+WARNING: DATA RACE
+Write at 0x00c000142088 by goroutine 7:
+  main.main.func1()
+      /Users/advait/Downloads/dumpster/racy.go:10 +0x5c</p>
+<p>Previous read at 0x00c000142088 by main goroutine:
+  main.main()
+      /Users/advait/Downloads/dumpster/racy.go:13 +0x10c</p>
+<p>Goroutine 7 (running) created at:
+  main.main()
+      /Users/advait/Downloads/dumpster/racy.go:9 +0xd0
+==================
+Found 2 data race(s)
+exit status 66
+```</p>
+<p>This only works during run time, but it's not recommended that this flag be used in production systems. This is because the caveat here</p>
+<blockquote>
+<p>...race-enabled binaries can use ten times the CPU and memory, so it is impractical to enable the race detector all the time. One way out of this dilemma is to run some tests with the race detector enabled...</p>
+</blockquote>
+<p>But this is still a really useful feature to have when writing tests.</p>
+<h2>Perusal</h2>
+<p>What got me thinking about debt:</p>
+<ul>
+<li>
+<p><a href="https://markgreville.ie/2021/07/23/technical-debt-is-not-debt-its-not-even-technical/">Technical Debt Is Not Debt; It’s Not Even Technical</a></p>
+</li>
+<li>
+<p><a href="https://kislayverma.com/programming/uncertainty-and-learning-as-tech-debt/">Uncertainty and Learning as Tech Debt</a></p>
+</li>
+</ul>
+<p>I also bought Skin In The Game this week, so next will be fun.</p>
+<h2>Notes on the epigraph.</h2>
+<p>I took this picture during my stoicism phase early this year (around the same time I was living a debt free life). I found the whole VC cult of stoicism pretty amusing so I thought it would be fun to 3d print the bust of old boy Marcus and make a snarky tweet about it. So I did it.</p>
+<p><img src="https://i.imgur.com/X9mQl73.png" height="400"></p>
+<p style="text-align:center"> My snarky tweet</p>
+
+<p>One of these days, I am going to go off the deep end. </p>
+<h3>Footnotes</h3>
+<p>[^1]: Including yours truly<br />
+[^2]: <a href="https://go.dev/blog/race-detector">Here</a> is the link.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p> 2024 Advait Raykar</p>
+            <div class="social-links">
+                <a href="mailto:advait.raykar@gmail.com">Email</a>
+                <a href="https://github.com/hallicopter" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,83 +1,11 @@
 ---
-layout: home
+layout: default
 ---
 
-<meta content="text/html" charset="utf-8">
-<link rel="shortcut icon" href="http://atharva.social/favicon.ico" id="favicon">
-<link rel="stylesheet" href="home.css">
+<h1>Welcome to my presence on the internet.</h1>
 
-
-<div class="main">
-    <div class="home-header">
-        Welcome to my presence on the internet.
-    </div>
-    <br>
-    <div class="section">
-        <div class="section-header">thoughts</div>
-        random thoughts on work, life, and anything that catches my fancy. may be unpolished. there is beauty in the blemishes of my prose, I tell myself.
-    </div>
-   
-    <br>
-    <div class="section">
-        <div class="section-header">books</div>
-        book reviews and notes
-    </div>
-
-    <br>
-    <div class="section">
-        <div class="section-header">longer</div>
-        posts I took a while to write, and I consider polished. it's been a while since I have updated this, so this isn't an entirely accurate representation of who I am today.
-    </div>
-    
-    <br>
-    <div class="section">
-        <div class="section-header">about</div>
-        more about me.
-    </div>
-</div>
-
-
-<!--<div class="posts">-->
-<!--  {% for post in site.posts %}-->
-<!--  {% if post.categories contains 'main' %}-->
-<!--  <article class="post">-->
-
-<!--    <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>-->
-
-<!--    <div class="entry">-->
-<!--      {{ post.excerpt }}-->
-<!--    </div>-->
-
-<!--    <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>-->
-<!--  </article>-->
-<!--  {% endif %}-->
-<!--  {% endfor %}-->
-
-
-<!--  &lt;!&ndash; pagination &ndash;&gt;-->
-<!--  {% if paginator.total_pages > 1 %}-->
-<!--  <div class="pagination">-->
-<!--    {% if paginator.previous_page %}-->
-<!--      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>-->
-<!--    {% else %}-->
-<!--      <span>&laquo; Prev</span>-->
-<!--    {% endif %}-->
-
-<!--    {% for page in (1..paginator.total_pages) %}-->
-<!--      {% if page == paginator.page %}-->
-<!--        <span class="webjeda">{{ page }}</span>-->
-<!--      {% elsif page == 1 %}-->
-<!--        <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>-->
-<!--      {% else %}-->
-<!--        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>-->
-<!--      {% endif %}-->
-<!--    {% endfor %}-->
-
-<!--    {% if paginator.next_page %}-->
-<!--      <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>-->
-<!--    {% else %}-->
-<!--      <span>Next &raquo;</span>-->
-<!--    {% endif %}-->
-<!--  </div>-->
-<!--  {% endif %}-->
-</div>
+<ul>
+  <li><a href="{{ site.baseurl }}/thoughts">thoughts</a> – random thoughts on work, life, and anything that catches my fancy</li>
+  <li><a href="{{ site.baseurl }}/books">books</a> – book reviews and notes</li>
+  <li><a href="{{ site.baseurl }}/about">about</a> – more about me</li>
+</ul>

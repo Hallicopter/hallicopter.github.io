@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Two - Advait Raykar</title>
+    <link rel="stylesheet" href="/new-style.css">
+    <style>
+        .post-content {
+            margin: var(--spacing) 0;
+        }
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+        .post-content h1, 
+        .post-content h2, 
+        .post-content h3 {
+            margin: 2rem 0 1rem;
+        }
+        .post-content p {
+            margin-bottom: 1rem;
+        }
+        .post-content ul, 
+        .post-content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        .post-content blockquote {
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-color);
+            color: var(--secondary-color);
+        }
+        .post-content code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .post-content pre code {
+            display: block;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .post-header {
+            text-align: center;
+            margin: var(--spacing) 0;
+        }
+        .post-date {
+            color: var(--secondary-color);
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Advait Raykar</a>
+            <div class="nav-links">
+                <a href="/blog">Blog</a>
+                <a href="/books">Books</a>
+                <a href="/about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article>
+            <header class="post-header">
+                <h1>Letter Two</h1>
+                <div class="post-date">2021-01-9-</div>
+            </header>
+            <div class="post-content">
+                <p>Pair programming, writing, and mental models.
+Sometimes, you are just worse than you think. Way worse.</p>
+<h2>Illusory Superiority.</h2>
+<p>I always <a href="https://en.wikipedia.org/wiki/Illusory_superiority#Better-than-average_heuristic">thought</a> that I was a better than the average writer. This egocentric belief lent me a sense of satisfaction, without any tangible output. It was a satisfaction that came from my alleged potential, as opposed to my work. Only recently have I recognized how wrong I was.</p>
+<p>In the past year, I ended up reading many books on our thinkng, <a href="https://advait.live/tags/#Psychology">psychology</a> and biases. I have come across mentions of Kahneman more than I care to remember. Yet, I never could connect these biases to my assessment of my writing prowess. I am not a good writer, let along above average.</p>
+<p>This revelation came as a result of me reading <a href="https://www.goodreads.com/book/show/53343.On_Writing_Well?from_search=true&amp;from_srp=true&amp;qid=Hf9KvVXozD&amp;rank=1">On Writing Well</a>. William Zinsser makes a very good case on stripping writing to its core, and why a lot of writing is about rewriting. I have never once proof read any of my writing. Me putting out my work has always been the equivalent of me regurgitating my thoughts online, with all its septic structure and putrid grammar. Sometimes I read my work, and find sentences that bring to mind a visual of the bits of undigested carrots that are scattered in a bucket of puke. </p>
+<p><em>I need to rewrite better</em></p>
+<h2>On Pair programming.</h2>
+<h3>Some notes.</h3>
+<p>On the surface, taking a systematic approach to pair programming seems like an erudite practice, but we often overlook that we naturally tend to do this in a haphazard manner when solving a particularly hard or new problem. Here, I want to list down certain pointers, and ideas that have come from prior pair programming experiences. These ideas are guidelines informed only by mild experience, which should be kept in mind while incorporating them in practice.</p>
+<h3>Why you should pair program.</h3>
+<p>Doing some back of the tissue math yields unfavorable results on slapping two programmers on a single task, one sitting with his hands on his lap, while the other codes (goes without saying, this is only figurative, nobody has any hands on any laps, but if they do, they are not doing things right).</p>
+<p>This is a fallacy, and I want to present some simple arguments for pair programming to further motivate a systematic practice:</p>
+<ul>
+<li>
+<p>Pair programming has a certain basis in psychology, especially when using the driver-navigator approach. The navigator (the one not coding, but seeing the screen) is activating the part of the brain which allows for more higher level, connect the dots kind of thought, while the driver, the one coding, primarily activates the more verbal linear mode. This allows for a tiered approach to the same problem. [<a href="https://advait.live/pragmatic-thinking/">src</a>]</p>
+</li>
+<li>
+<p>Pair programming saves on the code review process to a great degree, since the code has undergone scrutiny by two people.</p>
+</li>
+<li>
+<p>Lower <a href="https://en.wikipedia.org/wiki/Bus_factor">bus factor</a>.</p>
+</li>
+<li>
+<p>Higher productivity in tasks that are more challenging/unfamiliar.</p>
+</li>
+</ul>
+<h3>When you should pair program.</h3>
+<ul>
+<li>
+<p>When either one, or both members of the pair are unfamiliar with a part of the code base.</p>
+</li>
+<li>
+<p>While on boarding someone.</p>
+</li>
+<li>
+<p>While solving a particularly tough problem.</p>
+</li>
+</ul>
+<h3>When should you not pair program.</h3>
+<p>While writing things that are not hard, but time consuming. Here, the gains diminish rapidly to the point where its not worth putting two folk on one problem. Things like writing simple CRUD APIs fall into this category.</p>
+<h3>Recommended approach.</h3>
+<ul>
+<li>
+<p>Navigator should be the one who is really quick at navigating code (should know her/his shortcuts well). Also, it is preferred that the navigator having some prior experience with the code base.</p>
+</li>
+<li>
+<p>Block out at least 2 hours, recommend 3-4 hours. Time flies fast.</p>
+</li>
+<li>
+<p>Before the session begins</p>
+</li>
+<li>Decide roles.</li>
+<li>Identify an outcome for the session. (Notes must be taken at this stage)</li>
+<li>
+<p>Identify roughly, the parts of the code base that would need the changes to achieve the outcome. (This should ideally be done by the navigator, while sharing the screen)</p>
+</li>
+<li>
+<p>Finally, both participants can share screens (my preferred platform for this is discord, but anything works). The driver concentrates on their own screen, while the navigator has the codebase open on monitor, and the shared screen on another.</p>
+</li>
+</ul>
+<p>The navigators main job here is to be several steps ahead on things like where to find parts definitions, which file to make changes, and other such project level details. Its is extremely essential that the navigator knows all the shortcuts, so s/he is in a position to respond adequately to the driver’s question at all times. This setup isn’t unlike that of a rally car racer, and her navigator.</p>
+<p>Occasionally switch roles, to break the monotony. But avoid if a rhythm is established, and both parties are working well in their roles, with no saturation.</p>
+<p>That’s it. Remember, a bad navigator greatly slows thing down. A driver codify ideas quickly, and act on them. The driver’s main responsibility is to write legible, runnable code quickly, which can be scrutinized by the navigator.</p>
+<p>Pair programming is about teamwork. Establish a rhythm or else you would end up something like this:</p>
+<p><a href="https://www.youtube.com/watch?v=D9-voINFkCg"><img alt="IMAGE ALT TEXT HERE" src="https://img.youtube.com/vi/D9-voINFkCg/0.jpg" /></a></p>
+<h3>Caveats</h3>
+<p>The guide here is a highly opinionated guide. For a more complete guide, on best general practices, see the the first article in the references.</p>
+<h3>References</h3>
+<p><a href="https://martinfowler.com/articles/on-pair-programming.html">Martin Fowler / Pair Programming</a>
+Pragmatic Thinking and Learning</p>
+<h2>Mental Models.</h2>
+<h3>Every mental read is a write.</h3>
+<p>Off late, I have been conscientiously writing down thoughts and ideas in a systematic way. The tool of my choice is <a href="https://github.com/logseq/logseq">logseq</a>. I am not going crow about the greatness of the tool, but it combines the best of <a href="https://roamresearch.com/">Roam Research</a> and org/markdown flows. </p>
+<p>There is a sense of peace when things are off your head, and onto a tool explicitly designed to hold data - some place that is yours; a personal wiki. </p>
+<blockquote>
+<p>"The palest ink is better than the best memory." - one of those proverbs.</p>
+</blockquote>
+<p>An advantage, apart from permanence of thought, is that putting things down helps me rewrite a thought and better make mental connections. Associations are the brainchild of great ideas, in the same sense that a good analogy can really cement a concept in your head. It is well known that having a very basic heuristic in place of "experts" yields better result in a majority of scenarios. Writing down ideas, is, in my opinion, a rough parallel to such a heuristic.</p>
+<h3>Don't be stupid.</h3>
+<p>Another concerted effort I have been making is to apply <a href="https://fs.blog/2013/10/inversion/">inversion</a> as a mental model to decision making and inferences. This is something I picked up from <a href="https://advait.live/pragmatic-thinking/">Pragmatic Thinking and Learning</a> and internal objectives planning at the company I work at. Examples of practical ways this could be applied would be:
+* If don't start an initiative, what am I losing out on? (As opposed to what am I gaining if I start it.)
+* I want to live a happy life. Instead of thinking of the ways that I could lead a happy life, think of the way that could lead to a sad life.</p>
+<p>The core idea of inversion is to you avoid stupid decisions.</p>
+<blockquote>
+<p>“It is remarkable how much long-term advantage people like us have gotten by trying to be consistently not stupid, instead of trying to be very intelligent.” - Charlie Munger</p>
+</blockquote>
+<p>I want to seek brilliance, but not at risk of going down stupidly. </p>
+<p>Its wise to remember that a public toilet is as smelly as its smelliest stool. (To clarify the bad analogy, you are the public toilet, and your decisions are the stools.)</p>
+<p>I hope you enjoyed this weeks letter. The first 100 are going to be bad, so might as well get them out of the way as soon as I can.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p> 2024 Advait Raykar</p>
+            <div class="social-links">
+                <a href="mailto:advait.raykar@gmail.com">Email</a>
+                <a href="https://github.com/hallicopter" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

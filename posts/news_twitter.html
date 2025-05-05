@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysing Times Now and Republic TV twitter feeds. - Advait Raykar</title>
+    <link rel="stylesheet" href="/new-style.css">
+    <style>
+        .post-content {
+            margin: var(--spacing) 0;
+        }
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+        .post-content h1, 
+        .post-content h2, 
+        .post-content h3 {
+            margin: 2rem 0 1rem;
+        }
+        .post-content p {
+            margin-bottom: 1rem;
+        }
+        .post-content ul, 
+        .post-content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        .post-content blockquote {
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-color);
+            color: var(--secondary-color);
+        }
+        .post-content code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .post-content pre code {
+            display: block;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .post-header {
+            text-align: center;
+            margin: var(--spacing) 0;
+        }
+        .post-date {
+            color: var(--secondary-color);
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Advait Raykar</a>
+            <div class="nav-links">
+                <a href="/blog">Blog</a>
+                <a href="/books">Books</a>
+                <a href="/about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article>
+            <header class="post-header">
+                <h1>Analysing Times Now and Republic TV twitter feeds.</h1>
+                <div class="post-date">2017-12-28</div>
+            </header>
+            <div class="post-content">
+                <h2>Or how I scraped the web and did some amateur analysis.</h2>
+
+<p>As I have said in the past, I am no pro. I do all this for fun, and my methodologies can definitely questionable. Please question them by commenting below.</p>
+<h3>Step 1: Getting the data.</h3>
+<p>I quite obviously got this data of the official Twitter handles of <a href="https://twitter.com/republic?lang=en">RepublicTV</a> and <a href="https://twitter.com/timesnow?lang=en">Times Now</a>. I was actually kind of surprised that Republic TV got the handle @republic. Heavy investments.</p>
+<p>All in all, I was able to scrape 13000 to 14000 tweets off each of their feeds. This corpus, I thought was enough. Also, this process was kind of time consuming, and I got bored.</p>
+<p>Each tweet object contained the following data:</p>
+<ol>
+    <li>A timestamp for when the tweet took fruition.</li>
+    <li>The number of retweets.</li>
+    <li>The number of likes.</li>
+    <li>The actual text of the tweet (Obviously).</li>
+    <li>And a few other details I did not use.</li>
+</ol>
+<p>I used python for this. There a lot of libraries that you can scrape twitter with. I usually use tweepy. For this project I tried something called <a href="https://github.com/taspinar/twitterscraper">twitterscraper.</a> It is a very good library. You can read their readme to know more about the library.</p>
+<p>The data I have ranges from week 40ish of this calendar year to week 51. There are 13819 tweets from Republic TV and 11503 tweets from Times Now.</p>
+<h3>Step 2: Mucking around.</h3>
+<h3><strong>Hashtags and wordclouds.</strong></h3>
+<p><img class="" src="https://i1.wp.com/www.republicnewsindia.in/wp-content/uploads/2017/08/Exclusive-Col-Purohit-Speaks-To-Republic-TV.jpg?resize=350%2C200&amp;ssl=1" width="577" height="330" /></p>
+<p><img class="alignnone" src="http://cloudfront.timesnow.tv/debate/1489601697-nhrdebate1first.jpg" alt="" width="548" height="412" /></p>
+<p>Indian news is obsessed with hashtags. Atleast these two channels are, with these hashtags flying around the screen like there is no tomorrow.</p>
+<p>So, I thought looking at these would be a good start. I started by extracting the hashtags from the tweets. This was done easily by the power of regular expressions.</p>
+<p>At first glance, I noticed that Republic tends to keep using one hashtag multiple times, whereas, Times Now uses a more varied array of hashtags. A good way to visualise this, I thought would be using a wordcloud. In a wordcloud, the size of each word is proportional to its frequency in a corpus. These are the results I got:</p>
+<p>&nbsp;</p>
+<h4 style="text-align: center;">Times Now wordcloud <img class="aligncenter" src="https://i.imgur.com/rXpns6K.jpg" width="901" height="525" /></h4>
+<p>It is very clear from the wordcloud of Times Now that they do use a lot of varied hashtags. #Dec18WithTimesNow is one that stands out. Another one that stands out is #ModiUnstoppable.</p>
+<p>These were their most used hastags:</p>
+<ol>
+    <li>Dec18WithTimesNow, 869</li>
+    <li>BREAKING, 446</li>
+    <li>ModiUnstoppable, 333</li>
+    <li>UPANotGuilty, 247</li>
+    <li>TNExclusive, 207</li>
+    <li>ModiInvincible, 153</li>
+    <li>CongPFIBhakt, 112</li>
+    <li>TamilNaduDiaryGate, 112</li>
+    <li>StandWithAnthem, 109</li>
+    <li>VadraJawaabDo, 103</li>
+</ol>
+<p>For those interested, the next 30. Unformatted because lazy.</p>
+<p>('<strong>ModiMidTermPoll</strong>', 103), ('<strong>AarushiWantsJustice</strong>', 99), ('<strong>RahulNeechPolitics</strong>', 96), ('<strong>VadraTape</strong>', 87), ('<strong>NDABacksDialogue</strong>', 84), ('<strong>SriSriMandirMove</strong>', 84), ('<strong>HafizSaeedConfessions</strong>', 83), ('<strong>TarmacTerrorTape</strong>', 83), ('<strong>WATCH</strong>', 81), ('<strong>StandForAnthem</strong>', 81), ('<strong>RahulEraDawns</strong>', 80), ('<strong>GujaratModiVerdict</strong>', 79), ('<strong>AAPKiAag</strong>', 79), ('<strong>CongBetrayedRam</strong>', 77), ('<strong>RahulSeparatistBhakt</strong>', 77), ('<strong>RaGaSomnathSelfGoal</strong>', 77), ('<strong>AreYouSeriousRahul</strong>', 76), ('<strong>MersalVendetta</strong>', 75), ('<strong>HadiyaConversionTwist</strong>', 74), ('<strong>HumanityTowedAway</strong>', 73), ('<strong>DeepikaThreatened</strong>', 72), ('<strong>CongVsMandir</strong>', 71), ('<strong>KoiBaatNahiCops</strong>',69), ('<strong>RagaRiggedPollTape</strong>', 67), ('<strong>SoniaTejpalQuidProQuo</strong>', 65), ('<strong>DeepikaVsSena</strong>', 63), ('<strong>VadraTicketGate</strong>', 62), ('<strong>ZakirBackOnTV</strong>', 61), ('<strong>RaGaShortCircuit</strong>', 61), ('<strong>ShahDaresLeft</strong>', 60), ('<strong>SabkaSardar</strong>', 59), ('<strong>CondomCurfew</strong>', 59), ('<strong>DeMoTaxRats</strong>', 59), ('<strong>Modinomics</strong>', 58), ('<strong>CMOnlyForMuslims</strong>', 58), ('<strong>RKNagarCashForVotes</strong>', 57), ('<strong>TripleTalaqBill</strong>', 57), ('<strong>CowSlaughterCruelty</strong>', 57), ('<strong>HeadScarfDebate</strong>', 57), ('<strong>KnowYourCandidates</strong>', 57)</p>
+<p>Clearly, unlike Republic, they have not tried creating a cult around their main anchor. After Arnab left Times Now, they probably learnt that a brand is bigger than a person. Also the clear tilt towards our glorious leader Modi is apparent with the frequent appearances of hastags like ModiInvincible, Modinomics and ModiUnstoppable. Also they are clearly not huge fans of Rahul Gandhi and congress too, with the use of hastags like CongBetrayedRam and RahulNeechPolitics and PappuCensored. Keen readers would also notice disproportiante appearances of Congress as a party in the hastags. We will quantify this later in the article. Frankly, this is a great wordcloud, and I recommend everyone to take a magnifying glass and observe it.</p>
+<h4 style="text-align: center;">Republic TV wordcloud</h4>
+<p><img class="aligncenter" src="https://i.imgur.com/u8gGJeR.jpg" width="913" height="532" /></p>
+<p>Republic TV, the new kid on the block. The "<a href="https://en.wikipedia.org/wiki/Rajeev_Chandrasekhar">Independent</a>" media we have all dreamt of and yearned for. The true messiah saving us from the clutches of the "Lutyens" circles.</p>
+<p>Their hashtags are way less varied than Times Now. Arnab is very prominent in their most tweeted hashtag (Not surprising considering the fact that the whole channel is where it is because of his popularity.)</p>
+<p>When Republic starts using a hashtags, they truly beat it to death. These are their top 10 most used hastags with their frequency:</p>
+<ol>
+    <li>BREAKING, 820</li>
+    <li>Dec18WithArnab, 506</li>
+    <li>RepublicAppLaunch, 223</li>
+    <li>ScamOfScams, 211</li>
+    <li>CorruptionHighOrLow, 191</li>
+    <li>AreHindusSoftTarget, 186</li>
+    <li>WontForgetScams, 185</li>
+    <li>MallyaTicketgate, 180</li>
+    <li>ChurchVsNationalists, 176</li>
+    <li>CongNeechPolitics, 161</li>
+</ol>
+<p>These are next 30 for those who are interested. I was too lazy to format.</p>
+<p>('<strong>PadmavatiFight</strong>', 157), ('<strong>NetasForVIPs</strong>', 157), ('<strong>Shocker2GVerdict</strong>', 156), ('<strong>RamMandirDebate</strong>', 154), ('<strong>ModiBigChanges</strong>', 143), ('<strong>AnthemFirstNoCompromise</strong>', 140), ('<strong>GujaratVotes</strong>', 132), ('<strong>AmitShahSpeaksToArnab</strong>', 130), ('<strong>SoniaLetterLeaked</strong>', 130), ('<strong>JaitleySpeaksToArnab</strong>', 129), ('<strong>CongChaiwalaAttack</strong>', 126), ('<strong>LutyensAyodhyaFormula</strong>', 120), ('<strong>ClericsBackChildMarriage</strong>', 120), ('<strong>WhoKilledAarushi</strong>', 119), ('<strong>GujaratHinduCard</strong>', 118), ('<strong>AreHindusTargeted</strong>', 117), ('<strong>WhoCommunalisedPolitics</strong>', 117), ('<strong>OneNationOnePoll</strong>', 117), ('<strong>WhoDumpedVikas</strong>', 116), ('<strong>IndiaWillGetSaeed</strong>', 114), ('<strong>BiggestBoforsInterview</strong>', 112), ('<strong>HrithikSpeaksToArnab</strong>', 112), ('<strong>SmritiVsRahul</strong>', 107), ('<strong>BoforsPakistanLink</strong>', 106), ('<strong>SunandaMailTrail</strong>', 103), ('<strong>NationalAnthemDebate</strong>', 100), ('<strong>CashForJustice</strong>', 100), ('<strong>NewIndiaPlan</strong>', 99), ('<strong>IndiaAgainstVVIPNetas</strong>', 99), ('<strong>MallyaNamesPawar</strong>', 97), ('<strong>PoliticsOverVeterans</strong>', 94), ('<strong>IndiaBacksVinodRai</strong>', 94), ('<strong>FringeVsPadmavati</strong>', 92), ('<strong>PiyushSpeaksToArnab</strong>', 88), ('<strong>SackSangeetSom</strong>', 88), ('<strong>ModiFaithAttacked</strong>', 86), ('<strong>RahulBotAttack</strong>', 85), ('<strong>RahulMughalEmperor</strong>', 84), ('<strong>SriSriMandirMeet</strong>', 83), ('<strong>BoforsOpened</strong>', 83)</p>
+<p>Republic shoehorns BREAKING into a lot of their tweets, hence the top spot. Here also the tilt against Congress and Rahul is very apparent. There absolutely no negative hashtags about Modi in the top 50. Also, when it comes to the nation, our man does not muck about one bit.</p>
+<h3>Who is more popular a topic, Modi or Rahul?</h3>
+<p>Honestly, with all this coverage, it seems that these new channels are the ones keeping Rahul Gandhi and the Congress relevant. I made these graphs that support my findings.</p>
+<p><img class="shrinkToFit transparent" src="https://i.imgur.com/2s9jvyR.png" alt="https://i.imgur.com/2s9jvyR.png" width="677" height="724" /> <img class="transparent" src="https://i.imgur.com/eUeUUP9.png" alt="https://i.imgur.com/eUeUUP9.png" width="752" height="604" /></p>
+<p>From these charts it is clear that Rahul is way more of person of interest as compared to Modi.</p>
+<p>Week 42 and Week 46 are clear anomalies as Modi far outshine Rahul in those weeks. This can be justified by looking at what happened during those weeks.</p>
+<p><strong>Week 42: </strong>That was when PM Modi visited his home state of Gujarat and made some charectristically fiery speeches that captured quite a few headlines.</p>
+<p><strong>Week 46: </strong> This was when Moody bumped up our scores, which was widely covered. A lot of credit was given to Modi, hence he trended.</p>
+<p>I was not able to figure out why week 45 was also a light spot. Week 47 owards was the election hype, with Rahul Gandhi given way more coverage. Republic practically used no Modi hastags during that period.</p>
+<p>Overall, some mildly interesting facts were unearthed.</p>
+<h3>Common words and phrases.</h3>
+<p>N-grams are just sets of n continuous words. So, in "My name is Advait", the bigrams would be "My name", "name is", "is Advait". That's what they basically are.</p>
+<p>I figure that finding the most common unigrams (ie., the most common words) and the most common bigrams in the data would be interesting. I went one step ahead and plotted them for viewing pleasure of y'all folk. Please not that I removed all stop words (words like 'is', 'a'. 'an' etc. They don't convey much meaning.) and punctuations to make the data more clear.</p>
+<p style="text-align: center;"><strong>Times Now - Most common words</strong></p>
+<p><img class="aligncenter" src="https://i.imgur.com/tSUmoZC.png" width="1406" height="736" /></p>
+<p style="text-align: center;"><strong>Times Now most common bigrams.</strong></p>
+<p><img class="aligncenter" src="https://i.imgur.com/9WPVUd6.png" width="1414" height="740" /></p>
+<p>As far as most common singular word goes, BJP scores high with them, blazing past the likes of Congress and PM. Honestly, I did not find the unigrams to interesting as a single word does not convey too much meaning.</p>
+<p>The bigrams are far more interesting. It is not very surprising that their most popular phrase is 'TIMES NOW', since everyone self promotes. Now here is the interesting bit, a close runners up is held by 'Rahul Gandhi', which is much much more than PM Modi. This just backs the fact that it is the new channels that give way too much attention to him.</p>
+<p>Now lets replicate this for Republic TV.</p>
+<p style="text-align: center;"><strong>Republic</strong> <strong>TV most common words</strong></p>
+<p><img class="aligncenter" src="https://i.imgur.com/5jBQvCk.png" width="1131" height="1210" /></p>
+<p>Here again, I think the unigrams don't convey much, but I put it up anyway to fill in the pages. Here is the good stuff:</p>
+<p><img class="alignnone" src="https://i.imgur.com/hVlGN7N.png" alt="" width="1390" height="728" /></p>
+<p>This is quite a bit more interesting than the previous graph. We can see many variations of 'send us your views', with the most popular one being "fire views"?</p>
+<p>Also Sambit Patra seems to be super popular with this channel. Not surprising since he is a panel regular at the debates, and he and Arnab seem to know each other from his Times Now days.</p>
+<p>Also unsurprising is the fact that Rahul Gandhi is the first non-promotional bigram that appears on the list. From all this it is easy to conclude that Rahul generates many clicks and TRP. In hindsight, I should have put his name in the title of this blog for more views.</p>
+<h3>F-scores and Stunning charts.</h3>
+<p>This is an interesting corpus. It would be nice to see what words make this corpus truly what it is, or more simply put what words and phrases are more characteristic of a category than others.</p>
+<p>For finding terms of importance, a<a href="https://github.com/JasonKessler/scattertext#understanding-scaled-f-score"> scaled F-score</a> is being utilised. It basically is a method of finding out terms that are statistically significant as compared to other terms. After attaining all the F-scores, and finding term freequencies, this can be plotted:</p>
+<p><a href="https://i.imgur.com/SVTrz5Y.png"><img class="alignnone " src="https://i.imgur.com/fhD9Qly.png" width="1376" height="678" /></a></p>
+<p>Don't be intimidated by the beauty of this chart. It is very interesting, and not too hard to understand. At first glance though, I do admit it looks like one of those fancy meaningless ones you'd find in the annals of r/dataisbeautiful.</p>
+<p>The y-axis is the frequency of a term as used by Times Now, and in the x-axis lies the term frequency of Republic TV.</p>
+<p>For Republic TV, the most frequent, <em>but characteristic </em>term would be arnab. Wow, what a surprise. For more of these terms look at the bottom right of the chart to find other such terms.</p>
+<p>On the flip side, we can see such terms used by Times Now on the top left corner of the chart. Here the theme of not deifying an anchor continues with the use of tnexlcusive over the name of a primetime anchor.</p>
+<p>The top right of the chart is very interesting. These are the terms that are characteristic to both the Times Now dataset and the Republic TV data set. The most prominent terms in that region are debate (duh, because who does not like a good shout fest.) , Rahul (that theme continues) and bjp.</p>
+<p>You can find more such interesting tidbits by actually interacting with the chart. I do have an interactive version, where you can find term occurences and search terms right<a href="https://ufile.io/ftem0"> here</a>.</p>
+<p>On the right side, we find characteristic terms listed out for both Times Now and Republic TV.</p>
+<p>We can see which new anchors are given priority over the other here in the Times Now list. Also, Dr Sambit is high on the characteristic-city of Republic, featuring prominently everywhere.</p>
+<p>The "Characteristic" list are the characteristic terms of the both the datasets combined. There more Republic related terms here because of the simple fact that Republic tweets way more that Times Now. Also, they repeat themselves a lot. The usuals, 'rahul', 'modi', 'mallya' and 'patra' feature on this list. This is a fun graph, and if you actually download it from the link, note that it can take some time to load on your browser as it is a relatively large file (4.9 MB).</p>
+<h3>Retweets and Likes.</h3>
+<p>In this section I could not figure out how to present the data in any fancy way. Honestly, there isn't much in the data either. Here are some boring facts:</p>
+<h4>Republic TV</h4>
+<p>Total likes : 704150
+Average likes : 50.955206599609234</p>
+<p>Total retweets : 283275
+Average retweets : 20.498950720023156</p>
+<p>Tweets analyzed : 13819</p>
+<p><strong>Times Now</strong></p>
+<p>Total likes : 765255
+Average likes : 66.52655828914196</p>
+<p>Total retweets : 318855
+Average retweets : 27.719290619838304</p>
+<p>Tweets analyzed : 11503</p>
+<p>From this it is evident that the social media outreach on twitter far exceeds that of Republic TV. Despite having over 2000 fewer tweets, Times now have many more likes <em>and </em>retweets than Republic TV. But we should not forget the fact that Times Now have many more followers on twitter as compared to Republic. There is quite the follower burn that is to be expected of an account that tweets so often. Also, most of their likes and retweets come from their top 150ish tweets. This is evident in these completely unecessary charts:</p>
+<p><img class="alignnone " src="https://i.imgur.com/VspSt1J.png" width="993" height="520" /></p>
+<p><img class="alignnone " src="https://i.imgur.com/PiDhPQH.png" width="917" height="480" /></p>
+<p><strong>Times Now</strong></p>
+<p>Let us have a look at their top five most like tweets:</p>
+<ol>
+    <li><strong>Rahul Gandhi could not even win municipal elections in his own constituency Amethi, says BJP president @AmitShah speaking with @navikakumar #FranklySpeakingWithShah </strong>3293 likes</li>
+    <li>"<strong>This protocol that PM cannot sit with a foreign pilot but can have a foreign wife, this, I don't understand: Sambit Patra, Spokesperson, BJP #Dec18WithTimesNow</strong>", 3086 likes</li>
+    <li>'<strong>6 hours after Gujarat loss, Rahul Gandhi was watching ‘Star Wars’ at a cinema hall in Delhi. #AreYouSeriousRahul Watch @thenewshour with @navikakumar</strong>, 2506 likes</li>
+    <li>"<strong>HARD FACT: 87% Christians in Mizoram have been given minority status despite Hindu's being at 2.75% #HinduRightsBoost</strong>", 2245 likes</li>
+    <li>'<strong>I would like PM to take lesson from this and set up a warlike council for fighting corruption: @Swamy39, BJP #UPANotGuilty</strong>', 2192 likes</li>
+</ol>
+<p>3 out of the 5 tweets have a very clear anti-congress tilt, which makes sense as they are not a particularly popular party and have countless flaws. But we as a people are huge fans of whatboutisms.</p>
+<p>These are their most retweeted tweets:</p>
+<ol>
+    <li> <strong>"HARD FACT: 87% Christians in Mizoram have been given minority status despite Hindu's being at 2.75% #HinduRightsBoost"</strong>, 2463</li>
+    <li><strong>'Big step to conflict resolution. ‘Positive of outcome soon’ #SriSriMandirMove, </strong> 1604</li>
+    <li>"<strong>This is how AAP responded to TIMES NOW's expose on #AAPHallOfShame</strong>", 1583</li>
+    <li>"<strong>Congress ally Jignesh Mewani tries wooing Muslim voters, asks crowd to chant Allah-Uh-Akbar but the crowd hits back with Modi Chants #AllahRamRaGa</strong>', 1334</li>
+    <li>'<strong>Hard Facts: 19:00 PM Modi conducted post-mortem on Gujarat election results; at 19:40, Rahul Gandhi watched Star Wars at a cinema hall #AreYouSeriousRahul'</strong>, 1210</li>
+</ol>
+<p>I don't know what to make of this. Very pro incumbent government.</p>
+<p><strong>Republic TV</strong></p>
+<p>Most liked :</p>
+<ol>
+    <li><strong>"#AmitShahSpeaksToArnab | A significant portion of Gujarat was a dark zone. Now, it isn't. Narmada's waters are reaching many parts: Amit Shah</strong>", 2835</li>
+    <li>"<strong>#AmitShahSpeaksToArnab |I don't dismiss anybody. Every politician has their own standing in an election. But our track record speaks for itself and the Gujarat public will vote for us based on the work we have done: Amit Shah</strong>", 2812</li>
+    <li>"<strong>#AmitShahSpeaksToArnab | WATCH: Amit Shah on the Congress' 'Chaiwala' meme attack at the Prime Minister</strong> ", 2344</li>
+    <li><strong>'#CongNeechPolitics | Arnab: I want Rahul Gandhi to see this video and comment on it right now. How proud does this make you? @OfficeOfRG'</strong>, 2336</li>
+    <li>'<strong>WATCH the full #AmitShahSpeaksToArnab here</strong> [link]', 2134</li>
+</ol>
+<p>Most Retweeted:</p>
+<ol>
+    <li><strong>'#CongNeechPolitics | Arnab: I want Rahul Gandhi to see this video and comment on it right now. How proud does this make you? @OfficeOfRG',</strong> 1660</li>
+    <li>'<strong>Where do you stand on the #FirecrackerDebate?</strong>', 1289</li>
+    <li><strong>"#RepublicWatchesPadmavati | We've watched Padmavati. Get the real story here"</strong>, 1229</li>
+    <li><strong>'#SoniaLetterLeaked | Proven: Sonia Gandhi interfered directly in the Tehelka investigation [link]'</strong>, 1119</li>
+    <li><strong>'#BiggestBoforsInterview | Watch how GujaratCongress Chief Bharatsinh Solanki manhandled Republic TV crew for asking questions on Bofors'</strong>, 1088</li>
+</ol>
+<p>I always was of the opinion that the duty of the media was to keep the incumbent government on its toes, and bring to the forefront important stories that would bring a positive change to the citizens. These media houses don't seem to share my opinion.</p>
+<h3>Tweet frequencies and heatmaps</h3>
+<p>These are a few heatmaps I generated to find tweeting patterns of these channels.</p>
+<p>First, I wanted to look at what days they tweeted the most. Here is a heatmap of their tweet frequencies over the days of the week for all twelve weeks of data:</p>
+<p><img class="alignnone size-medium" src="https://i.imgur.com/GDKmfPJ.png" width="960" height="1027" /></p>
+<p>Week 51 Monday and Thursday were on fire for obvious reasons - Gujarat Elections. Other than that, it can be seen that on an average, their tweet frequency reduces as the week passes by.</p>
+<p>Here are individual heatmaps. <strong>Note that week</strong> <strong>40 Mon and Tue data is missing for republic.</strong></p>
+<p><img class="alignnone " src="https://i.imgur.com/amZ1dYt.png" width="608" height="650" /></p>
+<p><img class="alignnone " src="https://i.imgur.com/GDKmfPJ.png" width="743" height="795" /></p>
+<p>We can notice that Republic TV tries to keep its tweet frequency constant (Also, they just tweet more), but the waning of tweet frequency is very evident in the Times now heat map. What would you do with this information? Nothing. This is very, I repeat very, useless information.</p>
+<p>A nicer heatmap would be their distribution throughout the day over the week. Here is what I got:</p>
+<p><img class="alignnone size-medium" src="https://i.imgur.com/DPnhzXu.png" width="1366" height="715" /></p>
+<p>They really up their tweet game in the 8PM to 12AM slot, because my man Arnab is on screen. There is a very steady increase in the number of tweets throughout the day. Their sunday afternoon slot is also pretty loaded because of their strong weekend programming game (like that Anupam Kher show).</p>
+<p><img class="alignnone size-medium" src="https://i.imgur.com/XkwEEMk.png" width="1366" height="715" /></p>
+<p>&nbsp;</p>
+<p>Their tweeting pattern is also extremely similar to that of Republic TV. Their lack of debates at weekend primetime slots is also evident. They do have a bright spot during the 12-2 slot on saturday which I am guessing is because they want to promote their show India Upfront.</p>
+<h2>The Grand Conclusion.</h2>
+<p><strong>So what? What is so surprising?</strong></p>
+<p>Frankly, there is not much new here. The graphs look nice. I did try some sentiment analyses, but it was quite inaccurate and I had to toss that.</p>
+<p><strong>Why did I select Times Now and Republic?</strong></p>
+<p>They are loud channels who claim to be the best. They are what I would call the pioneers of the new age of crass journalism. Very peurile debates and little to no subtlety. Honestly, I hate these channels and their brand of journalism, so please do consider my biases in the article. Maybe I will do NDTV in the future.</p>
+<h1>If you liked what you read, please share this. Also, if you disliked or disagree with what you read, feel free to tell me why. I invite all sorts of constructive criticism.</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p> 2024 Advait Raykar</p>
+            <div class="social-links">
+                <a href="mailto:advait.raykar@gmail.com">Email</a>
+                <a href="https://github.com/hallicopter" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

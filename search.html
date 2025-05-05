@@ -1,0 +1,88 @@
+---
+layout: default
+title: Search
+permalink: /search/
+---
+
+<h1>Search</h1>
+<input type="text" id="search-input" placeholder="Type to search..." autofocus style="width:100%;max-width:400px;padding:8px;font-size:1.1em;margin-bottom:1em;">
+
+<!-- Status area to show loading/error messages -->
+<div id="search-status" style="margin-bottom:1em;font-style:italic;color:#888;">Loading search index...</div>
+
+<!-- Results container -->
+<ul id="search-results" style="list-style:none;padding:0;"></ul>
+
+<script>
+// Minimal real-time search with no dependencies
+document.addEventListener('DOMContentLoaded', function() {
+  const input = document.getElementById('search-input');
+  const resultsEl = document.getElementById('search-results');
+  const statusEl = document.getElementById('search-status');
+  let posts = [];
+  
+  // Use absolute URL to search.json - this is required for Jekyll sites
+  const jsonUrl = window.location.origin + '/search.json';
+  
+  // Fetch posts data
+  fetch(jsonUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.status} ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      posts = data;
+      statusEl.textContent = `Ready to search ${posts.length} posts.`;
+      // Try search if there's already input
+      if (input.value.trim()) {
+        handleSearch();
+      }
+    })
+    .catch(error => {
+      statusEl.innerHTML = `Error: Could not load search data. <br>Try refreshing or check if <a href="/search.json">/search.json</a> is accessible.`;
+      console.error('Search data error:', error);
+    });
+  
+  // Handle search events
+  function handleSearch() {
+    const query = input.value.trim().toLowerCase();
+    
+    if (!query) {
+      resultsEl.innerHTML = '';
+      statusEl.textContent = `Ready to search ${posts.length} posts.`;
+      return;
+    }
+    
+    // Filter posts by query string
+    const results = posts.filter(post => 
+      (post.title && post.title.toLowerCase().includes(query)) || 
+      (post.content && post.content.toLowerCase().includes(query))
+    );
+    
+    // Display results
+    if (results.length === 0) {
+      resultsEl.innerHTML = '';
+      statusEl.textContent = 'No matching posts found.';
+    } else {
+      statusEl.textContent = `Found ${results.length} matching posts.`;
+      resultsEl.innerHTML = results.map(post => `
+        <li style="margin-bottom:1.5em;padding-bottom:1em;border-bottom:1px solid #eee;">
+          <a href="${post.url}" style="font-weight:bold;text-decoration:none;color:#222;font-size:1.1em;">${post.title || 'Untitled'}</a>
+          <div style="font-size:0.8em;color:#666;margin:3px 0;">${post.date || ''}</div>
+          <div style="font-size:0.95em;color:#444;">${post.content ? post.content.slice(0, 150) + '...' : 'No content'}</div>
+        </li>
+      `).join('');
+    }
+  }
+  
+  // Add event listeners
+  input.addEventListener('input', handleSearch);
+  input.addEventListener('focus', () => {
+    if (posts.length > 0 && !statusEl.textContent.includes('Error')) {
+      statusEl.textContent = `Ready to search ${posts.length} posts.`;
+    }
+  });
+});
+</script>

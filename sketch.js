@@ -1,11 +1,10 @@
 var canvas;
-var mic;
 var body = document.body,
     html = document.documentElement;
 
 let height;
-let width = Math.max( body.scrollWidth, body.offsetWidth,
-    html.clientWidth, html.scrollWidth, html.offsetWidth );
+let width = Math.max(body.scrollWidth, body.offsetWidth,
+    html.clientWidth, html.scrollWidth, html.offsetWidth);
 
 // Get the true document height
 function getDocHeight() {
@@ -19,10 +18,18 @@ function getDocHeight() {
 }
 
 // Set a reasonable max height for performance
-const MAX_CANVAS_HEIGHT = 2100;
+const MAX_CANVAS_HEIGHT = 2500;
+
+// Elegant color palette to match the site design
+const COLORS = {
+    background: '#FAFAFA',  // Very light gray background
+    accent: '#B22222',      // Elegant red accent
+    subtle: '#F8F8F8'       // Subtle gray for patterns
+};
 
 let stars = [];
 let comets = [];
+let patterns = [];
 let tick = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -39,31 +46,33 @@ document.addEventListener('DOMContentLoaded', function() {
             
             canvas = p.createCanvas(width, height);
             p.colorMode(p.HSB, 360, 100, 100, 1);
-            p.background('#0E192B');
+            p.background(COLORS.background);
 
-            // Create stars with higher density on sides, but fewer overall
-            for (let i = 0; i < 250; i++) {
-                let x, y;
-                
-                if (p.random() < 0.8) {
-                    x = p.random() < 0.5 ? 
-                        p.random(0, width * 0.25) : 
-                        p.random(width * 0.75, width);
-                } else {
-                    x = p.random(width * 0.25, width * 0.75);
-                }
-                
-                let normalizedY = p.random();
-                y = height * normalizedY;
+            // Create subtle pattern elements instead of stars
+            for (let i = 0; i < 80; i++) {
+                let x = p.random(width);
+                let y = p.random(height);
                 
                 stars.push({
                     x: x,
                     y: y,
-                    size: p.random(0.8, 2.5),
-                    brightness: p.random(40, 80),
-                    twinkleSpeed: p.random(0.01, 0.02),
+                    size: p.random(1, 3),
+                    brightness: p.random(20, 40),
+                    twinkleSpeed: p.random(0.005, 0.01),
                     twinklePhase: p.random(p.TWO_PI),
-                    isBright: p.random() < 0.15 // 15% chance for brighter stars
+                    isBright: p.random() < 0.1 // 10% chance for brighter elements
+                });
+            }
+            
+            // Create subtle background patterns
+            for (let i = 0; i < 15; i++) {
+                patterns.push({
+                    x: p.random(width),
+                    y: p.random(height),
+                    size: p.random(80, 200),
+                    opacity: p.random(0.01, 0.03),
+                    speed: p.random(0.0005, 0.001),
+                    phase: p.random(p.TWO_PI)
                 });
             }
 
@@ -71,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
             canvas.style('position', 'fixed'); 
             canvas.style('top', '0');
             canvas.style('left', '0');
-            p.blendMode(p.SCREEN);
+            p.blendMode(p.MULTIPLY); // Subtle multiply blend for elegant effect
         }
 
         p.windowResized = function() {
@@ -85,39 +94,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
         p.draw = function() {
             p.clear();
-            p.background('#0E192B');
+            p.background(COLORS.background);
+            
+            // Draw and update subtle background patterns
+            patterns.forEach(pattern => {
+                let movement = p.sin(p.frameCount * pattern.speed + pattern.phase);
+                let x = pattern.x + movement * 20;
+                let y = pattern.y + p.cos(p.frameCount * pattern.speed) * 10;
+                
+                p.noStroke();
+                // Use the accent color with very low opacity
+                let h = 0; // Red hue in HSB
+                let s = 80; // Saturation for the elegant red
+                p.fill(h, s, 80, pattern.opacity);
+                p.ellipse(x, y, pattern.size, pattern.size * 0.6);
+            });
 
-            // Draw and update stars
+            // Draw and update subtle dots
             stars.forEach(star => {
                 let primaryTwinkle = p.map(p.sin(p.frameCount * star.twinkleSpeed + star.twinklePhase), -1, 1, 0.8, 1);
                 let secondaryTwinkle = p.map(p.sin(p.frameCount * star.twinkleSpeed * 1.5), -1, 1, 0.9, 1);
                 let finalTwinkle = primaryTwinkle * secondaryTwinkle;
 
-                // Enhance twinkle for bright stars
+                // Subtle variation for visual interest
                 if (star.isBright) {
-                    finalTwinkle = p.map(finalTwinkle, 0.8, 1, 0.9, 1.3); // More dramatic twinkle range
+                    finalTwinkle = p.map(finalTwinkle, 0.8, 1, 0.9, 1.2);
                 }
                 
                 p.noStroke();
-                // Main star with adjusted opacity for bright stars
-                let mainOpacity = star.isBright ? 0.7 : 0.5;
-                p.fill(210, 10, star.brightness * finalTwinkle, mainOpacity);
+                // Use elegant red from our color palette with very low opacity
+                let h = 0; // Red hue in HSB
+                let s = 80; // Saturation for the elegant red
+                let mainOpacity = star.isBright ? 0.04 : 0.02;
+                p.fill(h, s, 80, mainOpacity);
                 p.circle(star.x, star.y, star.size * finalTwinkle);
                 
-                // More subtle glow, slightly enhanced for bright stars
-                let glowOpacity = star.isBright ? 0.15 : 0.1;
-                let glowSize = star.isBright ? 1.8 : 1.5;
-                p.fill(210, 10, star.brightness * finalTwinkle, glowOpacity);
-                p.circle(star.x, star.y, star.size * finalTwinkle * glowSize);
+                // Very subtle glow
+                let glowOpacity = star.isBright ? 0.02 : 0.01;
+                p.fill(h, s, 80, glowOpacity);
+                p.circle(star.x, star.y, star.size * finalTwinkle * 2);
             });
 
-            // Maintain single comet with longer lifetime between spawns
-            if (comets.length < 1 && p.random(1) < 0.05) {
-                let startX = p.random() < 0.5 ? -50 : p.width + 50;
-                let startY = p.random(p.height * 0.7);
-                let angle = startX < 0 ? 
-                    p.random(-p.PI/12, p.PI/12) : 
-                    p.random(11*p.PI/12, 13*p.PI/12);
+            // Very occasional elegant line effect (much less frequent)
+            if (comets.length < 1 && p.random(1) < 0.01) {
+                let startX = p.random(p.width);
+                let startY = -20;
+                let angle = p.PI/2 + p.random(-0.1, 0.1); // Mostly vertical with slight variation
                 
                 comets.push(new Comet(p, startX, startY, angle));
             }
@@ -137,14 +159,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 class Comet {
-    constructor(p, x, y, angle, speed = p.random(1.5, 2.5)) {
+    constructor(p, x, y, angle, speed = p.random(0.5, 1)) {
         this.p = p;
         this.pos = p.createVector(x, y);
         this.vel = p5.Vector.fromAngle(angle);
         this.vel.mult(speed);
         this.history = [];
-        this.lifetime = 600;
-        this.size = p.random(1.5, 2);
+        this.lifetime = 800;
+        this.size = p.random(0.8, 1.2);
         this.alpha = 1;
     }
 
@@ -152,31 +174,31 @@ class Comet {
         this.pos.add(this.vel);
         this.history.push(this.p.createVector(this.pos.x, this.pos.y));
         
-        if (this.history.length > 60) {
+        if (this.history.length > 100) {
             this.history.splice(0, 1);
         }
         
         this.lifetime--;
-        this.alpha = this.p.map(this.lifetime, 600, 0, 1, 0, true);
+        this.alpha = this.p.map(this.lifetime, 800, 0, 1, 0, true);
     }
 
     display() {
+        // Draw elegant line with the accent color
         this.p.noFill();
         this.p.beginShape();
         for (let i = 0; i < this.history.length; i++) {
             let pos = this.history[i];
             let alpha = this.p.map(i, 0, this.history.length, 0, 1);
-            this.p.stroke(210, 10, 100, 0.08 * alpha * this.alpha);
+            // Use our elegant red color with very low opacity
+            this.p.stroke(0, 80, 80, 0.03 * alpha * this.alpha);
             this.p.vertex(pos.x, pos.y);
         }
         this.p.endShape();
         
+        // Very subtle dot at the end
         this.p.noStroke();
-        this.p.fill(210, 10, 100, 0.6 * this.alpha);
+        this.p.fill(0, 80, 80, 0.05 * this.alpha);
         this.p.circle(this.pos.x, this.pos.y, this.size);
-        
-        this.p.fill(210, 10, 100, 0.15 * this.alpha);
-        this.p.circle(this.pos.x, this.pos.y, this.size * 2);
     }
 
     isDead() {

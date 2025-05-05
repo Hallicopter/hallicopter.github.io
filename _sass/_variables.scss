@@ -3,25 +3,44 @@
 // VARIABLES
 //
 
-// Colors
-$blue: #b3a9ee;
+// Colors - Based on Design Guide
+$elegant-red: #B22222;
+$accent-red: #A02020;
 
-// Grays
-$black: #000;
-$darkerGray: #f0edff;
-$darkGray: #333;
-$gray: #c749ef;
-$lightGray: #7a607f;
-$white: #ffffff;
+// Neutrals
+$black: #1A1A1A;
+$dark-gray: #333333;
+$medium-gray: #666666;
+$light-gray: #EEEEEE;
+$softer-gray: #F8F8F8;
+$white: #FFFFFF;
 
-// Font stacks
-$helvetica: Helvetica, Arial, sans-serif;
-$helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$georgia: Georgia, serif;
+// Font stacks - Based on Design Guide
+$serif: 'EB Garamond', 'Playfair Display', 'Baskerville', Georgia, serif;
+$sans: 'Inter', 'Source Sans Pro', 'Lato', Helvetica, Arial, sans-serif;
+
+// Layout
+$content-width: 800px;
+$content-padding: 40px;
+
+// Typography
+$h1-size: 56px;
+$h2-size: 44px;
+$h3-size: 32px;
+$h4-size: 26px;
+$body-size: 20px;
+$small-size: 16px;
+$line-height: 1.7;
 
 // Mobile breakpoints
 @mixin mobile {
   @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 641px) and (max-width: 1024px) {
     @content;
   }
 }

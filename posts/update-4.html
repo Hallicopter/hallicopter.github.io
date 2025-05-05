@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideas are worthless and semaphores are not, part four. - Advait Raykar</title>
+    <link rel="stylesheet" href="/new-style.css">
+    <style>
+        .post-content {
+            margin: var(--spacing) 0;
+        }
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+        .post-content h1, 
+        .post-content h2, 
+        .post-content h3 {
+            margin: 2rem 0 1rem;
+        }
+        .post-content p {
+            margin-bottom: 1rem;
+        }
+        .post-content ul, 
+        .post-content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        .post-content blockquote {
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-color);
+            color: var(--secondary-color);
+        }
+        .post-content code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .post-content pre code {
+            display: block;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .post-header {
+            text-align: center;
+            margin: var(--spacing) 0;
+        }
+        .post-date {
+            color: var(--secondary-color);
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Advait Raykar</a>
+            <div class="nav-links">
+                <a href="/blog">Blog</a>
+                <a href="/books">Books</a>
+                <a href="/about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article>
+            <header class="post-header">
+                <h1>Ideas are worthless and semaphores are not, part four.</h1>
+                <div class="post-date">2021-09-26</div>
+            </header>
+            <div class="post-content">
+                <p>Mountains, semaphores and ideas.</p>
+<p><img src="https://i.imgur.com/jBoOPhy.png" height="400"></p>
+<p style="text-align:center"> Kudremukh, Chikkamagaluru, 2017</p>
+
+<h2>Recap</h2>
+<p>For those new here, I aspire to write about what is happening with me on at least a weekly basis. To quote my older post</p>
+<blockquote>
+<p>I hope I keep this up and eventually I can publish my future memoir of my wildly successful life with this a reference.</p>
+</blockquote>
+<p>In that spirit, I <em>had</em> decided to rename this series to "My memoir", and then soon later declared that I don't like the name. I have now decided that I don't want to restrict it to any name. Every chapter will have it's own title followed by the chapter number. Let's see how my titles get progressively worse. Enough with the rambling, read the rest of my "memoir" <a href="https://advait.live/tags/#Memoir">here</a>. </p>
+<p>Apart from this, all my chapters end with "Notes on the <a href="https://en.wikipedia.org/wiki/Epigraph_(literature)">epigraph</a>" where I give more context on the photograph in my frontmatter.</p>
+<h3>An elegant solution.</h3>
+<p>I recently got to use a very elegant technique to keep track and limit the number of concurrent connections to a websocket server I am building at work. Luckily for me, I have written the server in Go which has excellent primitves for dealing with synchronisation and concurrency. </p>
+<p>The problem statement was quite simple</p>
+<blockquote>
+<p>Keep track of the number of concurrent websocket connections to the server. </p>
+</blockquote>
+<p>For anyone who is new to Go, every time a new connection is made to the server, a new thread (goroutine) is spawned to handle the connection. Knowing this, the best way to keep track of the concurrency was using a semaphore to control access to the handler function for the websocket endpoint. Adapting the method I found <a href="https://medium.com/@deckarep/gos-extended-concurrency-semaphores-part-1-5eeabfa351ce">here</a>, I was able to keep track of my concurrent connections by simply using a buffered go channel as a semaphore.</p>
+<p>```go
+func Handler(w http.ResponseWriter, r *http.Request) {</p>
+<pre><code>// As soon as we get a new socket connection, add it the counting semaphore buffer.
+semaphore &lt;- 1
+
+// Right before we leave this function, remove it from the semaphore buffer.
+defer func() { &lt;-semaphore }()
+
+....
+</code></pre>
+<p>}
+```</p>
+<p>This way at any given point, I can create access and expose the number of concurrent connections by finding the size of the channel buffer, like so</p>
+<p><code>go
+// Find the number of concurrent connections by seeing how much of the buffer is used
+// As a reminder, everytime we accept a connection, we are adding an empty struct to the go channel semaphore
+// The len of this buffer will thus give us the number of connections
+concurrentConnections := len(semaphore)</code></p>
+<p>I can even limit the number of connections and make the other clients to wait using a channel select. I found this to be an extremely simple and elegant solution, all thanks to Go.</p>
+<h3>Ideas are worthless</h3>
+<p>I love heuristics[^1]. "Ideas are worthless" is one such heuristic that I have grown to love over the past two years. Of course, but the nature of it being a heuristic, it need not be right all the time. But it is right <em>very often</em>. I have a tendency to delude myself into thinking I am onto an amazing idea. This heuristic helps me fight this delusion. </p>
+<p>The truth is, ideas <em>are</em> worth their weight in gold, ie., worthless. Everyone has great ideas. I have hundreds of them [^2]. True value lies in their execution. </p>
+<p>While I have a lot of thoughts around ideas and their execution, their essence can be distilled down into the following aphorism</p>
+<ol>
+<li>Ideas are worthless.</li>
+<li>Perfection is the enemy of good.</li>
+<li>A great product is one that is shipped.</li>
+</ol>
+<h2>Notes on the epigraph</h2>
+<p>This picture was taken in July 2017 on my way up Kudremukh. Kudremukh is the 2nd highest peak in Karnataka, and my first proper trek. This was also the first and last trip with my friends from school [^3]. </p>
+<p>We went as a part of the Bangalore Trekking Club group that conducts these treks. We stayed at a very tiny homestay near the foothill of Kudremukh. All of us stayed in the attic of the house in suspect sleeping bags. They were suspect because one night we discovered that there was blood in one of them, but that was probably because my friend bled in it while sleeping. To be fair, seeing blood was very common due to leeches being absolutely everywhere. I had never seen these many leeches in my life before. The weird thing about leeches is that they don't hurt at all. But they are disgusting. One of the most useful things I learnt on this trek is that leeches hate sanitisers. This was why I carried a pomegranate flavoured sanitiser[^4] wherever I went. </p>
+<p>Another memorable incident that occured on the trek was that I smashed by OnePlus One. I want to say that I smashed it on the trek, but I actually smashed it on the way to the shared shower. It was an inelegant end to an elegant device.</p>
+<p>There was also this guy on the trek who just couldn't go five minutes without telling everyone that he was from IIT Madras and how he graduated a year early[^5]. He was quite the hoot. </p>
+<p>This was a really fun trip. It taught me which of my friends hate treks, how to deal with leeches, and gave me my website profile picture. I would have written a lot more about it, but it's late in the night as I write this and I am too sleepy to articulate my thoughts any better than this. Maybe I will do a redux of this trek in future chapters with a nicer narrative. But for now, I am going to remember how perfection is the enemy of good and end this chapter.</p>
+<h3>Footnotes</h3>
+<p>[^1]: If you go to the search page on my website and look for "heuristics" you'd know how much I like a good old fashioned heuristic.
+[^2]: Or so I delude myself into thinking.
+[^3]: But  to be fair, 2 of them were also from my college with whom I went on other trips. 
+[^4]: I really recommend pomegranate flavoured sanitisers.
+[^5]: The way he told as was asking if we went to IIT Madras because we said "da" a lot which is a common bangalore slang. Very smooth segue.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p> 2024 Advait Raykar</p>
+            <div class="social-links">
+                <a href="mailto:advait.raykar@gmail.com">Email</a>
+                <a href="https://github.com/hallicopter" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+/* Custom Font Face Declarations */
+@font-face {
+  font-family: 'Goudy Initialen';
+  src: url('/assets/fonts/GoudyInitialen.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap');

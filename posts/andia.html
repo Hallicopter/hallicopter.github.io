@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis of the r/India subeddit - Advait Raykar</title>
+    <link rel="stylesheet" href="/new-style.css">
+    <style>
+        .post-content {
+            margin: var(--spacing) 0;
+        }
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+        .post-content h1, 
+        .post-content h2, 
+        .post-content h3 {
+            margin: 2rem 0 1rem;
+        }
+        .post-content p {
+            margin-bottom: 1rem;
+        }
+        .post-content ul, 
+        .post-content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        .post-content blockquote {
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-color);
+            color: var(--secondary-color);
+        }
+        .post-content code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .post-content pre code {
+            display: block;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .post-header {
+            text-align: center;
+            margin: var(--spacing) 0;
+        }
+        .post-date {
+            color: var(--secondary-color);
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Advait Raykar</a>
+            <div class="nav-links">
+                <a href="/blog">Blog</a>
+                <a href="/books">Books</a>
+                <a href="/about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article>
+            <header class="post-header">
+                <h1>Analysis of the r/India subeddit</h1>
+                <div class="post-date">2017-7-13-</div>
+            </header>
+            <div class="post-content">
+                <p><sub><em>Disclaimer: I am no expert. My methodologies might be completely wrong and the inferences wronger. But I try</em><sub></p>
+<p>Now since I have that out of the way, welcome to my first blog post. This is going to be about r/India because there is nothing as good as pandering for views. The r/India community seemed niche, but large enought to pander to, so here is what I have to offer.</p>
+<h3>The data gathering</h3>
+<p>So, first things first, I had to get the data required for tha analysis. For this I whipped a script using a python wrapper for the Reddit API called PRAW. Using this script I packaged the top 1000 links this year on r/India sub into a csv file. Why only a thousand links you ask, because reddit API limitations coupled with laziness to work around that limit. Also, I felt 1000 links should be good enough since post the top 1000, the upvotes where under 300. Also, I love trashy science. Nothing like the unscientific method masquerading as scientific method. Here is the template for the csv file:</p>
+<p>| Title        | Upvotes           | Flair  |
+| ------------- |:-------------:| -----:|
+|If you still throw garbage on street.    | 5041 | Non-Political |</p>
+<h3>Making fun graphs</h3>
+<p>The motivation behind this blog is fun graphs and charts. All charts were generated using the good old matplotlib.
+First I read the csv file using pandas. All the data manipulation was done using pandas.</p>
+<h4>Share of flairs</h4>
+<p>First thing I tried was to find out what flair occured the most in the top 1000. I plotted a couple charts tp give you an idea of the flair distribution.</p>
+<p><em>The Pie chart</em></p>
+<p><img alt="_config.yml" src="{{ site.baseurl }}/images/flairshare.png" /> </p>
+<p>Unsurprisingly, non-political has the lions share with over 40% of the links falling into this category. It might just be my perception, but I imagined that there would be a few more political links, given the politcal atmosphere of the sub. </p>
+<p>To get a better understanding of the 'others' category, which consists of flairs with less than 10 appearances, I made this chart.
+<img alt="_config.yml" src="{{ site.baseurl }}/images/flairpop.png" /> </p>
+<p><em>Is it me or Politics+non-political should equal 100%</em></p>
+<h4>Our favourite flairs</h4>
+<p>So I figured I want to make more charts and graphs to compensate the lack of real intellect. Here is a barchart for flair-wise upvotes.</p>
+<p><img alt="_config.yml" src="{{ site.baseurl }}/images/flair_upvotes.png" /> </p>
+<p>Here we can see some shifting in the ranks. Some flair have higher upvootes despite having lesser frequencies. These flairs must be our favourite ones. For the sake of more graphs, here is a bar chart of our favourite flairs, judged by average upvotes for a flair submission.:</p>
+<p><img alt="_config.yml" src="{{ site.baseurl }}/images/average_upvotes.png" /> </p>
+<p>Turns out we are huge Policy Economy nerds. Specifically Economic policy, which is wierd since other policy flairs are way lower on our favourites list. </p>
+<p>Also, we love us a good AMA. The Shashi Tharoor AMA leads the pack with 1581 upvotes. Also the memorably cringy AMA with the best in the business, Arnab Goswami comes second with 778 upvotes. </p>
+<h3>Unqualified analysis of submission titles</h3>
+<p>Since I put the effort to scrape the titles of the submissions, I have to make it look like I put it to good use. I tried using spacy for nlp analysis but the result were supper iffy, so I went all out manual scavenging (they should enforce that ban properly).</p>
+<h4>Popular names</h4>
+<p>By my intense research, here is what I found to be the most mentioned people in the link submissions:</p>
+<ol>
+<li>Narendra Modi (<em>OMG what a surprise!</em>) wih 39 appearances</li>
+<li>Yogi Adityanath (<em>Again, what a surpirse!</em>) with 7 appearances</li>
+<li>Salman Khan (<em>Bhaaaiiii!!!!!!!</em>) with 7 appearnces</li>
+</ol>
+<h4>Popular places</h4>
+<p>So lets see which places pique our interest:</p>
+<ol>
+<li>India (<em>Duh, we are the true nationalist sub</em>) with 150 appearances</li>
+<li>Kerala (<em>Actually, I am kinda surprised, maybe the diaspora?</em>) with 24 appearances</li>
+<li>Delhi (<em>Joint runner up</em>) with 24 appearances</li>
+<li>Mumbai (<em>Fairly close 4th</em>) with 20 appearances (<strong>Mumbai+Bombay=25</strong>)</li>
+</ol>
+<p><em>No love for Bengaluru(15) :(</em></p>
+<h2>I guess that will be all for this post. Constructive criticism is appreciated, but I don't have a comments system in place, since I don't have an audience. One day maybe I'll put that in place. For now, you can email me crticism if you have no life.</h2>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p> 2024 Advait Raykar</p>
+            <div class="social-links">
+                <a href="mailto:advait.raykar@gmail.com">Email</a>
+                <a href="https://github.com/hallicopter" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

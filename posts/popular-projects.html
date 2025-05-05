@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My most popular side project. - Advait Raykar</title>
+    <link rel="stylesheet" href="/new-style.css">
+    <style>
+        .post-content {
+            margin: var(--spacing) 0;
+        }
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+        .post-content h1, 
+        .post-content h2, 
+        .post-content h3 {
+            margin: 2rem 0 1rem;
+        }
+        .post-content p {
+            margin-bottom: 1rem;
+        }
+        .post-content ul, 
+        .post-content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        .post-content blockquote {
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-color);
+            color: var(--secondary-color);
+        }
+        .post-content code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .post-content pre code {
+            display: block;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .post-header {
+            text-align: center;
+            margin: var(--spacing) 0;
+        }
+        .post-date {
+            color: var(--secondary-color);
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Advait Raykar</a>
+            <div class="nav-links">
+                <a href="/blog">Blog</a>
+                <a href="/books">Books</a>
+                <a href="/about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article>
+            <header class="post-header">
+                <h1>My most popular side project.</h1>
+                <div class="post-date">2021-03-12</div>
+            </header>
+            <div class="post-content">
+                <p>A look back at what I like, and dislike about my most popular project being a terminal speed reader.</p>
+<h2>Breaking down relative success.</h2>
+<p>Shirah reader is a terminal reader I wrote in 2020 when I was at the peak of my RSVP speed reading phase. I really wanted a speed reading tool that I could use on my computer to read ebooks; unfortunately, the best I could find was some terminal readers. This is when I decided to write my own tool based on my needs, and figured someone else also may find it useful.</p>
+<p>First, here is an introduction to what I made. I have reproduced a portion of the README file in my <a href="https://github.com/Hallicopter/shirah-reader">repository</a>:</p>
+<hr>
+
+<h4>Shirah</h4>
+
+<p>A curses-based terminal RSVP speed reader.</p>
+<p><img src="https://raw.githubusercontent.com/Hallicopter/shirah-reader/main/assets/shirah.gif" height="400"></p>
+<p style="text-align:center">Note: Poor colour representation in gif, looks way better irl.</p>
+
+<h4>  What is an RSVP reader? </h4>
+<p>RSVP stands for <a href="https://en.wikipedia.org/wiki/Rapid_serial_visual_presentation">Rapid Serial Visual presentiation</a></p>
+<p>Its a controversial method to enable speedreading. I have been using this on my devices, and it has given me great results. I wanted to have an option to do this in the terminal too.</p>
+<p><img alt="Alt text" src="https://raw.githubusercontent.com/Hallicopter/shirah-reader/main/assets/speedread.gif" /></p>
+<p>Ignore the haters, and try it for yourself.
+Also, I don't like that the best options on a computer are paid softwares.</p>
+<hr>
+
+<p>At the time of me writing this, my project has 129 stars, making it by far my most popular side project. <br>
+This, in my eyes, was a pretty huge success for me because it helped me achieve one of my personal <a href="https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/">OKRs</a> for last quarter:</p>
+<p><img alt="OKRs" src="https://i.postimg.cc/zvkTY3S1/image.png" /></p>
+<p style="text-align:center">Screencap of my public personal OKRs at work</p>
+
+<p>Having dabbled in lots of side projects in the past with none having gained more than 10-15 stars, I learnt a lot about what kind of projects do really get stars. So, here I have outlined my theory for GitHub stars based on my $\text{sample size}$ of $n=1$</p>
+<ol>
+<li>People love end-user projects. It has a low barrier to adoption. Nobody has the time to install and try out your low-level memory management library.</li>
+<li>Gifs are everything.</li>
+<li>Hit a niche that can be easily understood by lay-people.</li>
+<li>Promote fancy gif on Reddit.</li>
+<li>People like the <em>idea</em> of a technical project, as opposed to a real technical <em>implementation</em>. It's all aesthetics. This is why "awesome lists" have so many stars.</li>
+</ol>
+<p>Almost overnight, I had 100+ stars on my repository because it met a lot of these guidelines, and got picked up by the folks at r/linux and r/commandline for a total of over 900 upvotes. I doubt many people really use my utility. Even I don't RSVP  speed-read anymore.</p>
+<h2>The fortunes of being undiscovered</h2>
+<p>In the grand scheme of things, 130 odd stars is not a big deal. And I am glad this didn't blow up too much. Personally, between 100 and 300 stars is the sweet spot for this kind of a project. I am quite happy with how this little side project turned out and the general reception towards it, but on the whole, this is far from my best work. Here are some reasons I don't like this project:
+1. I didn't write most of it. I merely extended and repackaged another project. I did however credit the original author, who was nice enough to approve of my work. So what I have written amounts to an elaborate plugin, as opposed to a 0-1 project.
+2. Its a fairly non-technical project. For the most part, its run of the mill curses programming. I didn't get to flex any technical expertise here.
+3. The interface for speed reading is piss poor. It's confusing and counter-intuitive to most people. I didn't put much thought into it, since I figured I'd be the only one using it.
+4. I made this in one evening on a weekend. I have spent way more time on my other projects. </p>
+<h2>Becoming famous</h2>
+<p>For the past 5+ months, I have been constantly putting out my work. This was in the form of my (short-lived) <a href="http://localhost:4000/tags/#The%20Letter">newletter</a>, book reviews, articles and <a href="https://github.com/Hallicopter/">side projects</a>. I realise that at any point, there always is the chance that some of my content may blow up. Shirah is probably the closest I have come to blowing up in the past 5 months. It's far from blowing up, but its close enough for me to make me think about the implications of such a scenario.</p>
+<p>Think about it like this, Da Vinci will always be the "Mona Lisa" person. Cal Newport will always be the "Deep Work" person. Seinfeld will always be the "Seinfeld" person. JK Rowling will always be the "Harry Potter" person. </p>
+<p>I doubt any of these people got to choose "X", in their "X" person explicitly. It just happened, and now they are stuck with it forever. Jani Lane was a famous musician who tragically died of alcoholism. He got very popular for his single "Cherry Pie", a song that the label executives asked him to compose last moment as something "single-worthy" for his album. He considered it as one of his inferior works and was famously quoted saying </p>
+<blockquote>
+<p>"hate that song ... my legacy is "Cherry Pie" ... I could shoot myself in the head for writing that song,"</p>
+</blockquote>
+<p>He did later disown that statement, saying the interviewer caught him on a bad day and that he is actually glad that he wrote the song <a href="[https://en.wikipedia.org/wiki/Cherry_Pie_(Warrant_song)](https://en.wikipedia.org/wiki/Cherry_Pie_(Warrant_song))">^1</a>. </p>
+<p>While I am glad Jani changed his mind on his legacy, there must be so many other people who would be unhappy about it. I don't want to be unhappy about blowing up for something that I didn't expect to blow up. The way I think about everything I put out has changed a little, knowing this could happen at any moment. My work hasn't changed much in terms of <em>what</em> I put out but I think a little more about the <em>implications</em> of what I put out going viral. And as optimistic as it sounds, if I ever blow up, I want to be prepared for its implications. </p>
+<h3>Footnotes</h3>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p> 2024 Advait Raykar</p>
+            <div class="social-links">
+                <a href="mailto:advait.raykar@gmail.com">Email</a>
+                <a href="https://github.com/hallicopter" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

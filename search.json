@@ -3,12 +3,11 @@
 [
   {% for post in site.posts %}
     {
-
-      "title"    : "{% if post.title != "" %}{{ post.title | escape }}{% else %}{{ post.excerpt | strip_html |  escape | strip }}{%endif%}",
-      "url"      : "{{ site.baseurl }}{{ post.url }}",
-      "category" : "{{ post.tags | join: ', '}}",
-      "date"     : "{{ post.date | date: "%B %e, %Y" }}",
-      "content" : "{{ post.content | strip_html | strip_newlines | escape | remove: '\'| replace: ", ", ' ' | replace: "	", ' ' }}"
-    } {% unless forloop.last %},{% endunless %}
+      "title": {{ post.title | jsonify }},
+      "url": {{ site.baseurl | append: post.url | jsonify }},
+      "category": {{ post.tags | join: ', ' | jsonify }},
+      "date": {{ post.date | date: "%B %e, %Y" | jsonify }},
+      "content": {{ post.content | strip_html | strip_newlines | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]

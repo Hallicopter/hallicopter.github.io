@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Five - Advait Raykar</title>
+    <link rel="stylesheet" href="/new-style.css">
+    <style>
+        .post-content {
+            margin: var(--spacing) 0;
+        }
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+        .post-content h1, 
+        .post-content h2, 
+        .post-content h3 {
+            margin: 2rem 0 1rem;
+        }
+        .post-content p {
+            margin-bottom: 1rem;
+        }
+        .post-content ul, 
+        .post-content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        .post-content blockquote {
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-color);
+            color: var(--secondary-color);
+        }
+        .post-content code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .post-content pre code {
+            display: block;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .post-header {
+            text-align: center;
+            margin: var(--spacing) 0;
+        }
+        .post-date {
+            color: var(--secondary-color);
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Advait Raykar</a>
+            <div class="nav-links">
+                <a href="/blog">Blog</a>
+                <a href="/books">Books</a>
+                <a href="/about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article>
+            <header class="post-header">
+                <h1>Letter Five</h1>
+                <div class="post-date">2021-1-31-</div>
+            </header>
+            <div class="post-content">
+                <p>Opaque Heuristics, Generative Art and going Interplanetary on Web3.
+Also, My grandparents would be proud of me.</p>
+<h2>Fasting as an opaque heuristic.</h2>
+<p>I recently finished reading Antifragile by Nassim Nicholas Taleb. It truly feels like a life-changing book. For those who want to know my thoughts on it, and my (very) detailed takeaways check out <a href="/antifragile">Antifragile</a></p>
+<p>Its really easy to read books that give you great advice, and present to you a new way of looking at a problem. What is hard, is applying this to your life in a meaningful way. Now that I know that antifragility is the ideal that I am striving for, I have to identify the things that I want to change in my life - have to make small 1% changes [^1]. A simple change that I am first trying is the introduction of stressors in my diet. I am, in this case, relying on the opaque heuristic [^2] of the Hindu fasting calendar. I have decided to give a sincere attempt at fasting on every Chaturti [^3] and Ekadashi [^4]. These are traditionally considered auspicious days in Hinduism, and many devotees have been observing forms of fasting on these days for <em>thousands of years</em>. The days depend on the various phases of the moon since the Hindu calendar is a lunar calendar. </p>
+<p>I have marked out my schedule for this month [^5]:</p>
+<p><img alt="calendar" src="https://cdn.logseq.com/%2F7d2ce46d-18c8-479e-a7bf-56e9f5893f4db6b9999a-ea6a-4c80-9886-cf2f999a6f7f2021_01_31_Screenshot%202021-01-31%20at%201.53.18%20PM.png?Expires=4765681415&amp;Signature=jThqZC3L39G5Qg6Fii~bAQS~mHVZ~oLkPdoPU4uoMdY0L8gE79lLnF0Qwh4DaBlHsu4~B4qd6-TBtFEUPVSXKgfH9QuyJpbRPoqkDf36pVQPTHJ6O8JJnA6k0Fen7HWGbsNnzOOX54YBSgCrigtQ5yC08YSisgL5LYbArd6vIntGk5A0S~GL-Oc-dH~GRtf5Q9XBVM8NR-6hhi~netlEkNWbROwHRIpx37Vn87RHL-bNQvR5wSPTxBvEfSD4dK3H1KQsejMwPNoZh5-LR3VAW37E3EdXTRO0xhbEbGfVMgqbFJRM-335-DyTUMQQqKSOGibph7JnJw1CADov6phIkg__&amp;Key-Pair-Id=APKAJE5CCD6X7MP6PTEA" /> </p>
+<p>While I don't care much for the underlying vedic reasoning for the fasting (venerating a god, accumulating virtue, etc.), I do think that the stressor of introducing variation in my caloric intake would do my body good. The basis for this idea has already caught steam in the form of intermittent fasting [^6], so may as well try it out in a form that has survived thousands of years of practice. The absence of evidence of harm is not the evidence of absence of harm. But if a practice has survived that long, without major side effects, I can rest a bit more assured that it won't do me much harm. I have clipped the downsides and kept the possible upsides. As Fat Tony from Antifragile would say, <em>"I am playing a non-suckers game"</em></p>
+<h2>You are my host now.</h2>
+<p>Google's authentication servers went down last month. Millions were affected; I couldn't log into Gmail, Google Drive, and even Google Docs. A few weeks ago Slack servers went down, again affecting thousands of businesses. Today, most of our data is stored in centralised data stores, owned by the top 4-5 corporate giants. Its too much power and responsibility for them. Even what you are reading now, is being served to you from a Microsoft server somewhere (the non-ipfs version of this blog is hosted on GitHub sites.) Just think about this whole setup - <em>its just too fragile</em></p>
+<p>Being a huge supporter of Web3, or the decentralised web, I decided to put my money where my mouth is. I am now hosting my website on IPFS, or the InterPlanetary File System. It's a decentralised peer to peer file storage and distribution network, which has combined the best of the past technologies into one neat stack. For more on IPFS, the <a href="https://ipfs.io/">website</a> has excellent resources on how to get started.</p>
+<p>If you go visit <a href="http://ipfs.advait.live">ipfs.advait.live</a>, you will be served this blog by nodes in the decentralised web. It may be quite slow for now, since adoption is not very widespread, resulting in very slow serving of pieces of content that aren't particularly popular (like this); but its a resilient and antifragile piece of technology that is rapidly gaining popularity. If you are using Brave, which is a browser that natively supports IPFS, and are running a local node, you will be served the website straight off of your node. You would be contributing to the decentralised web. Currently, I am serving the website off a proxy, or a <em>gateway</em>. This basically acts as an interface between the IPFS world of peers and nodes, and our good old centralised internet. It's not ideal, since the gateway becomes the bottleneck in this case, but till adoption is widespread, it's a compromise that has to be made.</p>
+<p>DApps, and the decentralised web is the future. There is lots more I can write about the advantages, nuances, and shortcomings of IPFS, but I think the best way to learn about them would be to try it out yourself. Let's make the internet Antifragile.</p>
+<h2>Generative art, and processing.</h2>
+<p>For the longest time, my website has been very functional in design [^7]. I wanted a bit more oomph, but not too much. Inspired by my brothers (temporarily defunct) blog, I decided to incorporate some generative art into my website. For this, I used Processing, particularly the js library, p5 js.</p>
+<p>P5 Js is a neat little library that allows you to create visual media. Its popularly used for creating generative art. If you are interested in giving it a go, I recommend Daniel Shiffman's playlist <a href="https://thecodingtrain.com/beginners/p5js/">here</a>.</p>
+<p>I, being unimaginative and lazy, adapted the <a href="https://generated.space/">beautiful work</a> by Kjetil Midtgarden Golid to subtly spice up my website. I have modified his map trace art to create cartographic patterns that grow over time on the sides of my website. If you stare at the website for a minute or so, you would see beautiful patterns forming along the edges of the blog post. So far, I am loving it. [^8]</p>
+<p>My website and its code is available publicly over at my <a href="https://github.com/Hallicopter">Github</a>.</p>
+<h4>Footnotes</h4>
+<p>[^1]: A la <a href="/Atomic-Habits">Atomic Habits</a>
+[^2]: These are heuristics performed by society for a long time, for reasons not fully understood, yet they have stuck
+[^3]: Chaturthi (Kannada: ಚತುರ್ಥಿ or ಚೌತಿ; Telugu: చతుర్థి or చవితి), is the fourth day (Tithi) of any lunar month in the Hindu calendar. 
+[^4]: Ekadashi ("Eleventh"), is the eleventh lunar day (tithi) of each of the two lunar phases which occur in a Vedic calendar month - the Shukla Pakṣa (the period of the brightening moon also known as the waxing phase) and the Kṛṣṇa Pakṣa (the period of the fading moon also known as the waning phase). In Nepal and India, Ekādaśī is considered a day to cleanse the body, aid repair and rejuvenation and is usually observed by partial or complete fast.
+[^5]: Shoutout to Kalnirnay, the Marathi household essential.
+[^6]: The VC bois love this.
+[^7]: Code for devoid of imagination.
+[^8]: Though I absolutely hate that I have massacred the performance of my website in the process. Over time, I wish to better optimise the abysmal code that I have added to the original codebase.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p> 2024 Advait Raykar</p>
+            <div class="social-links">
+                <a href="mailto:advait.raykar@gmail.com">Email</a>
+                <a href="https://github.com/hallicopter" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

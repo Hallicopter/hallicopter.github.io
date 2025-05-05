@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Seven - Advait Raykar</title>
+    <link rel="stylesheet" href="/new-style.css">
+    <style>
+        .post-content {
+            margin: var(--spacing) 0;
+        }
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+        .post-content h1, 
+        .post-content h2, 
+        .post-content h3 {
+            margin: 2rem 0 1rem;
+        }
+        .post-content p {
+            margin-bottom: 1rem;
+        }
+        .post-content ul, 
+        .post-content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        .post-content blockquote {
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-color);
+            color: var(--secondary-color);
+        }
+        .post-content code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .post-content pre code {
+            display: block;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .post-header {
+            text-align: center;
+            margin: var(--spacing) 0;
+        }
+        .post-date {
+            color: var(--secondary-color);
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">Advait Raykar</a>
+            <div class="nav-links">
+                <a href="/blog">Blog</a>
+                <a href="/books">Books</a>
+                <a href="/about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article>
+            <header class="post-header">
+                <h1>Letter Seven</h1>
+                <div class="post-date">2021-2-14-</div>
+            </header>
+            <div class="post-content">
+                <p>Algebra of Udon Satisfaction, and a Bad Heuristic™.</p>
+<h2>Udon Deal</h2>
+<p>I write this with sore wrists, flour sullied clothes and an almost-disgust for udon noodles. 
+Yesterday, I had a sudden craving for Udon noodles, a kind of Japanese Noodle made of whole wheat. The noodle has a bite to it, it's springy, chewy and beautiful. I had to have it. This flash of motivation to make my own Udon came to me at about 9:30 PM on a Saturday night - kind of late for cooking, but I figured it would be good to capitalise on my motivation before I run out of it. I had the 3 basic ingredients that went into it - salt, flour and water [^1], so I thought I could quickly knead me some dough and let it rest for the night, allowing the gluten form overnight. This in itself turned out to be a huge pain - I didn't know dough (about 30 odd per cent hydration) can get this hard. My knuckles got red, and my wrists sore, but I kneaded till I had my shaggy dough. Mind you, this was dough worth at least 6 portions [^2]</p>
+<p>I woke up today morning, to see how my dough had fared overnight. It had become a brick, which resulted in me starting my day by increasing the hydration in my Udon dough. </p>
+<p>Kneading is very important to Udon preparation. Kneading allows the formation of gluten, the structure that lends the noodle its springy, chewy texture. The Japanese traditionally use their feet to do the kneading. My wrists thanked me for this discovery and proceeded to stomp away on my dough (much to my mother's horror.)</p>
+<p><img src="https://i.imgur.com/ZF6OAIm.jpg" alt="Feet kneading" width="480"/></p>
+<p style="text-align:center"> I bagged my dough and stomped away. I did this in small batches. </p>
+
+<p>After the intense kneading session, I let the dough rest again for a bit and proceeded to start rolling out the noodle. Here is where I started hating myself.</p>
+<p>Let me tell you something I discovered about cooking. Cooking is the most human thing you can. My grandfather always says that the meaning of life lies in cooking - humans would have been nowhere if not for the urge of having good food [^3]. I love cooking [^4]. I have been cooking all sorts of thing as a hobby for years. It has been a source of great joy and learning. But nothing is as much a pain as cooking in large quantities.</p>
+<p>The satisfaction (or feeling of being rewarded) by cooking depends on two opposing functions - The Joy function, and The Effort function. This can be modelled to look something like this, assuming you are cooking for $n$ people</p>
+<p>[\text{Joy}(n) \propto n]
+[\text{Effort}(n) \propto \frac{1}{k-n}]</p>
+<p>To maximise satisfaction, you would have to maximise the joy per effort expended. This would look something like this:</p>
+<p>[\text{Peak Satisfaction} = \text{maxima}({\frac{\text{Joy(n)}}{\text{Effort(n)}}})]</p>
+<p><img alt="satisfaction_graph.png" src="https://i.imgur.com/SMohfnC.png" /></p>
+<p>Assuming appropriate constants, I have modelled my satisfaction function[^5] as 
+$\text{Satisfaction}(n) = n(5-n)$ </p>
+<p>Plotting it makes it clear, I am quite a bit past the peak satisfaction (which occurs at $n=2.5$, which translates to me as main course + starters for two.)</p>
+<p>Here are a couple of illustrative examples of what output from peak satisfaction cooking looks like, as opposed to output from suboptimal satisfaction cooking (albeit net fun cooking)</p>
+<p><img src="https://i.imgur.com/Rs6vCkB.jpg" alt="drawing" width="480"/></p>
+<p style="text-align:center"> Optimal Satisfaction Udon</p>
+
+<p><img src="https://i.imgur.com/QGaJNXF.jpg" alt="Suboptimal Satisfaction Udon" width="480"/></p>
+<p style="text-align:center"> Suboptimal Satisfaction Udon</p>
+
+<p>I also have this habit of eating while cooking. I have eaten enough Udon (raw+cooked), to be sick of Udon for the rest of the day.</p>
+<p>All said Udon [^6], the joy still outweighed the effort to make a kilo of handmade Udon for my whole family (I made enough to have leftovers for dinner tonight). I am just glad I don't live in a family that is $n\geq5$</p>
+<h2>A bad heuristic.</h2>
+<p>I love heuristics. I think of them as older people giving me advice - it may not be right all the time, but sometimes they have a point. Whenever I find myself in a place where the decisions get a little hard, or I don't trust my choice much, I like to employ a bad heuristic.</p>
+<p>A bad heuristic is, in this context, a formalisation of the various factors affecting a decision into a formula. I especially like bad heuristics because they are what the title say - bad. By bad, I mean that the heuristic is chock-full caveats and drawbacks. This means, I would never completely rely on the heuristic, quite like the advice given by the aforementioned older folk.</p>
+<p>Off late, I have been in a bind to pick my next side coding project. To solve this conundrum, I have employed the following analysis resulting in a Bad Heuristic®</p>
+<p>Broadly, coding projects can be divided into two categories</p>
+<h3>End User Projects</h3>
+<p>These are projects that can be used by the end user without caring for underlying implementation level details.
+Examples
+* Ethereum
+* IPFS
+* Calibre
+* Docker</p>
+<h4>Pros</h4>
+<ul>
+<li>Project is not dependent on the success of the language it was built using, only the idea.</li>
+<li>Further reach, since its not constrained by the users of a particular language.</li>
+</ul>
+<h4>Cons</h4>
+<ul>
+<li>Harder to come up with ideas for standalone full fledged end user tools, as opposed to libraries.</li>
+<li>High probability that something you have made would be done elsewhere, but better. This would mean, lesser people using your project.</li>
+</ul>
+<h3>Library Projects</h3>
+<p>These are projects that live and die with the popularity of the language framework, or the ecosystem they reside in.
+Example
+* Django
+* Scikitlearn
+* GORM</p>
+<h4>Pros</h4>
+<ul>
+<li>The idea can be recycled from another library. Example, you notice that Python has a nice library for audio manipulation, but Racket doesn't. The idea is to recreate a library in another language.</li>
+<li>Low probability of someone doing what you did if you pick the right $P(Library Niche, Language)$</li>
+</ul>
+<h4>Cons</h4>
+<ul>
+<li>The library can only be as popular as the language it's implemented in.</li>
+</ul>
+<h3>The function to pick project.</h3>
+<p>Taking into account these factors, and my love for making niche projects, I have derived the following Bad Heuristic™:</p>
+<p>[
+  ProjectScore(Lang, Niche, Cat) = 
+  \begin{cases}
+    Niche^3, &amp; \text{for Cat = End-User} \
+    \newline
+    Lang \times Niche^2, &amp; \text{for Cat = Library} \
+  \end{cases}
+]</p>
+<p>Where</p>
+<p>[NicheScore(Project) 
+ =max \left(0, \frac{\text{75k - (# of Stars for Most Popular Project on the same topic)}}{75k} \times 2 \right)]
+ (Niche Score is proportional to how niche your project topic/subject is.)</p>
+<p>And</p>
+<p>[LangScore(Project) = max\left(\frac{\text{# of Stars for Most Popular Project in the Language}}{75k} \times 2, 2 \right)]
+(Lang Score is proportional to the popularity of the language.)</p>
+<p>Here, I have some applied examples</p>
+<h4>Making a static site generator (Cat = End-User)</h4>
+<p>$Niche Score = \frac{(75k-50k)}{75k} \times 2= 0.\overline{6}$</p>
+<p>$Project Score = 0.\overline{6}^3 = 0.\overline{296}$</p>
+<p>Here, the most popular static site generator is Hugo, with 50k stars.</p>
+<h4>Making a homomorphic cryptography library in Racket (Cat = Library)</h4>
+<p>$NicheScore =  \frac{(75k-2.6k)}{75k} \times 2= 1.930\overline{6}$</p>
+<p>$LangScore = \frac{3k}{75k} \times 2= 0.08$</p>
+<p>$ProjectScore = 1.930\overline{6}^2 \times 0.08 ≈ 0.298 $</p>
+<p>Here, most popular homomorphic encryption library is HElib with 2.6k stars
+Here, most popular Racket repository is Racket with 3k stars</p>
+<h4>A finite state machine in Haskell. (Cat = Library)</h4>
+<p>$Niche Score = \frac{(75k-7.6k)}{75k} \times 2= 1.7973$</p>
+<p>$LangScore = \frac{23k}{75k} \times 2 = 0.61$</p>
+<p>$ProjectScore = 1.7973^2 \times 0.61 ≈ 1.97 $</p>
+<h4>A homomorphic cryptography library in Haskell (Cat = Library)</h4>
+<p>$NicheScore =  \frac{(75k-2.6k)}{75k} \times 2= 1.930\overline{6}$</p>
+<p>$LangScore = \frac{23k}{75k} \times 2 = 0.61$</p>
+<p>$ProjectScore = 1.9306^2 \times 0.61 ≈ 2.2736 $</p>
+<h4>Creating a terminal RSVP speed reader (Cat=End-User)</h4>
+<p>Picking this as an example, because the $NicheScore$ is affected by me ( ☆ ͜ʖ ☆)
+   $NicheScore =  \frac{(75k-0.125k)}{75k} \times 2= 1.9967$</p>
+<p>$Project Score = 1.9967^3 = 7.9604$</p>
+<h4>Cons of Heuristic</h4>
+<p>Biased towards making more niche things, so does not account for the ceiling created by the niche itself.</p>
+<h4>Pros of Bad Heuristic</h4>
+<p>Keeps you away from ordinary projects.</p>
+<h4>A visual representation of the heuristic.</h4>
+<p>Red axis is LangScore, green axis is NicheScore. 
+Blue is the project score.</p>
+<p><img src="https://cdn.logseq.com/%2F7d2ce46d-18c8-479e-a7bf-56e9f5893f4d25e9dcb4-56d2-4f3b-9c42-f9a8232567dd2021_02_12_project_equation.gif?Expires=4766742564&Signature=H4SrElYsoBhkSv1sW7qUk34A2F9piah7myDIYOrvzrpgVeog5l1aCYuBYcmtUQmDSqJiNia6ryvFIocZwy9bJJVTlb5cAnxakrI2xziGRMTDs~CRK59yD1hzjU1cNUG6~rf3COjG~ZfkrTDXKVCKoNsxgZ9OSsJRkjYf7FlxZx5rNwXIZaxbP4aaS~I8pf3TNAu3ZMe99C6zTaPDF54Ztwpizx7zq4KLF7gIcOBT2a98pdM37SbemZxbydduP58KYhF4DVpIfVITpGvuNjtqRgtqSsmcQ3Agf6cI97XRgF40gYHv4VPxgHt4IwZFm41A8ROgitbFL0YOeBNX7GYXtA__&Key-Pair-Id=APKAJE5CCD6X7MP6PTEA" alt="drawing" width="480"/></p>
+<p style="text-align:center"> You can see my niche bias here.</p>
+
+<h3>Bad heuristics forever</h3>
+<p>Bad heuristics are great, they give you a direction, make you question that direction, and best of all, keep changing taking into account newer circumstances. This heuristic is only the first iteration. Being reliant on bad heuristics is itself a bad heurisitic that may one day change for me [^7].</p>
+<h2>Footnotes</h2>
+<p>[^1]: I also added my secret ingredient, MSG. Spoiler, I don't think I added enough to make a difference. It was a little too subtle. Next time, I would add way more. It definitely had a positive impact.
+[^2]: When I used to stay with my flatmates back in college, I used to cook only for myself. Sometimes for a couple of people. I never cooked huge quantities. After moving back home post-college, I realised I had to scale up a lot since I couldn't just cook for myself anymore. In my house, it's okay if there is more food, but there mustn't be too less.
+[^3]: A bit extreme I know, but he definitely lives by those words.
+[^4]: Something my grandfather is very proud of and belives I inherited from him. Highly likely to be honest.
+[^5]: I have been reading about chaos theory. Of course I would use this equation to model satisfaction.
+[^6]: Pronounced all said and done. Similarly, the title reads "A done deal"
+[^7]: Sry for cringe ending.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p> 2024 Advait Raykar</p>
+            <div class="social-links">
+                <a href="mailto:advait.raykar@gmail.com">Email</a>
+                <a href="https://github.com/hallicopter" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
