@@ -19,6 +19,11 @@
   box-sizing: border-box;
 }
 
+/* Explicitly opt out of browser dark mode */
+html {
+  color-scheme: light;
+}
+
 /* Old book aesthetic - extremely minimal */
 body {
   font-family: 'IM Fell DW Pica', Georgia, serif;
