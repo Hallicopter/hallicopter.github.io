@@ -40,7 +40,7 @@ What do you notice? No real bookstore has opened since 1983. And most of these o
 
 > In 1976 we purchased an 1890s brick-and-brownstone “handyman special” on the southeast corner of Madison Ave. and 93rd St \[…] and as we were both bookstore addicts and well aware that there was none in our neighborhood of young families and private schools, we decided to open one ourselves.
 
-The ones from the 2000s are not real bookstores. Assouline is obviously aimed at a wealthy, luxury-focused clientele. Albertine is an attempt at using the French Embassy’s real estate to increase their cultural soft power (maybe they can learn from the Koreans). And Barnes & Noble is Barnes & Noble.
+The ones from the 2000s are not real bookstores. Assouline is obviously a front for laundering money. Albertine is an attempt at using the French Embassy’s real estate to increase their cultural soft power (maybe they can learn from the Koreans). And Barnes & Noble is Barnes & Noble.
 
 <figure style="text-align: center;">
   <img width="1388" height="1048" alt="image" src="https://github.com/user-attachments/assets/1b6d1522-0f18-498e-b6d3-be12a2519935" />
