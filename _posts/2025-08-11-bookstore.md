@@ -1,11 +1,10 @@
-
-------
+---
 layout: post
 title: The last bookstore in the Upper East.
 categories: [thoughts]
 tags: [thoughts]
 drafts: true
-------------
+---
 
 I often hear my wife exclaim, “*Oh, how wonderful would it be to run my own little bookstore once I retire!*” I frown. A small, local business. I have nothing against them. If anything, I am the biggest proponent of small, local businesses. I generally refuse to eat at VC- and PE-funded bagel joints (but once in a while, I am forced to give in and get a cleverly priced 3-bagel serving from Pop Up at my wife’s behest). If there is a local business alternative to a PE-funded one, I will pick the local one 9 out of 10 times. That’s why Blank Street and its beautifully optimized operations see very few of my dollars, whereas Hutch and Waldo, on the Upper East Side, gets them. Although I should caveat: I almost never buy my coffee outside. I am learning how to create latte art—which is wholly unrelated to the discussion at hand about bookstores.
 
