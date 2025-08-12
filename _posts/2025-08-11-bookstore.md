@@ -47,6 +47,8 @@ The ones from the 2000s are not real bookstores. Assouline is obviously aimed at
   <figcaption style="font-style: italic;">Barnes &amp; Noble is Barnes &amp; Noble</figcaption>
 </figure>
 
+<br>
+
 Now, I wanted to explain to my wife why starting a bookstore is a bad idea.
 
 ## So, you want to start a new bookstore, huh?
