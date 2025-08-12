@@ -48,7 +48,10 @@ The ones from the 2000s are not real bookstores. Assouline is obviously a front 
 </figure>
 
 
-Now, I wanted to explain to my wife why starting a bookstore is a bad idea.
+
+<br>
+
+It was clear to me, like my wife, many harbour this pipedream. Here, I simply fulfil my moral duty (and societal obligation) to shed light on the realities of running small businesses, especially those that are as absurd as a bookstore (which of course greatly saddens me to even type).
 
 ## So, you want to start a new bookstore, huh?
 
