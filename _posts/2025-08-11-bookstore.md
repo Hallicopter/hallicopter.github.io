@@ -31,7 +31,7 @@ I live in the Upper East, so I took that as an example. I never understood how y
 | The Book Cellar (Webster Library)             | n/a (active since 2010s) | Volunteer-run used book shop benefiting NYPL; especially strong children’s & mystery sections.                                   |
 
 <div style="text-align: center;">
-  <em>Data may be incorrect, but that's beside the point</em>
+  <em>Approximate data from GPT-5</em>
 </div>
 
 <br>
@@ -85,6 +85,7 @@ Before we move on, we need to prepare a bit for the fun part: the unfortunate bu
 | **Returns and inventory turns**                | Returns mean lost sales and extra costs. Inventory turns—COGS ÷ average inventory—show how quickly you turn stock into cash. If you buy \\$100,000 in books in a year and keep \\$25,000 on hand, that’s 4 turns. Higher is better; it means less money gathering dust on shelves.                                                                                                             |
 | **Occupancy cost % and payroll %**             | Occupancy % = (rent + CRT) ÷ sales. Bookstores try to keep this around or below 20% so rent doesn’t eat the business. Payroll % compares staff cost to sales, with well-run shops often in the low-to-mid teens.                                                                                                                                                                             |
 | **Working capital**                            | This is the cash cushion for buying books, paying suppliers, and covering slow months. Without it, one bad season or delayed shipment can throw the whole plan off course.                                                                                                                                                                                                                   |
+<br>
 
 Great, now we can finally move on.
 
