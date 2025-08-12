@@ -55,7 +55,7 @@ It was clear to me: like my wife, many harbour this bookstore pipedream. In this
 
 ## So, you want to start a new bookstore, huh?
 
-I did what any smart person in 2025 would do: ask an LLM.
+I did what any smart (or stupid) person in 2025 would do: ask an LLM.
 
 <img width="1196" height="644" alt="image" src="https://github.com/user-attachments/assets/ae2ebf4a-af75-4ff8-8d19-31b10d521877" />
 
