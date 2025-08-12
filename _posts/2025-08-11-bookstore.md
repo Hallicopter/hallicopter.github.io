@@ -36,7 +36,7 @@ I live in the Upper East, so I took that as an example. I never understood how y
 
 <br>
 
-What do you notice? No real bookstore has opened since 1983. And most of these old bookstores are projects started by the rich folks of the Upper East. Let’s take “The Corner Bookstore.” The moment I entered the bookstore, I knew the economics made no sense. And then I dove in and read the history. That explained it all. That immediately confirmed my theory.
+What do you notice? No real bookstore has opened since 1983. And most of these old bookstores are projects started by the rich folks of the Upper East. Let’s take “The Corner Bookstore.” The moment I entered the bookstore, I knew the economics made no sense. And then I dove in and read the history. That explained it all and confirmed my theory.
 
 > In 1976 we purchased an 1890s brick-and-brownstone “handyman special” on the southeast corner of Madison Ave. and 93rd St \[…] and as we were both bookstore addicts and well aware that there was none in our neighborhood of young families and private schools, we decided to open one ourselves.
 
