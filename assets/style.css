@@ -24,6 +24,8 @@ html {
   color-scheme: light;
 }
 
+/* Theme variables (keep empty for now; no table bleed) */
+:root {}
 /* Old book aesthetic - extremely minimal */
 body {
   font-family: 'IM Fell DW Pica', Georgia, serif;
@@ -271,4 +273,76 @@ hr {
   box-sizing: border-box !important;
   display: block !important;
   white-space: normal !important;
+}
+
+/* Table styling - minimal, old-timey, and slightly wider than body */
+table {
+  width: 100%;
+  margin: 2em auto; /* more breathing room above/below */
+  border-collapse: collapse;
+  font-size: 0.95em;
+  line-height: 1.45; /* tighter than body text for dense tables */
+  background-color: #FAF0E6; /* Slightly lighter than body background */
+}
+
+th, td {
+  padding: 0.6em 0.9em; /* reduce vertical padding a touch */
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #D4C4A8; /* Subtle warm rule */
+  overflow-wrap: anywhere; /* keep long phrases from forcing overflow */
+  hyphens: auto;
+}
+
+th {
+  font-weight: normal;
+  color: #6B4226; /* Same as headings */
+  border-bottom: 2px solid #8B5A2B; /* Slightly darker for header */
+  font-size: 0.95em;
+  letter-spacing: 0.02em;
+}
+
+/* Align numeric/date column (2nd col) ONLY on tables with 3+ columns */
+table:has(tr > *:nth-child(3)) th:nth-child(2),
+table:has(tr > *:nth-child(3)) td:nth-child(2) {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  width: 1%; /* keep numeric column compact */
+}
+
+/* Guard rails for 4+ column tables (e.g., cost breakdown):
+   right-align and compact the 3rd column as well, keep last columns flexible */
+table:has(tr > *:nth-child(4)) th:nth-child(3),
+table:has(tr > *:nth-child(4)) td:nth-child(3) {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  width: 1%;
+}
+
+table:has(tr > *:nth-child(4)) th:nth-child(4),
+table:has(tr > *:nth-child(4)) td:nth-child(4) {
+  text-align: left;
+  white-space: normal;
+}
+
+/* Zebra striping - very subtle */
+tbody tr:nth-child(even) {
+  background-color: #F8F0E0;
+}
+
+/* No desktop bleed; keep tables within content width */
+
+/* Small screens: keep things compact and readable */
+@media (max-width: 900px) {
+  table {
+    max-width: 100%;
+    font-size: 0.9em;
+    display: block;
+    overflow-x: auto; /* allow horizontal scroll if needed */
+  }
+  th, td {
+    padding: 0.55em 0.75em;
+  }
 }
