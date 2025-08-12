@@ -59,7 +59,9 @@ I did what any smart (or stupid) person in 2025 would do: ask an LLM.
 
 <img width="1196" height="644" alt="image" src="https://github.com/user-attachments/assets/ae2ebf4a-af75-4ff8-8d19-31b10d521877" />
 
-I have to say—I love ChatGPT because of this kind of stuff. The breadth of the world’s knowledge in tokens, all for me to enjoy. I didn’t think I’d love playing with AOV and OpEx values for a bookstore nearly as much as I did. The conversation was long. GPT thought for 4 minutes and 14 seconds before uttering a word. And then it unleashed wisdom, in spades. Here is an abridged version.
+I have to say—I love ChatGPT because of this kind of stuff. The breadth of the world’s knowledge, all for me to enjoy for a low low price of $20/month. 
+
+I didn’t think I’d love playing with AOV and OpEx values for a bookstore nearly as much as I did. The conversation was long. GPT thought for 4 minutes and 14 seconds before uttering its first word. And then it unleashed wisdom, in spades. The conversation went on and on, and involed an excel workbook. Here is an abridged version.
 
 Chatty suggested two routes: one is the “lean” approach, and the other is the “prime” approach.
 
