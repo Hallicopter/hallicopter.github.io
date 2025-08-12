@@ -51,7 +51,7 @@ The ones from the 2000s are not real bookstores. Assouline is obviously a front 
 
 <br>
 
-It was clear to me: like my wife, many harbour this bookstore pipedream. In this essay, I simply fulfil my moral duty (and societal obligation) to shed light on the realities of running small businesses, especially those that are as absurd as a bookstore (which of course greatly saddens me to even type).
+It was clear to me: like my wife, many harbour this bookstore pipedream. In this essay, I simply fulfil my moral duty (and societal obligation) to shed light on the realities of running small businesses, especially those that are as absurd as a bookstore (which, of course, saddens me greatly to even write)
 
 ## So, you want to start a new bookstore, huh?
 
