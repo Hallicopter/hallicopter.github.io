@@ -8,14 +8,14 @@ drafts: true
 
 Of the people who have opinions on my spending habits, many would claim that I am a cheapskate. There is great irony here, because I actually quite enjoy spending money. I look for pristine opportunities to spend money. When I spend money well, I feel quite satistfied. 
 
-Now, the reason why this character misttribution exists is because I find it incredibly hard to find things that I am excited to spend money on. A while back, I bought a second hand book at Strand <br> – "Walden; or, Life in the Woods" by one Mr Henry David Thoreau. 
+Now, the reason why this character misttribution exists is because I find it incredibly hard to find things that I am excited to spend money on. A while back, I bought a second hand book at Strand – "Walden; or, Life in the Woods" by one Mr Henry David Thoreau. 
 
 <img width="476" height="952" alt="image" src="https://github.com/user-attachments/assets/41ac9f23-f693-4d0f-b64a-3134eca050cd" />
 
 I bought it for seven dollars and change. I was excited to spend money on it. Unfortunately, as I write this essay, I can’t recall—or even find—the exact location of the book. What I can remember, however, is this line from the 'Economy' section
 
 > The cost of a thing is the amount of what I will call life which is required to be exchanged for it, immediately or in the long run.
->                                                                                  ― Henry David Thoreau, Walden or, Life in the Woods 
+>                                                                                 <br> ― Henry David Thoreau, Walden or, Life in the Woods 
 
  I was quite amused by this framing of how much something costs. There are many ways this can be interpreted, but I enjoy a more optimistic interpretation.
 
