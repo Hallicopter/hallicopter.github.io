@@ -1,0 +1,222 @@
+:root {
+  color-scheme: light;
+}
+
+html, body {
+  width: 100%;
+  max-width: none !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0;
+  width: 100%;
+  background: #f5e8c9;
+  color: #3a3226;
+  font-family: 'IM Fell DW Pica', Georgia, serif;
+  overflow-x: hidden;
+}
+
+.app-frame {
+  min-height: 100vh;
+  width: 100%;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.2rem, 3vw, 2rem) 0 clamp(2rem, 5vw, 3.5rem);
+  gap: clamp(2rem, 3vw, 3rem);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2rem;
+  padding: 0 clamp(3rem, 8vw, 10rem);
+}
+
+.app-brand {
+  font-size: clamp(1.05rem, 2.8vw, 1.4rem);
+  letter-spacing: 0.04em;
+}
+
+.app-brand .brand-home {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-brand .divider {
+  opacity: 0.5;
+  margin: 0 0.35rem;
+}
+
+.app-nav a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(107, 66, 38, 0.55);
+}
+
+.app-main {
+  width: 100%;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 6vw, 4rem);
+}
+
+.intro {
+  width: 100%;
+  max-width: none;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  padding: 0 clamp(3rem, 6vw, 12rem);
+}
+
+.intro h1 {
+  margin: 0 0 0.85rem;
+  font-size: clamp(2.4rem, 6.5vw, 3.6rem);
+}
+
+.experience {
+  position: relative;
+  border-radius: clamp(18px, 2.5vw, 28px);
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+  width: 100%;
+}
+
+.experience-canvas {
+  position: relative;
+  width: 100%;
+  min-height: clamp(580px, 85vh, 1040px);
+}
+
+#bookshelf-canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#bookshelf-canvas canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.detail-overlay {
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  right: clamp(3.2rem, 5.5vw, 6rem);
+  width: clamp(300px, 26vw, 360px);
+  max-width: min(360px, 88%);
+  border-radius: clamp(18px, 3vw, 26px);
+  background: rgba(248, 236, 209, 0.86);
+  border: 1px solid rgba(200, 176, 137, 0.35);
+  box-shadow: 0 24px 60px rgba(84, 64, 38, 0.18);
+  padding: clamp(1.4rem, 2.6vw, 2rem);
+  transition: opacity 0.25s ease, transform 0.3s ease;
+  backdrop-filter: blur(8px);
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.detail-overlay.detail-empty {
+  opacity: 0;
+  transform: translateY(calc(-50% + 18px));
+  pointer-events: none;
+}
+
+.overlay-inner {
+  display: grid;
+  gap: clamp(0.8rem, 1.8vw, 1.2rem);
+}
+
+#detail-title {
+  margin: 0;
+  font-size: clamp(1.45rem, 3.2vw, 2.1rem);
+}
+
+#detail-author {
+  margin: -0.35rem 0 0;
+  font-weight: 400;
+  color: rgba(58, 50, 38, 0.7);
+  font-size: 1rem;
+}
+
+.detail-summary {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: rgba(58, 50, 38, 0.85);
+}
+
+.detail-notes {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  background: rgba(253, 244, 224, 0.95);
+  border-radius: 18px;
+  padding: 1rem 1.25rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 0 0 1px rgba(184, 156, 112, 0.32);
+  white-space: pre-line;
+}
+
+.detail-found {
+  font-size: 0.84rem;
+  color: rgba(58, 50, 38, 0.62);
+}
+
+.overlay-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.overlay-actions button {
+  font-family: inherit;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.35rem;
+  border-radius: 999px;
+  border: 1px solid rgba(195, 168, 128, 0.7);
+  background: linear-gradient(135deg, #f8e7c6 0%, #e9d3a9 100%);
+  color: inherit;
+  cursor: pointer;
+}
+
+.overlay-actions button:hover {
+  background: linear-gradient(135deg, #fdf1d5 0%, #edd6aa 100%);
+}
+
+@media (max-width: 900px) {
+  .detail-overlay {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, 110%);
+    width: min(460px, 92%);
+  }
+
+  .detail-overlay.detail-empty {
+    transform: translate(-50%, 110%) translateY(12px);
+  }
+}
+
+@media (max-width: 640px) {
+  .app-frame {
+    padding: 1.8rem 1.1rem 2.4rem;
+  }
+
+  .experience-canvas {
+    min-height: 420px;
+  }
+}

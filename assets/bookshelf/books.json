@@ -1,0 +1,74 @@
+{
+  "books": [
+    {
+      "title": "The Pragmatic Programmer",
+      "author": "Andrew Hunt & David Thomas",
+      "spineColor": "#563c2b",
+      "accentColor": "#bf8b57",
+      "coverImage": "https://covers.openlibrary.org/b/id/135412-L.jpg",
+      "summary": "Notes and techniques gathered across years of shipping software by hand.",
+      "notes": "I keep a running log of refactors inspired by this book. Most recent scribble: a small note on tracer bullets for greenfield ideas.",
+      "found": "Picked up at Blossom Book House, Bengaluru, 2016"
+    },
+    {
+      "title": "The Design of Everyday Things",
+      "author": "Don Norman",
+      "spineColor": "#463537",
+      "accentColor": "#d1a35f",
+      "coverImage": "",
+      "summary": "A reminder to forgive the user and blame the interface when something feels clumsy.",
+      "notes": "Dummy highlights about doors, teapots, and labeling switches. Replace with your own cautionary tales.",
+      "found": "Borrowed from a friend; eventually bought a copy in 2018"
+    },
+    {
+      "title": "Godel, Escher, Bach",
+      "author": "Douglas Hofstadter",
+      "spineColor": "#5a3d33",
+      "accentColor": "#e3b378",
+      "coverImage": "",
+      "summary": "Loops, fugues, and the strange machinery of consciousness distilled into playful dialogues.",
+      "notes": "Placeholder note about rereading the Crab canon and jotting margins full of arrows.",
+      "found": "Stumbled across a worn paperback at College Street, Kolkata"
+    },
+    {
+      "title": "Meditations",
+      "author": "Marcus Aurelius",
+      "spineColor": "#5b402a",
+      "accentColor": "#c89b58",
+      "coverImage": "",
+      "summary": "Stoic journaling from a Roman emperor; still works for modern morning pages.",
+      "notes": "Dummy page referencing Book II, line by line. Swap in your real reflections on temper and patience.",
+      "found": "Gifted by my sister during a monsoon in 2019"
+    },
+    {
+      "title": "A Pattern Language",
+      "author": "Christopher Alexander",
+      "spineColor": "#4c5434",
+      "accentColor": "#9cb06b",
+      "coverImage": "",
+      "summary": "Architecture, urban planning, and why rooms feel the way they do.",
+      "notes": "Placeholder bullet: '111 - Long Thin House'. Trade with the patterns you actually use.",
+      "found": "Library discard sale in Indiranagar, 2021"
+    },
+    {
+      "title": "The Left Hand of Darkness",
+      "author": "Ursula K. Le Guin",
+      "spineColor": "#3f3c57",
+      "accentColor": "#b3a5d1",
+      "coverImage": "",
+      "summary": "A cold planet, shifting genders, and Le Guin's patient politics.",
+      "notes": "Placeholder for icebound travel notes and quotes from Estraven.",
+      "found": "Secondhand shop on Church Street, 2020"
+    },
+    {
+      "title": "Creative Quest",
+      "author": "Questlove",
+      "spineColor": "#47403c",
+      "accentColor": "#d8b57f",
+      "coverImage": "",
+      "summary": "Ways to stay curious, from mixtapes to surprise collaborations.",
+      "notes": "Dummy entry about rotating playlists through the studio.",
+      "found": "Impulse buy at an airport newsstand, 2022"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookshelf – Advait Raykar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/bookshelf-app/app.css">
+  </head>
+  <body>
+    <div class="app-frame">
+      <header class="app-header">
+        <div class="app-brand">
+          <a href="../" class="brand-home">Advait Raykar</a>
+          <span class="divider">/</span>
+          <span class="brand-section">Bookshelf</span>
+        </div>
+        <nav class="app-nav">
+          <a href="../">Back to advait.live</a>
+        </nav>
+      </header>
+
+      <main class="app-main">
+        <section class="intro">
+          <h1>My bookshelf at home</h1>
+          <p>These are all the books I own a physical copy of. I have not read most of them, but click on the books to find out how and why I acquired them.</p>
+        </section>
+
+        <section class="experience">
+          <div id="bookshelf-canvas" class="experience-canvas" role="application" aria-label="Interactive floating bookshelf">
+            <div class="detail-overlay detail-empty" id="detail-panel">
+              <div class="overlay-inner">
+                <h2 id="detail-title"></h2>
+                <h3 id="detail-author"></h3>
+                <p id="detail-summary" class="detail-summary"></p>
+                <div id="detail-notes" class="detail-notes"></div>
+                <div id="detail-found" class="detail-found"></div>
+                <div class="overlay-actions">
+                  <button type="button" id="detail-close">Back to rows</button>
+                  <button type="button" id="detail-next">Next book</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      window.BOOKSHELF_JSON_PATH = "/assets/bookshelf/books.json";
+    </script>
+    <script type="module" src="../assets/bookshelf-app/app.js"></script>
+  </body>
+</html>
