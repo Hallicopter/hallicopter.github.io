@@ -10,6 +10,11 @@
     
     <!-- Old Book Theme - Single CSS File -->
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/style.css" />
+    {% if page.extra_css %}
+      {% for css_path in page.extra_css %}
+        <link rel="stylesheet" href="{{ css_path | relative_url }}">
+      {% endfor %}
+    {% endif %}
     <!-- Google Fonts: IM Fell DW Pica -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +34,8 @@
         <h1><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
         <nav>
             <a href="{{ site.baseurl }}/thoughts">thoughts</a>
-            <a href="{{ site.baseurl }}/books">books</a>
+            <a href="{{ site.baseurl }}/bookshelf-app/">bookshelf</a>
+            <a href="{{ site.baseurl }}/books">reviews</a>
             <a href="{{ site.baseurl }}/search">search</a>
             <a href="{{ site.baseurl }}/about">about</a>
         </nav>

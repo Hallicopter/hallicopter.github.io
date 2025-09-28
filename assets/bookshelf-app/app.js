@@ -185,7 +185,7 @@ if (!container) {
 
       this.basePosition = new THREE.Vector3();
       this.targetPosition = new THREE.Vector3();
-      this.focusOffset = new THREE.Vector3(-0.4, 0.18, 0.0);
+      this.focusOffset = new THREE.Vector3(-1.1, 0.18, 0.0);
       this.scaleCurrent = 1;
       this.scaleTarget = 1;
       this.openAmount = 0;
@@ -704,8 +704,8 @@ if (!container) {
       selectedBook.group.getWorldPosition(worldPos);
       cameraTargetPosition = worldPos
         .clone()
-        .add(new THREE.Vector3(-2.2, 0.32, 5.2));
-      cameraTargetLookAt = worldPos.clone().add(new THREE.Vector3(0.8, 0, 0));
+        .add(new THREE.Vector3(-2.8, 0.32, 5.2));
+      cameraTargetLookAt = worldPos.clone().add(new THREE.Vector3(1.6, 0, 0));
       if (detailPanel) {
         detailPanel.classList.remove("detail-empty");
       }
