@@ -15,3 +15,6 @@ package.json
 *.gemspec
 .jekyll-cache
 .obsidian/
+# Ignore bundler cache and installed gems
+vendor/
+!assets/vendor/
