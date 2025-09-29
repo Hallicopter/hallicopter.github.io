@@ -132,8 +132,11 @@ if (!container) {
   const gridGroup = new THREE.Group();
   scene.add(gridGroup);
 
+  const DEFAULT_FOV = 58;
+  const FOCUS_FOV = 38;
+
   const camera = new THREE.PerspectiveCamera(
-    38,
+    DEFAULT_FOV,
     container.clientWidth / container.clientHeight,
     0.1,
     100,
@@ -642,27 +645,15 @@ if (!container) {
     if (!count) {
       return;
     }
-    const aspect =
-      container.clientWidth && container.clientHeight
-        ? container.clientWidth / container.clientHeight
-        : camera.aspect || 1.6;
+    booksPerRow = count >= 5 ? 5 : Math.max(1, count);
 
-    const idealCols = Math.ceil(Math.sqrt(count * Math.min(aspect, 1.4)));
-    const minCols = Math.min(3, count);
-    const maxCols = Math.min(5, count);
-    booksPerRow = THREE.MathUtils.clamp(idealCols, minCols || 1, maxCols || count);
-
-    const horizontalTightness = 0.42;
-    columnSpacing = BOOK_WIDTH * horizontalTightness;
+    columnSpacing = BOOK_WIDTH * (selectedBook ? 0.24 : 0.32);
 
     layoutRows = Math.max(1, Math.ceil(count / booksPerRow));
-    const verticalTightness =
-      layoutRows <= 3
-        ? 1.35
-        : layoutRows <= 6
-          ? 1.2
-          : 1.05;
-    layoutSpacingY = BOOK_HEIGHT * verticalTightness;
+    const verticalMultiplier = selectedBook
+      ? 1.3
+      : 1.05 + Math.min(0.2, Math.max(0, layoutRows - 1) * 0.05);
+    layoutSpacingY = BOOK_HEIGHT * verticalMultiplier;
     layoutRowOffset = (layoutRows - 1) * layoutSpacingY * 0.5;
 
     const stepX = BOOK_WIDTH + columnSpacing;
@@ -673,17 +664,16 @@ if (!container) {
         : layoutRows * BOOK_HEIGHT + (layoutRows - 1) * (layoutSpacingY - BOOK_HEIGHT);
 
     const verticalFov = THREE.MathUtils.degToRad(camera.fov);
-    const viewportAspect = container.clientWidth && container.clientHeight
-      ? container.clientWidth / container.clientHeight
-      : 1.6;
     const halfHeight = gridHeight * 0.5 + BOOK_HEIGHT * 0.45;
     const distanceForHeight = halfHeight / Math.tan(verticalFov / 2);
-    const horizontalFov = 2 * Math.atan(Math.tan(verticalFov / 2) * viewportAspect);
-    const halfWidth = gridWidth * 0.5 + BOOK_WIDTH * 0.65;
+    const horizontalFov =
+      2 * Math.atan(Math.tan(verticalFov / 2) * (container.clientWidth / container.clientHeight || 1.6));
+    const halfWidth = gridWidth * 0.5 + BOOK_WIDTH * 0.25;
     const distanceForWidth = halfWidth / Math.tan(horizontalFov / 2);
-    const requiredDist = Math.max(distanceForHeight, distanceForWidth, 5.2);
+    const minDistance = selectedBook ? 6.5 : 4.0;
+    const requiredDist = Math.max(distanceForHeight, distanceForWidth, minDistance);
 
-    const verticalOffset = 1.9 + Math.max(0, layoutRows - 3) * 0.22;
+    const verticalOffset = (selectedBook ? 1.9 : 1.7) + Math.max(0, layoutRows - 3) * 0.18;
     cameraBasePosition.set(0, verticalOffset, requiredDist);
     cameraBaseLookAt.set(0, 0, 0);
     if (!selectedBook) {
@@ -761,6 +751,9 @@ if (!container) {
 
   function focusBook(book) {
     selectedBook = book;
+    camera.fov = selectedBook ? FOCUS_FOV : DEFAULT_FOV;
+    camera.updateProjectionMatrix();
+    updateGridMetrics(books.length);
     books.forEach((item) => {
       const isSelected = item === selectedBook;
       if (selectedBook) {
