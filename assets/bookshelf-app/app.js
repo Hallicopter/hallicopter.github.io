@@ -165,14 +165,12 @@ if (!container) {
   rimLight.position.set(0, 8, -12);
   scene.add(rimLight);
 
-  const BOOK_SCALE = 1.55;
-  const BOOK_WIDTH = 1.42 * BOOK_SCALE;
-  const BOOK_HEIGHT = 2.2 * BOOK_SCALE;
-  const BOOK_DEPTH = 0.24 * BOOK_SCALE;
+  const BOOK_WIDTH = 1.42;
+  const BOOK_HEIGHT = 2.2;
+  const BOOK_DEPTH = 0.24;
   const BOOK_SPACING_Z = 0.08;
   let booksPerRow = 4;
   let columnSpacing = BOOK_WIDTH * 0.45;
-  const FOCUS_SHIFT_X = BOOK_WIDTH * 0.85;
 
   let layoutSpacingY = BOOK_HEIGHT * 1.6;
   let layoutRows = 0;
@@ -205,7 +203,7 @@ if (!container) {
 
       this.basePosition = new THREE.Vector3();
       this.targetPosition = new THREE.Vector3();
-      this.focusOffset = new THREE.Vector3(-FOCUS_SHIFT_X, 0.18, 0.0);
+      this.focusOffset = new THREE.Vector3(-1.1, 0.18, 0.0);
       this.scaleCurrent = 1;
       this.scaleTarget = 1;
       this.openAmount = 0;
@@ -654,16 +652,16 @@ if (!container) {
     const maxCols = Math.min(5, count);
     booksPerRow = THREE.MathUtils.clamp(idealCols, minCols || 1, maxCols || count);
 
-    const horizontalTightness = 0.38;
+    const horizontalTightness = 0.42;
     columnSpacing = BOOK_WIDTH * horizontalTightness;
 
     layoutRows = Math.max(1, Math.ceil(count / booksPerRow));
     const verticalTightness =
       layoutRows <= 3
-        ? 1.1
+        ? 1.35
         : layoutRows <= 6
-          ? 1.05
-          : 0.98;
+          ? 1.2
+          : 1.05;
     layoutSpacingY = BOOK_HEIGHT * verticalTightness;
     layoutRowOffset = (layoutRows - 1) * layoutSpacingY * 0.5;
 
@@ -678,10 +676,10 @@ if (!container) {
     const viewportAspect = container.clientWidth && container.clientHeight
       ? container.clientWidth / container.clientHeight
       : 1.6;
-    const halfHeight = gridHeight * 0.5 + BOOK_HEIGHT * 0.95;
+    const halfHeight = gridHeight * 0.5 + BOOK_HEIGHT * 0.45;
     const distanceForHeight = halfHeight / Math.tan(verticalFov / 2);
     const horizontalFov = 2 * Math.atan(Math.tan(verticalFov / 2) * viewportAspect);
-    const halfWidth = gridWidth * 0.5 + BOOK_WIDTH * 0.6;
+    const halfWidth = gridWidth * 0.5 + BOOK_WIDTH * 0.65;
     const distanceForWidth = halfWidth / Math.tan(horizontalFov / 2);
     const requiredDist = Math.max(distanceForHeight, distanceForWidth, 5.2);
 
@@ -787,8 +785,8 @@ if (!container) {
       selectedBook.group.getWorldPosition(worldPos);
       cameraTargetPosition = worldPos
         .clone()
-        .add(new THREE.Vector3(-FOCUS_SHIFT_X * 2.1, 0.35, 4.7 + BOOK_WIDTH * 0.25));
-      cameraTargetLookAt = worldPos.clone().add(new THREE.Vector3(FOCUS_SHIFT_X * 0.6, 0, 0));
+        .add(new THREE.Vector3(-2.8, 0.32, 5.2));
+      cameraTargetLookAt = worldPos.clone().add(new THREE.Vector3(1.6, 0, 0));
       if (detailPanel) {
         detailPanel.classList.remove("detail-empty");
       }
