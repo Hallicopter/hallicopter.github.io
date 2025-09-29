@@ -648,23 +648,24 @@ if (!container) {
         : camera.aspect || 1.6;
 
     const idealCols = Math.ceil(Math.sqrt(count * Math.min(aspect, 1.4)));
-    const minCols = Math.min(4, count);
-    const maxCols = Math.min(8, count);
+    const minCols = Math.min(3, count);
+    const maxCols = Math.min(5, count);
     booksPerRow = THREE.MathUtils.clamp(idealCols, minCols || 1, maxCols || count);
 
     const horizontalTightness = THREE.MathUtils.clamp(
-      0.65 - booksPerRow * 0.03,
+      0.58,
       0.32,
       0.6,
     );
     columnSpacing = BOOK_WIDTH * horizontalTightness;
 
     layoutRows = Math.max(1, Math.ceil(count / booksPerRow));
-    const verticalTightness = THREE.MathUtils.clamp(
-      1.35 - layoutRows * 0.03,
-      0.95,
-      1.35,
-    );
+    const verticalTightness =
+      layoutRows <= 3
+        ? 1.35
+        : layoutRows <= 6
+          ? 1.2
+          : 1.05;
     layoutSpacingY = BOOK_HEIGHT * verticalTightness;
     layoutRowOffset = (layoutRows - 1) * layoutSpacingY * 0.5;
 
@@ -676,15 +677,18 @@ if (!container) {
         : layoutRows * BOOK_HEIGHT + (layoutRows - 1) * (layoutSpacingY - BOOK_HEIGHT);
 
     const verticalFov = THREE.MathUtils.degToRad(camera.fov);
-    const halfHeight = gridHeight * 0.5 + BOOK_HEIGHT * 0.8;
+    const viewportAspect = container.clientWidth && container.clientHeight
+      ? container.clientWidth / container.clientHeight
+      : 1.6;
+    const halfHeight = gridHeight * 0.5 + BOOK_HEIGHT * 0.95;
     const distanceForHeight = halfHeight / Math.tan(verticalFov / 2);
-    const horizontalFov =
-      2 * Math.atan(Math.tan(verticalFov / 2) * (container.clientWidth / container.clientHeight || 1.6));
-    const halfWidth = gridWidth * 0.5 + BOOK_WIDTH * 0.9;
+    const horizontalFov = 2 * Math.atan(Math.tan(verticalFov / 2) * viewportAspect);
+    const halfWidth = gridWidth * 0.5 + BOOK_WIDTH * 1.05;
     const distanceForWidth = halfWidth / Math.tan(horizontalFov / 2);
     const requiredDist = Math.max(distanceForHeight, distanceForWidth, 6.5);
 
-    cameraBasePosition.set(0, 1.9 + Math.max(0, layoutRows - 3) * 0.18, requiredDist);
+    const verticalOffset = 1.9 + Math.max(0, layoutRows - 3) * 0.22;
+    cameraBasePosition.set(0, verticalOffset, requiredDist);
     cameraBaseLookAt.set(0, 0, 0);
     if (!selectedBook) {
       camera.position.copy(cameraBasePosition);
