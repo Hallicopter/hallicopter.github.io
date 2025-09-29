@@ -88,6 +88,18 @@ function prepareCoverTexture(texture) {
   texture.needsUpdate = true;
   return texture;
 }
+
+const adjustColorLightness = (hex, delta) => {
+  try {
+    const base = new THREE.Color(hex);
+    const hsl = {};
+    base.getHSL(hsl);
+    hsl.l = THREE.MathUtils.clamp(hsl.l + delta, 0, 1);
+    return new THREE.Color().setHSL(hsl.h, hsl.s, hsl.l).getStyle();
+  } catch (error) {
+    return hex;
+  }
+};
 const container = document.getElementById("bookshelf-canvas");
 
 if (!container) {
@@ -108,7 +120,8 @@ if (!container) {
   } else {
     renderer.outputEncoding = THREE.sRGBEncoding;
   }
-  renderer.toneMapping = THREE.NoToneMapping;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.2;
   renderer.setPixelRatio(window.devicePixelRatio || 1);
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.shadowMap.enabled = true;
@@ -116,6 +129,8 @@ if (!container) {
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0xf5e8c9);
+  const gridGroup = new THREE.Group();
+  scene.add(gridGroup);
 
   const camera = new THREE.PerspectiveCamera(
     38,
@@ -126,10 +141,10 @@ if (!container) {
   camera.position.set(0, 1.9, 8.6);
   camera.lookAt(0, 0, 0);
 
-  const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+  const ambient = new THREE.AmbientLight(0xffffff, 0.82);
   scene.add(ambient);
 
-  const keyLight = new THREE.DirectionalLight(0xffffff, 1);
+  const keyLight = new THREE.DirectionalLight(0xffffff, 1.18);
   keyLight.position.set(-5, 12, 10);
   keyLight.castShadow = true;
   keyLight.shadow.mapSize.set(1024, 1024);
@@ -137,8 +152,8 @@ if (!container) {
   scene.add(keyLight);
 
   const fillLight = new THREE.SpotLight(
-    0xf4f0e6,
-    0.55,
+    0xfef4df,
+    0.65,
     60,
     Math.PI / 5.5,
     0.65,
@@ -146,7 +161,7 @@ if (!container) {
   fillLight.position.set(6, 11, 8);
   scene.add(fillLight);
 
-  const rimLight = new THREE.DirectionalLight(0xf5f2ea, 0.35);
+  const rimLight = new THREE.DirectionalLight(0xf5f2ea, 0.45);
   rimLight.position.set(0, 8, -12);
   scene.add(rimLight);
 
@@ -154,11 +169,14 @@ if (!container) {
   const BOOK_HEIGHT = 2.2;
   const BOOK_DEPTH = 0.24;
   const BOOK_SPACING_Z = 0.08;
-  const BOOKS_PER_ROW = 4;
+  let booksPerRow = 4;
+  let columnSpacing = BOOK_WIDTH * 0.45;
 
   let layoutSpacingY = BOOK_HEIGHT * 1.6;
   let layoutRows = 0;
   let layoutRowOffset = 0;
+  let gridWidth = BOOK_WIDTH;
+  let gridHeight = BOOK_HEIGHT;
   let viewWidthCache = 0;
 
   const books = [];
@@ -305,6 +323,23 @@ if (!container) {
       coverPlane.renderOrder = 1;
       frontCoverGroup.add(coverPlane);
 
+      const brightenLayer = new THREE.Mesh(
+        new THREE.PlaneGeometry(WIDTH * 0.95, HEIGHT * 0.95),
+        new THREE.MeshBasicMaterial({
+          color: 0xffffff,
+          opacity: 0.12,
+          transparent: true,
+          toneMapped: false,
+        }),
+      );
+      brightenLayer.position.set(
+        0,
+        0,
+        BOARD_THICKNESS / 2 + BOARD_BEVEL + JACKET_GAP * 1.5,
+      );
+      brightenLayer.renderOrder = 1.5;
+      frontCoverGroup.add(brightenLayer);
+
       const glossLayer = new THREE.Mesh(
         new THREE.PlaneGeometry(WIDTH * 0.96, HEIGHT * 0.96),
         new THREE.MeshPhysicalMaterial({
@@ -374,7 +409,11 @@ if (!container) {
         canvas.width = 512;
         canvas.height = 768;
         const ctx = canvas.getContext("2d");
-        ctx.fillStyle = this.data.accentColor || "#8b5a2b";
+        const baseColor = this.data.accentColor || "#8b5a2b";
+        const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        gradient.addColorStop(0, adjustColorLightness(baseColor, 0.18));
+        gradient.addColorStop(1, adjustColorLightness(baseColor, -0.05));
+        ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "rgba(255, 240, 215, 0.9)";
         ctx.textAlign = "center";
@@ -417,18 +456,8 @@ if (!container) {
     }
 
     placeOnGrid(rowIndex, columnIndex, columnsInRow) {
-      const columns = Math.max(1, columnsInRow || BOOKS_PER_ROW);
-      const viewWidth = viewWidthCache || viewWidthAtBase();
-      const margin = Math.max(BOOK_WIDTH * 0.8, viewWidth * 0.12);
-      const targetWidth = Math.max(BOOK_WIDTH, viewWidth - margin * 2);
-      const spacing =
-        columns > 1
-          ? Math.max(
-              BOOK_WIDTH * 0.05,
-              (targetWidth - columns * BOOK_WIDTH) / (columns - 1),
-            )
-          : 0;
-      const step = BOOK_WIDTH + spacing;
+      const columns = Math.max(1, columnsInRow || booksPerRow);
+      const step = BOOK_WIDTH + columnSpacing;
       const centerOffset = (columns - 1) * step * 0.5;
       const x = columnIndex * step - centerOffset;
       const y = layoutRowOffset - rowIndex * layoutSpacingY;
@@ -609,22 +638,77 @@ if (!container) {
     });
   }
 
-  function distributeBooks(data) {
-    viewWidthCache = viewWidthAtBase();
-    layoutRows = Math.max(1, Math.ceil(data.length / BOOKS_PER_ROW));
-    layoutSpacingY = BOOK_HEIGHT * 1.5;
+  function updateGridMetrics(count) {
+    if (!count) {
+      return;
+    }
+    const aspect =
+      container.clientWidth && container.clientHeight
+        ? container.clientWidth / container.clientHeight
+        : camera.aspect || 1.6;
+
+    const idealCols = Math.ceil(Math.sqrt(count * Math.min(aspect, 1.4)));
+    const minCols = Math.min(4, count);
+    const maxCols = Math.min(8, count);
+    booksPerRow = THREE.MathUtils.clamp(idealCols, minCols || 1, maxCols || count);
+
+    const horizontalTightness = THREE.MathUtils.clamp(
+      0.65 - booksPerRow * 0.03,
+      0.32,
+      0.6,
+    );
+    columnSpacing = BOOK_WIDTH * horizontalTightness;
+
+    layoutRows = Math.max(1, Math.ceil(count / booksPerRow));
+    const verticalTightness = THREE.MathUtils.clamp(
+      1.35 - layoutRows * 0.03,
+      0.95,
+      1.35,
+    );
+    layoutSpacingY = BOOK_HEIGHT * verticalTightness;
     layoutRowOffset = (layoutRows - 1) * layoutSpacingY * 0.5;
 
+    const stepX = BOOK_WIDTH + columnSpacing;
+    gridWidth = booksPerRow * BOOK_WIDTH + (booksPerRow - 1) * columnSpacing;
+    gridHeight =
+      layoutRows <= 1
+        ? BOOK_HEIGHT
+        : layoutRows * BOOK_HEIGHT + (layoutRows - 1) * (layoutSpacingY - BOOK_HEIGHT);
+
+    const verticalFov = THREE.MathUtils.degToRad(camera.fov);
+    const halfHeight = gridHeight * 0.5 + BOOK_HEIGHT * 0.8;
+    const distanceForHeight = halfHeight / Math.tan(verticalFov / 2);
+    const horizontalFov =
+      2 * Math.atan(Math.tan(verticalFov / 2) * (container.clientWidth / container.clientHeight || 1.6));
+    const halfWidth = gridWidth * 0.5 + BOOK_WIDTH * 0.9;
+    const distanceForWidth = halfWidth / Math.tan(horizontalFov / 2);
+    const requiredDist = Math.max(distanceForHeight, distanceForWidth, 6.5);
+
+    cameraBasePosition.set(0, 1.9 + Math.max(0, layoutRows - 3) * 0.18, requiredDist);
+    cameraBaseLookAt.set(0, 0, 0);
+    if (!selectedBook) {
+      camera.position.copy(cameraBasePosition);
+      cameraTargetPosition = cameraBasePosition.clone();
+      cameraTargetLookAt = cameraBaseLookAt.clone();
+      cameraLookAt.copy(cameraBaseLookAt);
+    }
+
+    viewWidthCache = viewWidthAtBase();
+  }
+
+  function distributeBooks(data) {
+    updateGridMetrics(data.length);
+
     data.forEach((bookData, index) => {
-      const row = Math.floor(index / BOOKS_PER_ROW);
-      const col = index % BOOKS_PER_ROW;
+      const row = Math.floor(index / booksPerRow);
+      const col = index % booksPerRow;
       const columnsInThisRow = Math.min(
-        BOOKS_PER_ROW,
-        data.length - row * BOOKS_PER_ROW,
+        booksPerRow,
+        data.length - row * booksPerRow,
       );
       const book = new BookMesh(bookData, index);
       book.placeOnGrid(row, col, columnsInThisRow);
-      scene.add(book.group);
+      gridGroup.add(book.group);
       books.push(book);
     });
 
@@ -635,17 +719,14 @@ if (!container) {
     if (!books.length) {
       return;
     }
-    viewWidthCache = viewWidthAtBase();
-    layoutRows = Math.max(1, Math.ceil(books.length / BOOKS_PER_ROW));
-    layoutSpacingY = BOOK_HEIGHT * 1.5;
-    layoutRowOffset = (layoutRows - 1) * layoutSpacingY * 0.5;
+    updateGridMetrics(books.length);
 
     books.forEach((book, index) => {
-      const row = Math.floor(index / BOOKS_PER_ROW);
-      const col = index % BOOKS_PER_ROW;
+      const row = Math.floor(index / booksPerRow);
+      const col = index % booksPerRow;
       const columnsInThisRow = Math.min(
-        BOOKS_PER_ROW,
-        books.length - row * BOOKS_PER_ROW,
+        booksPerRow,
+        books.length - row * booksPerRow,
       );
       book.placeOnGrid(row, col, columnsInThisRow);
       if (!book.isFocused()) {
