@@ -65,7 +65,8 @@ body {
   max-width: none;
   display: flex;
   flex-direction: column;
-  gap: clamp(2.5rem, 6vw, 4rem);
+  /* tighter vertical rhythm between intro and canvas */
+  gap: clamp(1.0rem, 2.2vw, 1.6rem);
 }
 
 .intro {
@@ -76,31 +77,39 @@ body {
   padding: 0 clamp(3rem, 6vw, 12rem);
 }
 
-.intro h1 {
-  margin: 0 0 0.85rem;
-  font-size: clamp(2.4rem, 6.5vw, 3.6rem);
-}
+.intro h1 { margin: 0 0 0.4rem; font-size: clamp(2.4rem, 6.5vw, 3.6rem); }
+
+/* pull the canvas slightly closer to the heading */
+.experience { margin-top: 0; }
 
 .experience {
   position: relative;
   border-radius: clamp(18px, 2.5vw, 28px);
-  overflow: hidden;
+  overflow: visible;
   background: transparent;
   box-shadow: none;
   width: 100%;
 }
-
+.experience--fullbleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
 .experience-canvas {
-  position: relative;
+  position: static;
   width: 100%;
-  min-height: clamp(580px, 85vh, 1040px);
+  height: auto;
 }
 
 #bookshelf-canvas {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0;
+  /* Pin the render area while the section scrolls */
+  position: sticky;
+  top: 0;
+  width: min(80vw, 1600px);
+  height: 100vh; /* one viewport */
+  margin: 0 auto; /* center horizontally */
+  overflow: hidden;
+  z-index: 1;
 }
 
 #bookshelf-canvas canvas {
@@ -208,6 +217,11 @@ body {
 
   .detail-overlay.detail-empty {
     transform: translate(-50%, 110%) translateY(12px);
+  }
+
+  /* On small screens, allow a bit more width */
+  #bookshelf-canvas {
+    width: 94vw;
   }
 }
 

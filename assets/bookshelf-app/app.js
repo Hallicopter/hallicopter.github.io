@@ -113,6 +113,7 @@ if (!container) {
   const closeBtn = document.getElementById("detail-close");
   const nextBtn = document.getElementById("detail-next");
   const detailPanel = document.getElementById("detail-panel");
+  const experienceSection = container.closest(".experience") || container;
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   if ("outputColorSpace" in renderer) {
@@ -123,26 +124,63 @@ if (!container) {
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.2;
   renderer.setPixelRatio(window.devicePixelRatio || 1);
-  renderer.setSize(container.clientWidth, container.clientHeight);
+  // Size the renderer to the container; do not override CSS width/height
+  function ensureCanvasSize() {
+    const rect = container.getBoundingClientRect();
+    const w = Math.max(1, Math.round(rect.width));
+    const h = Math.max(1, Math.round(rect.height));
+    renderer.setSize(w, h, false);
+  }
   renderer.shadowMap.enabled = true;
   container.appendChild(renderer.domElement);
+  // Size the renderer immediately so frustum math uses real pixels
+  ensureCanvasSize();
+
+  const DEFAULT_FOV = 46; // used for focus camera
+  const FOCUS_FOV = 34;
+  const DEFAULT_GRID_SCALE = 1.0; // will be scaled to fill width
+  const FOCUS_GRID_SCALE = 1.0;
+  const MIN_DEFAULT_DISTANCE = 1.0;
+  const MAX_DEFAULT_DISTANCE = 15.0;
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0xf5e8c9);
   const gridGroup = new THREE.Group();
   scene.add(gridGroup);
+  gridGroup.scale.setScalar(DEFAULT_GRID_SCALE);
 
-  const DEFAULT_FOV = 58;
-  const FOCUS_FOV = 38;
-
-  const camera = new THREE.PerspectiveCamera(
+  // Two cameras: list (orthographic, pixel space) and focus (perspective)
+  function makeListCamera() {
+    const rect = container.getBoundingClientRect();
+    const w = Math.max(1, Math.round(rect.width));
+    const h = Math.max(1, Math.round(rect.height));
+    const cam = new THREE.OrthographicCamera(-w / 2, w / 2, h / 2, -h / 2, -1000, 1000);
+    cam.position.set(0, 0, 10);
+    cam.lookAt(0, 0, 0);
+    return cam;
+  }
+  function updateListCameraFrustum(cam) {
+    const rect = container.getBoundingClientRect();
+    const w = Math.max(1, Math.round(rect.width));
+    const h = Math.max(1, Math.round(rect.height));
+    cam.left = -w / 2;
+    cam.right = w / 2;
+    cam.top = h / 2;
+    cam.bottom = -h / 2;
+    cam.near = -1000;
+    cam.far = 1000;
+    cam.updateProjectionMatrix();
+  }
+  const listCamera = makeListCamera();
+  const focusCamera = new THREE.PerspectiveCamera(
     DEFAULT_FOV,
-    container.clientWidth / container.clientHeight,
+    (container.clientWidth || 1) / (container.clientHeight || 1),
     0.1,
     100,
   );
-  camera.position.set(0, 1.9, 8.6);
-  camera.lookAt(0, 0, 0);
+  focusCamera.position.set(0, 1.9, 8.6);
+  focusCamera.lookAt(0, 0, 0);
+  let camera = listCamera;
 
   const ambient = new THREE.AmbientLight(0xffffff, 0.82);
   scene.add(ambient);
@@ -172,8 +210,13 @@ if (!container) {
   const BOOK_HEIGHT = 2.2;
   const BOOK_DEPTH = 0.24;
   const BOOK_SPACING_Z = 0.08;
-  let booksPerRow = 4;
-  let columnSpacing = BOOK_WIDTH * 0.45;
+  const DEFAULT_BOOKS_PER_ROW = 5; // request: five books per row
+  let booksPerRow = DEFAULT_BOOKS_PER_ROW;
+  let columnSpacing = BOOK_WIDTH * 0.42;
+
+  const FOCUS_TARGET_SHIFT_X = BOOK_WIDTH * 1.95;
+  const FOCUS_TARGET_SHIFT_LOOK = BOOK_WIDTH * 0.75;
+  const FOCUS_TARGET_DEPTH = 8.0;
 
   let layoutSpacingY = BOOK_HEIGHT * 1.6;
   let layoutRows = 0;
@@ -185,6 +228,18 @@ if (!container) {
   const books = [];
   let selectedBook = null;
   let highlightedBook = null;
+  let scrollEnabled = false;
+  let scrollProgress = 0;
+  let scrollProgressTarget = 0;
+  let gridTopOffset = 0;
+  let gridBottomOffset = 0;
+  let sectionTopY = 0;
+  let trackPxGlobal = 0;
+  let savedScrollProgress = 0;
+  // Camera vertical mapping (list view uses ortho; initialize to zero)
+  let lookTopY = 0;
+  let lookBottomY = 0;
+  let cameraOffsetY = 0;
 
   const loader = new THREE.TextureLoader();
   if (loader.setCrossOrigin) {
@@ -206,7 +261,7 @@ if (!container) {
 
       this.basePosition = new THREE.Vector3();
       this.targetPosition = new THREE.Vector3();
-      this.focusOffset = new THREE.Vector3(-1.1, 0.18, 0.0);
+      this.focusOffset = new THREE.Vector3(-BOOK_WIDTH * 0.6, 0.18, 0.0);
       this.scaleCurrent = 1;
       this.scaleTarget = 1;
       this.openAmount = 0;
@@ -594,7 +649,7 @@ if (!container) {
   const clock = new THREE.Clock();
   const raycaster = new THREE.Raycaster();
   const pointer = new THREE.Vector2();
-  const cameraBasePosition = new THREE.Vector3(0, 1.9, 8.6);
+  const cameraBasePosition = new THREE.Vector3(0, 0, 10);
   const cameraBaseLookAt = new THREE.Vector3(0, 0, 0);
   let cameraTargetPosition = cameraBasePosition.clone();
   let cameraTargetLookAt = cameraBaseLookAt.clone();
@@ -645,14 +700,14 @@ if (!container) {
     if (!count) {
       return;
     }
-    booksPerRow = count >= 5 ? 5 : Math.max(1, count);
+    booksPerRow = Math.min(DEFAULT_BOOKS_PER_ROW, Math.max(1, count));
 
-    columnSpacing = BOOK_WIDTH * (selectedBook ? 0.24 : 0.32);
+    columnSpacing = BOOK_WIDTH * (selectedBook ? 0.28 : 0.25);
 
     layoutRows = Math.max(1, Math.ceil(count / booksPerRow));
     const verticalMultiplier = selectedBook
-      ? 1.3
-      : 1.05 + Math.min(0.2, Math.max(0, layoutRows - 1) * 0.05);
+      ? 1.25
+      : 1.0 + Math.min(0.25, Math.max(0, layoutRows - 1) * 0.05);
     layoutSpacingY = BOOK_HEIGHT * verticalMultiplier;
     layoutRowOffset = (layoutRows - 1) * layoutSpacingY * 0.5;
 
@@ -663,27 +718,51 @@ if (!container) {
         ? BOOK_HEIGHT
         : layoutRows * BOOK_HEIGHT + (layoutRows - 1) * (layoutSpacingY - BOOK_HEIGHT);
 
-    const verticalFov = THREE.MathUtils.degToRad(camera.fov);
-    const halfHeight = gridHeight * 0.5 + BOOK_HEIGHT * 0.45;
-    const distanceForHeight = halfHeight / Math.tan(verticalFov / 2);
-    const horizontalFov =
-      2 * Math.atan(Math.tan(verticalFov / 2) * (container.clientWidth / container.clientHeight || 1.6));
-    const halfWidth = gridWidth * 0.5 + BOOK_WIDTH * 0.25;
-    const distanceForWidth = halfWidth / Math.tan(horizontalFov / 2);
-    const minDistance = selectedBook ? 6.5 : 4.0;
-    const requiredDist = Math.max(distanceForHeight, distanceForWidth, minDistance);
-
-    const verticalOffset = (selectedBook ? 1.9 : 1.7) + Math.max(0, layoutRows - 3) * 0.18;
-    cameraBasePosition.set(0, verticalOffset, requiredDist);
-    cameraBaseLookAt.set(0, 0, 0);
     if (!selectedBook) {
-      camera.position.copy(cameraBasePosition);
-      cameraTargetPosition = cameraBasePosition.clone();
-      cameraTargetLookAt = cameraBaseLookAt.clone();
-      cameraLookAt.copy(cameraBaseLookAt);
-    }
+      // LIST VIEW (orthographic): pixel-space scaling and scroll track
+      camera = listCamera;
+      updateListCameraFrustum(listCamera);
+      const rectCanvas = container.getBoundingClientRect();
+      const viewportW = Math.max(1, Math.round(rectCanvas.width));
+      const viewportH = Math.max(1, Math.round(rectCanvas.height));
 
-    viewWidthCache = viewWidthAtBase();
+      // Scale the grid to nearly fill the width
+      const baseScale = DEFAULT_GRID_SCALE;
+      gridGroup.scale.setScalar(baseScale);
+      const rowW = gridWidth * baseScale;
+      const scaleFactor = rowW > 0 ? (viewportW * 0.98) / rowW : 1.0;
+      const finalScale = baseScale * scaleFactor;
+      gridGroup.scale.setScalar(finalScale);
+
+      // Analytically derive vertical extents instead of reading Box3 from an out‑of‑date layout
+      const gridHeightPx = gridHeight * finalScale; // world→pixel because ortho frustum is pixel-sized
+      const topEdge = +gridHeightPx / 2;
+      const bottomEdge = -gridHeightPx / 2;
+      const visibleHalf = viewportH / 2;
+      const pad = Math.max(16, BOOK_HEIGHT * finalScale * 0.2);
+      const lookTop = topEdge - (visibleHalf - pad);
+      const lookBottom = bottomEdge + (visibleHalf - pad);
+      gridTopOffset = lookTop;
+      gridBottomOffset = lookBottom;
+
+      // Make page scroll range match the exact camera sweep (bottom-top)
+      const sweep = Math.max(0, lookTop - lookBottom);
+      trackPxGlobal = Math.ceil(sweep + viewportH); // section height so (height - viewport) == sweep
+      experienceSection.style.height = `${trackPxGlobal}px`;
+      scrollEnabled = true;
+
+      // initialise camera to top
+      cameraBaseLookAt.set(0, lookTop, 0);
+      cameraBasePosition.set(0, lookTop, 10);
+      cameraTargetPosition.copy(cameraBasePosition);
+      cameraTargetLookAt.copy(cameraBaseLookAt);
+      cameraLookAt.copy(cameraBaseLookAt);
+      viewWidthCache = viewportW;
+      // cache section top for scroll mapping
+      const rectSec = experienceSection.getBoundingClientRect();
+      sectionTopY = window.scrollY + rectSec.top;
+      return;
+    }
   }
 
   function distributeBooks(data) {
@@ -703,6 +782,7 @@ if (!container) {
     });
 
     relayoutBooks();
+    syncScrollProgressFromPage();
   }
 
   function relayoutBooks() {
@@ -710,6 +790,7 @@ if (!container) {
       return;
     }
     updateGridMetrics(books.length);
+    syncScrollProgressFromPage();
 
     books.forEach((book, index) => {
       const row = Math.floor(index / booksPerRow);
@@ -733,6 +814,20 @@ if (!container) {
     });
   }
 
+  // Position camera to frame the entire grid so user always sees books
+  function frameAllRows() { /* no-op in orthographic list view */ }
+
+  function syncScrollProgressFromPage() {
+    if (!scrollEnabled || selectedBook || !experienceSection) {
+      return;
+    }
+    const viewportHeight = window.innerHeight || 1;
+    const scrollRange = Math.max(trackPxGlobal - viewportHeight, 0);
+    if (scrollRange <= 0) { scrollProgressTarget = 0; return; }
+    const scrolled = THREE.MathUtils.clamp(window.scrollY - sectionTopY, 0, scrollRange);
+    scrollProgressTarget = scrolled / scrollRange;
+  }
+
   function updateDetail(book) {
     if (!book) {
       detailTitle.textContent = "";
@@ -750,6 +845,9 @@ if (!container) {
   }
 
   function focusBook(book) {
+    const previousScrollTarget = scrollEnabled
+      ? THREE.MathUtils.clamp(scrollProgressTarget, 0, 1)
+      : 0;
     selectedBook = book;
     camera.fov = selectedBook ? FOCUS_FOV : DEFAULT_FOV;
     camera.updateProjectionMatrix();
@@ -769,6 +867,9 @@ if (!container) {
     });
 
     if (selectedBook) {
+      savedScrollProgress = previousScrollTarget;
+      scrollProgress = 0;
+      scrollProgressTarget = 0;
       updateDetail(selectedBook);
       if (detailPanel) {
         detailPanel.classList.remove("detail-empty");
@@ -778,12 +879,16 @@ if (!container) {
       selectedBook.group.getWorldPosition(worldPos);
       cameraTargetPosition = worldPos
         .clone()
-        .add(new THREE.Vector3(-2.8, 0.32, 5.2));
-      cameraTargetLookAt = worldPos.clone().add(new THREE.Vector3(1.6, 0, 0));
+        .add(new THREE.Vector3(-FOCUS_TARGET_SHIFT_X, 0.32, FOCUS_TARGET_DEPTH));
+      cameraTargetLookAt = worldPos.clone().add(new THREE.Vector3(FOCUS_TARGET_SHIFT_LOOK, 0, 0));
       if (detailPanel) {
         detailPanel.classList.remove("detail-empty");
       }
     } else {
+      if (scrollEnabled) {
+        scrollProgressTarget = THREE.MathUtils.clamp(savedScrollProgress, 0, 1);
+        scrollProgress = scrollProgressTarget;
+      }
       updateDetail(null);
       if (detailPanel) {
         detailPanel.classList.add("detail-empty");
@@ -850,9 +955,24 @@ if (!container) {
   function render() {
     const delta = clock.getDelta();
     books.forEach((book) => book.update(delta));
-    camera.position.lerp(cameraTargetPosition, 0.08);
-    cameraLookAt.lerp(cameraTargetLookAt, 0.1);
-    camera.lookAt(cameraLookAt);
+    if (!selectedBook) {
+      // List view: map page scroll directly to camera Y (no easing)
+      if (scrollEnabled) {
+        scrollProgress = scrollProgressTarget;
+      }
+      const lookY = THREE.MathUtils.lerp(
+        gridTopOffset,
+        gridBottomOffset,
+        scrollProgress,
+      );
+      camera.position.set(0, lookY, 10);
+      camera.lookAt(0, lookY, 0);
+    } else {
+      // Focus view: keep the gentle ease
+      camera.position.lerp(cameraTargetPosition, 0.08);
+      cameraLookAt.lerp(cameraTargetLookAt, 0.1);
+      camera.lookAt(cameraLookAt);
+    }
     renderer.render(scene, camera);
     requestAnimationFrame(render);
   }
@@ -878,6 +998,7 @@ if (!container) {
       if (detailPanel) {
         detailPanel.classList.add("detail-empty");
       }
+      syncScrollProgressFromPage();
     } catch (error) {
       console.error(error);
       updateDetail(null);
@@ -890,10 +1011,8 @@ if (!container) {
   }
 
   function onResize() {
-    const { clientWidth, clientHeight } = container;
-    renderer.setSize(clientWidth, clientHeight);
-    camera.aspect = clientWidth / clientHeight;
-    camera.updateProjectionMatrix();
+    ensureCanvasSize();
+    updateListCameraFrustum(listCamera);
     relayoutBooks();
   }
 
@@ -902,6 +1021,8 @@ if (!container) {
   });
   renderer.domElement.addEventListener("click", pointerClick);
   window.addEventListener("resize", onResize);
+  // Keep scroll mapping in sync with page scroll
+  window.addEventListener("scroll", syncScrollProgressFromPage, { passive: true });
 
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {

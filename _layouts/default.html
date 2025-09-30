@@ -8,8 +8,8 @@
     {% seo title=false %}
     {% include meta.html %} <!-- Keep basic meta tags -->
     
-    <!-- Old Book Theme - Single CSS File -->
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/style.css" />
+    <!-- Old Book Theme - Single CSS File (decoupled from any SCSS build) -->
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/site.css" />
     {% if page.extra_css %}
       {% for css_path in page.extra_css %}
         <link rel="stylesheet" href="{{ css_path | relative_url }}">

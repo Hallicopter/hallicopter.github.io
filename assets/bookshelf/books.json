@@ -1,74 +1,457 @@
 {
   "books": [
     {
-      "title": "The Pragmatic Programmer",
-      "author": "Andrew Hunt & David Thomas",
-      "spineColor": "#563c2b",
-      "accentColor": "#bf8b57",
-      "coverImage": "https://covers.openlibrary.org/b/id/135412-L.jpg",
-      "summary": "Notes and techniques gathered across years of shipping software by hand.",
-      "notes": "I keep a running log of refactors inspired by this book. Most recent scribble: a small note on tracer bullets for greenfield ideas.",
-      "found": "Picked up at Blossom Book House, Bengaluru, 2016"
+      "title": "A Supposedly Fun Thing I'll Never Do Again",
+      "author": "David Foster Wallace",
+      "spineColor": "#0b0b0b",
+      "accentColor": "#ffffff",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780316925280-L.jpg"
     },
     {
-      "title": "The Design of Everyday Things",
-      "author": "Don Norman",
-      "spineColor": "#463537",
-      "accentColor": "#d1a35f",
-      "coverImage": "",
-      "summary": "A reminder to forgive the user and blame the interface when something feels clumsy.",
-      "notes": "Dummy highlights about doors, teapots, and labeling switches. Replace with your own cautionary tales.",
-      "found": "Borrowed from a friend; eventually bought a copy in 2018"
+      "title": "Grit",
+      "author": "Angela Duckworth",
+      "spineColor": "#ffffff",
+      "accentColor": "#c62828",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9781501111105-L.jpg"
     },
     {
-      "title": "Godel, Escher, Bach",
-      "author": "Douglas Hofstadter",
-      "spineColor": "#5a3d33",
-      "accentColor": "#e3b378",
-      "coverImage": "",
-      "summary": "Loops, fugues, and the strange machinery of consciousness distilled into playful dialogues.",
-      "notes": "Placeholder note about rereading the Crab canon and jotting margins full of arrows.",
-      "found": "Stumbled across a worn paperback at College Street, Kolkata"
+      "title": "The Case for Climate Capitalism",
+      "author": "Tom Rand",
+      "spineColor": "#e3fff2",
+      "accentColor": "#1c8b6a",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9781770415386-L.jpg"
+    },
+
+    {
+      "title": "Same as Ever",
+      "author": "Morgan Housel",
+      "spineColor": "#ffffff",
+      "accentColor": "#222222",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780593655605-L.jpg"
+    },
+
+    {
+      "title": "The Little Prince",
+      "author": "Antoine de Saint‑Exupéry",
+      "spineColor": "#f6d365",
+      "accentColor": "#473d2f",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/0156012197-L.jpg"
     },
     {
-      "title": "Meditations",
-      "author": "Marcus Aurelius",
-      "spineColor": "#5b402a",
-      "accentColor": "#c89b58",
-      "coverImage": "",
-      "summary": "Stoic journaling from a Roman emperor; still works for modern morning pages.",
-      "notes": "Dummy page referencing Book II, line by line. Swap in your real reflections on temper and patience.",
-      "found": "Gifted by my sister during a monsoon in 2019"
+      "title": "Masala Lab",
+      "author": "Krish Ashok",
+      "spineColor": "#8b2232",
+      "accentColor": "#f4d06f",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780143451372-L.jpg"
     },
     {
-      "title": "A Pattern Language",
-      "author": "Christopher Alexander",
-      "spineColor": "#4c5434",
-      "accentColor": "#9cb06b",
-      "coverImage": "",
-      "summary": "Architecture, urban planning, and why rooms feel the way they do.",
-      "notes": "Placeholder bullet: '111 - Long Thin House'. Trade with the patterns you actually use.",
-      "found": "Library discard sale in Indiranagar, 2021"
+      "title": "The Product‑Led Organization",
+      "author": "Todd Olson",
+      "spineColor": "#ffffff",
+      "accentColor": "#c00000",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9781119660873-L.jpg"
     },
     {
-      "title": "The Left Hand of Darkness",
-      "author": "Ursula K. Le Guin",
-      "spineColor": "#3f3c57",
-      "accentColor": "#b3a5d1",
-      "coverImage": "",
-      "summary": "A cold planet, shifting genders, and Le Guin's patient politics.",
-      "notes": "Placeholder for icebound travel notes and quotes from Estraven.",
-      "found": "Secondhand shop on Church Street, 2020"
+      "title": "Ask a Native New Yorker",
+      "author": "Jake Dobkin",
+      "spineColor": "#ffd54f",
+      "accentColor": "#222222",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9781419729089-L.jpg"
     },
     {
-      "title": "Creative Quest",
-      "author": "Questlove",
-      "spineColor": "#47403c",
-      "accentColor": "#d8b57f",
-      "coverImage": "",
-      "summary": "Ways to stay curious, from mixtapes to surprise collaborations.",
-      "notes": "Dummy entry about rotating playlists through the studio.",
-      "found": "Impulse buy at an airport newsstand, 2022"
+      "title": "Educated",
+      "author": "Tara Westover",
+      "spineColor": "#f2e3d2",
+      "accentColor": "#c84e3a",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780399590504-L.jpg"
+    },
+    {
+      "title": "Deep Work",
+      "author": "Cal Newport",
+      "spineColor": "#f4d03f",
+      "accentColor": "#111111",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9781455586660-L.jpg"
+    },
+    {
+      "title": "The Messy Middle",
+      "author": "Scott Belsky",
+      "spineColor": "#ffd400",
+      "accentColor": "#111111",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780735218079-L.jpg"
+    },
+    {
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "spineColor": "#fbfaf4",
+      "accentColor": "#d4af37",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg"
+    },
+    {
+      "title": "All the Light We Cannot See",
+      "author": "Anthony Doerr",
+      "spineColor": "#0d3b66",
+      "accentColor": "#a0c4ff",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9781476746586-L.jpg"
+    },
+    {
+      "title": "The Amazing Maurice and His Educated Rodents",
+      "author": "Terry Pratchett",
+      "spineColor": "#b7cc3b",
+      "accentColor": "#2d6a4f",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780060012359-L.jpg"
+    },
+    {
+      "title": "One Hundred Years of Solitude",
+      "author": "Gabriel García Márquez",
+      "spineColor": "#f4d35e",
+      "accentColor": "#1b4332",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780061120091-L.jpg"
+    },
+    {
+      "title": "The Geography of Thought",
+      "author": "Richard E. Nisbett",
+      "spineColor": "#f2ae72",
+      "accentColor": "#2e4057",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780743255356-L.jpg"
+    },
+    {
+      "title": "Debt: The First 5,000 Years",
+      "author": "David Graeber",
+      "spineColor": "#d62828",
+      "accentColor": "#111111",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9781933633867-L.jpg"
+    },
+    {
+      "title": "Richard Castle's Unholy Storm (A Derrick Storm Graphic Novel)",
+      "author": "Richard Castle",
+      "spineColor": "#000000",
+      "accentColor": "#e53935",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/0785190295-L.jpg"
+    },
+    {
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "spineColor": "#ffffff",
+      "accentColor": "#111111",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/0060535261-L.jpg"
+    },
+
+    {
+      "title": "Outlive",
+      "author": "Peter Attia, MD",
+      "spineColor": "#f7f7f7",
+      "accentColor": "#2e7d32",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780593236598-L.jpg"
+    },
+    {
+      "title": "On Writing Well",
+      "author": "William Zinsser",
+      "spineColor": "#f2e9dc",
+      "accentColor": "#2962ff",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780060891541-L.jpg"
+    },
+    {
+      "title": "Fooled by Randomness",
+      "author": "Nassim Nicholas Taleb",
+      "spineColor": "#ffffff",
+      "accentColor": "#111111",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780812975215-L.jpg"
+    },
+    {
+      "title": "Antifragile",
+      "author": "Nassim Nicholas Taleb",
+      "spineColor": "#ffffff",
+      "accentColor": "#c62828",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780812979688-L.jpg"
+    },
+    {
+      "title": "The Black Swan",
+      "author": "Nassim Nicholas Taleb",
+      "spineColor": "#000000",
+      "accentColor": "#ffffff",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780812973815-L.jpg"
+    },
+    {
+      "title": "Getting to Yes",
+      "author": "Roger Fisher, William Ury, Bruce Patton",
+      "spineColor": "#ffffff",
+      "accentColor": "#d32f2f",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780143118756-L.jpg"
+    },
+    {
+      "title": "Everything I Know About Love",
+      "author": "Dolly Alderton",
+      "spineColor": "#3674c9",
+      "accentColor": "#ff9dcf",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780062968791-L.jpg"
+    },
+    {
+      "title": "Zero to One",
+      "author": "Peter Thiel with Blake Masters",
+      "spineColor": "#6ea8ff",
+      "accentColor": "#111111",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780804139298-L.jpg"
+    },
+    {
+      "title": "The Anthropocene Reviewed",
+      "author": "John Green",
+      "spineColor": "#111111",
+      "accentColor": "#33a1ff",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780525555247-L.jpg"
+    },
+    {
+      "title": "The Handmaid's Tale",
+      "author": "Margaret Atwood",
+      "spineColor": "#cb2d3e",
+      "accentColor": "#ffffff",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780385490818-L.jpg"
+    },
+    {
+      "title": "Night and Day",
+      "author": "Virginia Woolf",
+      "spineColor": "#ffffff",
+      "accentColor": "#111111",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780199536610-L.jpg"
+    },
+    {
+      "title": "Telling Tales",
+      "author": "Nadine Gordimer (ed.)",
+      "spineColor": "#f4e1c1",
+      "accentColor": "#d84315",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780747575002-L.jpg"
+    },
+    {
+      "title": "The Forest of Enchantments",
+      "author": "Chitra Banerjee Divakaruni",
+      "spineColor": "#dff2df",
+      "accentColor": "#1b5e20",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9789353025984-L.jpg"
+    },
+    {
+      "title": "Don't Sweat the Small Stuff ... and It's All Small Stuff",
+      "author": "Richard Carlson",
+      "spineColor": "#c62828",
+      "accentColor": "#ffffff",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780786881857-L.jpg"
+    },
+    {
+      "title": "Don Quixote",
+      "author": "Miguel de Cervantes (trans. Edith Grossman)",
+      "spineColor": "#7d4e3c",
+      "accentColor": "#ffffff",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780060934346-L.jpg"
+    },
+    {
+      "title": "Goodnight Tokyo",
+      "author": "Atsuhiro Yoshida",
+      "spineColor": "#ffffff",
+      "accentColor": "#1e88e5",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9798889660279-L.jpg"
+    },
+    {
+      "title": "Fooling Some of the People All of the Time",
+      "author": "David Einhorn",
+      "spineColor": "#ffffff",
+      "accentColor": "#111111",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780470073940-L.jpg"
+    },
+
+    {
+      "title": "How to Read a Book",
+      "author": "Mortimer J. Adler & Charles Van Doren",
+      "spineColor": "#f6d365",
+      "accentColor": "#333333",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780671212094-L.jpg"
+    },
+    {
+      "title": "Early Indians",
+      "author": "Tony Joseph",
+      "spineColor": "#ffffff",
+      "accentColor": "#d32f2f",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9789391165956-L.jpg"
+    },
+    {
+      "title": "India Before the Ambanis",
+      "author": "Lakshmi Subramanian",
+      "spineColor": "#efe2c2",
+      "accentColor": "#b71c1c",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780670098576-L.jpg"
+    },
+    {
+      "title": "The Power Law",
+      "author": "Sebastian Mallaby",
+      "spineColor": "#f2c311",
+      "accentColor": "#000000",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780525559992-L.jpg"
+    },
+    {
+      "title": "The Satanic Verses",
+      "author": "Salman Rushdie",
+      "spineColor": "#c0c0c0",
+      "accentColor": "#111111",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780812976717-L.jpg"
+    },
+    {
+      "title": "The Poppy War",
+      "author": "R. F. Kuang",
+      "spineColor": "#f39c12",
+      "accentColor": "#000000",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780062662569-L.jpg"
+    },
+    {
+      "title": "Stuff Every Beer Snob Should Know",
+      "author": "Ellen Goldstein",
+      "spineColor": "#000000",
+      "accentColor": "#fdd835",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9781594749834-L.jpg"
+    },
+    {
+      "title": "How to Be a Founder",
+      "author": "Alice Bentinck & Matt Clifford",
+      "spineColor": "#ffffff",
+      "accentColor": "#ff5722",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9781399411608-L.jpg"
+    },
+    {
+      "title": "Secret Ingredients: The New Yorker Book of Food and Drink",
+      "author": "David Remnick (ed.)",
+      "spineColor": "#b71c1c",
+      "accentColor": "#000000",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9781400065479-L.jpg"
+    },
+    {
+      "title": "The Mystery Method",
+      "author": "Mystery (Erik von Markovik)",
+      "spineColor": "#000000",
+      "accentColor": "#d4af37",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780312356460-L.jpg"
+    },
+    {
+      "title": "Build: An Unorthodox Guide to Making Things Worth Making",
+      "author": "Tony Fadell",
+      "spineColor": "#ffffff",
+      "accentColor": "#111111",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780063046061-L.jpg"
+    },
+    {
+      "title": "The Big Bull of Dalal Street",
+      "author": "Neil Borate, Aprajita Sharma & Aditya Kondawar",
+      "spineColor": "#111111",
+      "accentColor": "#ff9800",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780143460220-L.jpg"
+    },
+    {
+      "title": "Steve Jobs",
+      "author": "Walter Isaacson",
+      "spineColor": "#ffffff",
+      "accentColor": "#111111",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9781451648539-L.jpg"
+    },
+    {
+      "title": "The Things You Can See Only When You Slow Down",
+      "author": "Haemin Sunim",
+      "spineColor": "#3f51b5",
+      "accentColor": "#ffffff",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780143130772-L.jpg"
+    },
+    {
+      "title": "The Dead Romantics",
+      "author": "Ashley Poston",
+      "spineColor": "#ff9800",
+      "accentColor": "#000000",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780593336480-L.jpg"
+    },
+    {
+      "title": "The Sun Also Rises",
+      "author": "Ernest Hemingway",
+      "spineColor": "#d7bfa3",
+      "accentColor": "#000000",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780743297332-L.jpg"
+    },
+    {
+      "title": "The Omnivore’s Dilemma",
+      "author": "Michael Pollan",
+      "spineColor": "#c9b17e",
+      "accentColor": "#1b5e20",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780143038580-L.jpg"
+    },
+    {
+      "title": "Start Where You Are",
+      "author": "Pema Chödrön",
+      "spineColor": "#ffffff",
+      "accentColor": "#0d47a1",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9781611806052-L.jpg"
+    },
+    {
+      "title": "The Hunchback of Notre‑Dame",
+      "author": "Victor Hugo",
+      "spineColor": "#143f2e",
+      "accentColor": "#ffffff",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780140443530-L.jpg"
+    },
+    {
+      "title": "Zen and the Art of Motorcycle Maintenance",
+      "author": "Robert M. Pirsig",
+      "spineColor": "#2e7d32",
+      "accentColor": "#ffffff",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780060589463-L.jpg"
+    },
+
+    {
+      "title": "The Heart of the Buddha’s Teaching",
+      "author": "Thich Nhat Hanh",
+      "spineColor": "#e8d6b3",
+      "accentColor": "#8d6e63",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780767903691-L.jpg"
+    },
+    {
+      "title": "Am I a Hindu?",
+      "author": "Ed Viswanathan",
+      "spineColor": "#d84315",
+      "accentColor": "#ffffff",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780930860351-L.jpg"
+    },
+    {
+      "title": "The 5 Types of Wealth",
+      "author": "Sahil Bloom",
+      "spineColor": "#ffffff",
+      "accentColor": "#1e88e5",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780593723180-L.jpg"
+    },
+    {
+      "title": "Eclipse",
+      "author": "Stephenie Meyer",
+      "spineColor": "#000000",
+      "accentColor": "#e53935",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780316160209-L.jpg"
+    },
+    {
+      "title": "What Are You Doing With Your Life?",
+      "author": "J. Krishnamurti",
+      "spineColor": "#ffffff",
+      "accentColor": "#111111",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9781888004260-L.jpg"
+    },
+    {
+      "title": "Too Good To Be True",
+      "author": "Prajakta Koli",
+      "spineColor": "#90caf9",
+      "accentColor": "#111111",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780143460046-L.jpg"
+    },
+    {
+      "title": "Anxious People",
+      "author": "Fredrik Backman",
+      "spineColor": "#f4d03f",
+      "accentColor": "#111111",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9781501160837-L.jpg"
+    },
+    {
+      "title": "The Imperfectionists",
+      "author": "Tom Rachman",
+      "spineColor": "#1a237e",
+      "accentColor": "#ffffff",
+      "coverImage": "https://covers.openlibrary.org/b/isbn/9780385343671-L.jpg"
     }
   ]
 }
