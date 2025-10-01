@@ -14,7 +14,7 @@
       "author": "Leo Tolstoy",
       "spineColor": "#0b0b0b",
       "accentColor": "#ffffff",
-      "found": "Bought it at a second hand store in Menlo Park. It's a beautiful hardbound.",
+      "found": "Bought it at a second hand store, Feldman's, in Menlo Park. It's a beautiful hardbound.",
       "notes": "Kept it on the shelf so people think I am smart.",
       "coverImage": "https://m.media-amazon.com/images/I/81W6BFaJJWL._SL1500_.jpg"
     },
@@ -23,7 +23,7 @@
       "author": "David Foster Wallace",
       "spineColor": "#0b0b0b",
       "accentColor": "#ffffff",
-      "found": "Bought it at a second hand store in Menlo Park, for something like $7. Had to buy it.",
+      "found": "Bought it at a second hand store (Feldman's) in Menlo Park, for something like $7. Had to buy it.",
       "notes": "I have read the titular essay, and it goes hard. David Foster Wallace's non-fiction is a touch to pessimistic, but I love it none the less. This is water indeed.",
       "coverImage": "https://pictures.abebooks.com/isbn/9780316925280-us.jpg"
     },
@@ -41,6 +41,8 @@
       "author": "Tom Rand",
       "spineColor": "#f7e4c6",
       "accentColor": "#2e78b7",
+      "found": "At a climate conference I volunteered for when I was at grad school.",
+      "notes": "Haven't read it. Doesn't interest me too much, I am solid on the basic premise I guess.",
       "coverImage": "https://d2snwnmzyr8jue.cloudfront.net/dsa_9781690589662_270.jpeg"
     },
     {
@@ -48,6 +50,8 @@
       "author": "Morgan Housel",
       "spineColor": "#ffffff",
       "accentColor": "#222222",
+      "found": "Bought it at the Bengaluru Airport. A classic airport book.",
+      "notes": "A set of short essays. Good for a quick, if somewhat mindless read. If you have read as many non-fiction books as I have, you will probably be familiar with a big chunk of these anecdotes already.",
       "coverImage": "https://pictures.abebooks.com/isbn/9780593332702-us.jpg"
     },
     {
@@ -55,6 +59,8 @@
       "author": "Antoine de Saint\u2011Exup\u00e9ry",
       "spineColor": "#f6d365",
       "accentColor": "#473d2f",
+      "found": "Bought it in Bangalore I think. At an Om Bookstore in Phoneix Market City (if memory serves me correctly)",
+      "notes": "One of my favourite books. Full of whimsy. Everyone should read this. Especially adults.",
       "coverImage": "https://pictures.abebooks.com/isbn/9780156012195-us.jpg"
     },
     {
@@ -62,6 +68,8 @@
       "author": "Krish Ashok",
       "spineColor": "#8b2232",
       "accentColor": "#f4d06f",
+      "found": "Stole it from my brother.",
+      "notes": "Haven't read it. From what I hear, like a Indian Kenji Lopez-Alt. But my brother says the books has a few factual inaccuracies, that put into question the other parts of the book. And the author comes across as overly smug. But ask my brother for more information on this.",
       "coverImage": "https://pictures.abebooks.com/isbn/9780143451372-us.jpg"
     },
     {
@@ -69,6 +77,8 @@
       "author": "Todd Olson",
       "spineColor": "#ffffff",
       "accentColor": "#c00000",
+      "found": "My wife got this for free, when she helped organize Product Con NYC 2023",
+      "notes": "There is no way I am reading this.",
       "coverImage": "https://pictures.abebooks.com/isbn/9781119660873-us.jpg"
     },
     {
@@ -76,6 +86,8 @@
       "author": "Jake Dobkin",
       "spineColor": "#ffd54f",
       "accentColor": "#222222",
+      "found": "My wife bought it at the Chelsea Market. I thought it was overpriced. She moved to New York and wanted to be a New Yorker.",
+      "notes": "It's not very good.",
       "coverImage": "https://pictures.abebooks.com/isbn/9781419729089-us.jpg"
     },
     {
@@ -83,6 +95,8 @@
       "author": "Tara Westover",
       "spineColor": "#f2e3d2",
       "accentColor": "#c84e3a",
+      "found": "Bought it from Strand, my wife's book.",
+      "notes": "Haven't read it, but she loved it.",
       "coverImage": "https://pictures.abebooks.com/isbn/9780399590504-us.jpg"
     },
     {
@@ -90,6 +104,8 @@
       "author": "Cal Newport",
       "spineColor": "#f4d03f",
       "accentColor": "#111111",
+      "found": "Bought it from Flipkart.",
+      "notes": "It got me on the productivity grindset during covid. I get that this book gets meme'd a lot as a part of the tech bro essentials, but it's actually pretty good.",
       "coverImage": "https://covers.openlibrary.org/b/isbn/9781455586691-L.jpg"
     },
     {
@@ -97,6 +113,8 @@
       "author": "Scott Belsky",
       "spineColor": "#ffd400",
       "accentColor": "#111111",
+      "found": "Bought it at a good will for $5. I once met Scott Belsky, so I thought I should buy this.",
+      "notes": "Haven't fully read it. From the parts I read, I don't think I will learn anything new, but could be good for a skim.",
       "coverImage": "https://pictures.abebooks.com/isbn/9780735218079-us.jpg"
     },
     {
@@ -104,6 +122,8 @@
       "author": "James Clear",
       "spineColor": "#fbfaf4",
       "accentColor": "#d4af37",
+      "found": "Bought from Flipkart. Bought it with Deep Work.",
+      "notes": "Meme this book all you want, but it's straight up goated if you want to change your habits. Super practical, and minimal fluff (if you skip the anecdotes)",
       "coverImage": "https://pictures.abebooks.com/isbn/9780735211292-us.jpg"
     },
     {
@@ -111,6 +131,8 @@
       "author": "Anthony Doerr",
       "spineColor": "#0d3b66",
       "accentColor": "#a0c4ff",
+      "found": "My wife's friend gifted this book to her.",
+      "notes": "Neither she, nor I have read this. Looks a little sad.",
       "coverImage": "https://pictures.abebooks.com/isbn/9781476746586-us.jpg"
     },
     {
@@ -118,6 +140,8 @@
       "author": "Terry Pratchett",
       "spineColor": "#b7cc3b",
       "accentColor": "#2d6a4f",
+      "found": "Bought it at Feldman's in Menlo Park. ",
+      "notes": "I had actually bought it for my wife, because she likes fantasy. She didn't touch this book, because she doesn't like rats. I told her this book is about mice, but she wouldn't budge.",
       "coverImage": "https://pictures.abebooks.com/isbn/9780060012359-us.jpg"
     },
     {
@@ -125,6 +149,8 @@
       "author": "Gabriel Garc\u00eda M\u00e1rquez",
       "spineColor": "#f4d35e",
       "accentColor": "#1b4332",
+      "found": "Stooped from someone moving out.",
+      "notes": "Heard it's a certified hood classic, yet to read.",
       "coverImage": "https://pictures.abebooks.com/isbn/9780061120091-us.jpg"
     },
     {
@@ -132,6 +158,8 @@
       "author": "Richard E. Nisbett",
       "spineColor": "#f2ae72",
       "accentColor": "#2e4057",
+      "found": "Parents gifted this to me on my 27th birthday.",
+      "notes": "Yet to read, premise looks interesting.",
       "coverImage": "https://pictures.abebooks.com/isbn/9780743255356-us.jpg"
     },
     {
@@ -139,6 +167,8 @@
       "author": "David Graeber",
       "spineColor": "#d62828",
       "accentColor": "#111111",
+      "found": "Parents gifted this to me on my 27th birthday.",
+      "notes": "I like debt, so I would probably like this book I guess. I hear the book is a bit too critical of debt though. I have to read to find out.",
       "coverImage": "https://m.media-amazon.com/images/I/51+HNHMRfAL._SL1400_.jpg"
     },
     {
@@ -146,6 +176,8 @@
       "author": "Richard Castle",
       "spineColor": "#000000",
       "accentColor": "#e53935",
+      "found": "My wife's friend gifted this book to her.",
+      "notes": "My wife and I saw Castle (season 1 to season 7) while eating dinner and got into it. My wife's friend found out and gave this book. The art style is really fun. The plot is pretty basic. My wife and I read this together in one sitting. It felt like we saw a weird episdoe of Castle, but without Castle.",
       "coverImage": "https://m.media-amazon.com/images/I/71Hh8nhF1VL._SL1400_.jpg"
     },
     {
@@ -153,6 +185,8 @@
       "author": "Aldous Huxley",
       "spineColor": "#ffffff",
       "accentColor": "#111111",
+      "found": "Stooped from someone moving out.",
+      "notes": "Heard it's a certified hood classic, yet to read.",
       "coverImage": "https://pictures.abebooks.com/isbn/9780060850524-us.jpg"
     },
     {
@@ -160,6 +194,8 @@
       "author": "Peter Attia, MD",
       "spineColor": "#f7f7f7",
       "accentColor": "#2e7d32",
+      "found": "Bought from Flipkart",
+      "notes": "An excellent book – it really got me into health. I take it super seriously now, and the science is quite interesting. I got a dexa scan, and a whole bunch of tests done after this. I recommend quite literally everyone to read this book. Skim the science if you want to, but read the other 'practical' parts",
       "coverImage": "https://pictures.abebooks.com/isbn/9780593236598-us.jpg"
     },
     {
@@ -167,6 +203,8 @@
       "author": "William Zinsser",
       "spineColor": "#f2e9dc",
       "accentColor": "#2962ff",
+      "found": "Bought from Amazon in India I think.",
+      "notes": "It's a really good book on how to write well. Very non-fiction oriented. I enjoyed reading it. Very practical. If you are interested in writing a bit better, and open to a more academic view, this is a great book.",
       "coverImage": "https://pictures.abebooks.com/isbn/9780060891541-us.jpg"
     },
     {
@@ -174,6 +212,8 @@
       "author": "Nassim Nicholas Taleb",
       "spineColor": "#ffffff",
       "accentColor": "#111111",
+      "found": "Bought it from a book lending startup that went bankrupt in Bangalore.",
+      "notes": "It's good, but I'd just read antifragile instead.",
       "coverImage": "https://pictures.abebooks.com/isbn/9780812975215-us.jpg"
     },
     {
@@ -181,6 +221,8 @@
       "author": "Nassim Nicholas Taleb",
       "spineColor": "#ffffff",
       "accentColor": "#c62828",
+      "found": "I forget where I bought it.",
+      "notes": "Goated book, everyone should read it. One of the rare books that changed me in a deep way. See my review.",
       "coverImage": "https://pictures.abebooks.com/isbn/9780812979688-us.jpg"
     },
     {
@@ -188,6 +230,8 @@
       "author": "Nassim Nicholas Taleb",
       "spineColor": "#000000",
       "accentColor": "#ffffff",
+      "found": "I forget where I bought it.",
+      "notes": "Good book, but just read antifragile instead.",
       "coverImage": "https://pictures.abebooks.com/isbn/9780812973815-us.jpg"
     },
     {
@@ -454,7 +498,7 @@
       "author": "Prajakta Koli",
       "spineColor": "#90caf9",
       "accentColor": "#111111",
-      "coverImage": "https://pictures.abebooks.com/isbn/9780143460046-us.jpg"
+      "coverImage": "https://m.media-amazon.com/images/I/71i4L8WS5kL._SL1500_.jpg"
     },
     {
       "title": "Anxious People",
