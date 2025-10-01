@@ -1,6 +1,20 @@
 {
   "books": [
     {
+      "title": "The Power Broker",
+      "author": "Robert Caro",
+      "spineColor": "#0b0b0b",
+      "accentColor": "#ffffff",
+      "coverImage": "https://upload.wikimedia.org/wikipedia/en/6/68/The_Power_Broker_book_cover.jpg"
+    },
+    {
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "spineColor": "#0b0b0b",
+      "accentColor": "#ffffff",
+      "coverImage": "https://m.media-amazon.com/images/I/81W6BFaJJWL._SL1500_.jpg"
+    },
+    {
       "title": "A Supposedly Fun Thing I'll Never Do Again",
       "author": "David Foster Wallace",
       "spineColor": "#0b0b0b",
@@ -208,14 +222,14 @@
       "author": "Virginia Woolf",
       "spineColor": "#ffffff",
       "accentColor": "#111111",
-      "coverImage": "https://www.smith.edu/libraries/libs/rarebook/exhibitions/images/penandpress/large/5e_night_and_day.jpg"
+      "coverImage": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Night_and_Day_%28Virginia_Woolf%29.JPG"
     },
     {
       "title": "Telling Tales",
       "author": "Nadine Gordimer (ed.)",
       "spineColor": "#f4e1c1",
       "accentColor": "#d84315",
-      "coverImage": "https://pictures.abebooks.com/isbn/9780747575002-us.jpg"
+      "coverImage": "https://m.media-amazon.com/images/I/91oi8oxyYKL._SL1500_.jpg"
     },
     {
       "title": "The Forest of Enchantments",
@@ -243,7 +257,7 @@
       "author": "Atsuhiro Yoshida",
       "spineColor": "#ffffff",
       "accentColor": "#1e88e5",
-      "coverImage": "https://swirlandthread.files.wordpress.com/2024/01/goodnight-tokyo-1.jpg"
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1701453167i/201072367.jpg"
     },
     {
       "title": "Fooling Some of the People All of the Time",
@@ -278,7 +292,7 @@
       "author": "Sebastian Mallaby",
       "spineColor": "#f2c311",
       "accentColor": "#000000",
-      "coverImage": "https://pictures.abebooks.com/isbn/9780525559992-us.jpg"
+      "coverImage": "https://m.media-amazon.com/images/I/71WYvJXAW1L._SL1500_.jpg"
     },
     {
       "title": "The Satanic Verses",
@@ -355,7 +369,7 @@
       "author": "Ashley Poston",
       "spineColor": "#ff9800",
       "accentColor": "#000000",
-      "coverImage": "https://pictures.abebooks.com/isbn/9780593336480-us.jpg"
+      "coverImage": "https://m.media-amazon.com/images/I/81MT8btQrsL._SL1500_.jpg"
     },
     {
       "title": "The Sun Also Rises",
