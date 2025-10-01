@@ -125,13 +125,15 @@ body {
   top: 50%;
   bottom: auto;
   right: clamp(3.2rem, 5.5vw, 6rem);
-  width: clamp(300px, 26vw, 360px);
-  max-width: min(360px, 88%);
+  /* Make the detail card wider and taller */
+  width: clamp(380px, 36vw, 520px);
+  max-width: min(520px, 92%);
+  min-height: clamp(380px, 56vh, 620px);
   border-radius: clamp(18px, 3vw, 26px);
   background: rgba(248, 236, 209, 0.86);
   border: 1px solid rgba(200, 176, 137, 0.35);
   box-shadow: 0 24px 60px rgba(84, 64, 38, 0.18);
-  padding: clamp(1.4rem, 2.6vw, 2rem);
+  padding: clamp(1.6rem, 3vw, 2.4rem);
   transition: opacity 0.25s ease, transform 0.3s ease;
   backdrop-filter: blur(8px);
   transform: translateY(-50%);
@@ -212,7 +214,8 @@ body {
     left: 50%;
     right: auto;
     transform: translate(-50%, 110%);
-    width: min(460px, 92%);
+    width: min(520px, 92%);
+    min-height: auto;
   }
 
   .detail-overlay.detail-empty {

@@ -154,7 +154,14 @@ if (!container) {
     const rect = container.getBoundingClientRect();
     const w = Math.max(1, Math.round(rect.width));
     const h = Math.max(1, Math.round(rect.height));
-    const cam = new THREE.OrthographicCamera(-w / 2, w / 2, h / 2, -h / 2, -1000, 1000);
+    const cam = new THREE.OrthographicCamera(
+      -w / 2,
+      w / 2,
+      h / 2,
+      -h / 2,
+      -1000,
+      1000,
+    );
     cam.position.set(0, 0, 10);
     cam.lookAt(0, 0, 0);
     return cam;
@@ -214,9 +221,16 @@ if (!container) {
   let booksPerRow = DEFAULT_BOOKS_PER_ROW;
   let columnSpacing = BOOK_WIDTH * 0.42;
 
-  const FOCUS_TARGET_SHIFT_X = BOOK_WIDTH * 1.95;
-  const FOCUS_TARGET_SHIFT_LOOK = BOOK_WIDTH * 0.75;
-  const FOCUS_TARGET_DEPTH = 8.0;
+  // Nudge camera a touch further left when focused to give
+  // the enlarged detail card more breathing room
+  // Keep a modest left-of-subject vantage; smaller value brings
+  // the camera further left so the book sits more to the left
+  // (away from the card on the right).
+  // Push the camera ~40% further left to clear the wider card
+  const FOCUS_TARGET_SHIFT_X = BOOK_WIDTH * 3.15; // was 2.25
+  const FOCUS_TARGET_SHIFT_LOOK = BOOK_WIDTH * 1.26; // keep similar angle (was 0.9)
+  // Move the camera a bit closer so the focused book appears larger
+  const FOCUS_TARGET_DEPTH = 10;
 
   let layoutSpacingY = BOOK_HEIGHT * 1.6;
   let layoutRows = 0;
@@ -261,7 +275,8 @@ if (!container) {
 
       this.basePosition = new THREE.Vector3();
       this.targetPosition = new THREE.Vector3();
-      this.focusOffset = new THREE.Vector3(-BOOK_WIDTH * 0.6, 0.18, 0.0);
+      // Move the focused book ~40% further left (away from the card)
+      this.focusOffset = new THREE.Vector3(-BOOK_WIDTH * 2, 0.18, 0.0);
       this.scaleCurrent = 1;
       this.scaleTarget = 1;
       this.openAmount = 0;
@@ -544,7 +559,8 @@ if (!container) {
       if (isFocused) {
         // Natural "peek open", keep the book near its grid position
         this.openTarget = 0.28; // subtle opening
-        this.scaleTarget = 1.04; // gentle emphasis
+        // Make the focused book model a bit bigger
+        this.scaleTarget = 1.5; // was 1.04
         this.targetRotation.y = 0; // face the camera
         this.targetPosition.copy(this.basePosition).add(this.focusOffset);
       } else {
@@ -716,7 +732,8 @@ if (!container) {
     gridHeight =
       layoutRows <= 1
         ? BOOK_HEIGHT
-        : layoutRows * BOOK_HEIGHT + (layoutRows - 1) * (layoutSpacingY - BOOK_HEIGHT);
+        : layoutRows * BOOK_HEIGHT +
+          (layoutRows - 1) * (layoutSpacingY - BOOK_HEIGHT);
 
     if (!selectedBook) {
       // LIST VIEW (orthographic): pixel-space scaling and scroll track
@@ -815,7 +832,9 @@ if (!container) {
   }
 
   // Position camera to frame the entire grid so user always sees books
-  function frameAllRows() { /* no-op in orthographic list view */ }
+  function frameAllRows() {
+    /* no-op in orthographic list view */
+  }
 
   function syncScrollProgressFromPage() {
     if (!scrollEnabled || selectedBook || !experienceSection) {
@@ -823,8 +842,15 @@ if (!container) {
     }
     const viewportHeight = window.innerHeight || 1;
     const scrollRange = Math.max(trackPxGlobal - viewportHeight, 0);
-    if (scrollRange <= 0) { scrollProgressTarget = 0; return; }
-    const scrolled = THREE.MathUtils.clamp(window.scrollY - sectionTopY, 0, scrollRange);
+    if (scrollRange <= 0) {
+      scrollProgressTarget = 0;
+      return;
+    }
+    const scrolled = THREE.MathUtils.clamp(
+      window.scrollY - sectionTopY,
+      0,
+      scrollRange,
+    );
     scrollProgressTarget = scrolled / scrollRange;
   }
 
@@ -879,8 +905,12 @@ if (!container) {
       selectedBook.group.getWorldPosition(worldPos);
       cameraTargetPosition = worldPos
         .clone()
-        .add(new THREE.Vector3(-FOCUS_TARGET_SHIFT_X, 0.32, FOCUS_TARGET_DEPTH));
-      cameraTargetLookAt = worldPos.clone().add(new THREE.Vector3(FOCUS_TARGET_SHIFT_LOOK, 0, 0));
+        .add(
+          new THREE.Vector3(-FOCUS_TARGET_SHIFT_X, 0.32, FOCUS_TARGET_DEPTH),
+        );
+      cameraTargetLookAt = worldPos
+        .clone()
+        .add(new THREE.Vector3(FOCUS_TARGET_SHIFT_LOOK, 0, 0));
       if (detailPanel) {
         detailPanel.classList.remove("detail-empty");
       }
@@ -1022,7 +1052,9 @@ if (!container) {
   renderer.domElement.addEventListener("click", pointerClick);
   window.addEventListener("resize", onResize);
   // Keep scroll mapping in sync with page scroll
-  window.addEventListener("scroll", syncScrollProgressFromPage, { passive: true });
+  window.addEventListener("scroll", syncScrollProgressFromPage, {
+    passive: true,
+  });
 
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
